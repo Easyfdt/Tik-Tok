@@ -53,11 +53,12 @@ function envelope(f) {
 }
 function dur(f) { return parseFloat(sh('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f]).toString()); }
 // ElevenLabs-Stimmen (API-Key wird vom Netzwerk-Proxy eingesetzt). Fällt bei Fehlern auf Piper zurück.
-const EL_VOICES = { erz: '18X2yBovneA0q06wd8E9', lena: 'Jpm0FNvrnzdW3k4rnWVH', mats: '5rcNUqWNX3O3CWtoa74o', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
+const EL_VOICES = { erz: 'DoHz70qrC3ss60PDk9cg', lena: 'Jpm0FNvrnzdW3k4rnWVH', mats: '5rcNUqWNX3O3CWtoa74o', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
 const EL_CACHE = path.join(ROOT, 'out', 'el-cache'); fs.mkdirSync(EL_CACHE, { recursive: true });
 let elOk = process.env.ECHO_TTS !== 'piper', usedEL = 0, usedPiper = 0;
+const elKey = (line, text) => require('crypto').createHash('sha1').update(EL_VOICES[line.who] + '|' + line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
 function elevenLabs(line, text) {
-  const key = require('crypto').createHash('sha1').update(line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
+  const key = elKey(line, text); const _unused = require('crypto').createHash('sha1').update(EL_VOICES[line.who] + '|' + line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
   const mp3 = path.join(EL_CACHE, `${key}.mp3`);
   if (fs.existsSync(mp3)) return mp3; // nie doppelt Credits ausgeben
   const body = JSON.stringify({ text: (line.tone ? line.tone + ' ' : '') + text, model_id: process.env.ECHO_EL_MODEL || 'eleven_v4', language_code: 'de' });
@@ -209,6 +210,13 @@ async function render(tl, audio) {
   server.close();
 }
 
+// --lines: listet fehlende Sprechzeilen (für den ElevenLabs-Connector)
+if (process.argv.includes('--lines')) {
+  const out = [];
+  for (const sh of ep.shots) for (const line of sh.lines || []) { const text = line.say || line.text; const file = path.join(EL_CACHE, `${elKey(line, text)}.mp3`);
+    if (!fs.existsSync(file)) out.push({ file, voice_id: EL_VOICES[line.who], prompt: (line.tone ? line.tone + ' ' : '') + text }); }
+  console.log(JSON.stringify(out, null, 1)); process.exit(0);
+}
 (async () => {
   ensureVoices();
   const tl = buildTimeline();
