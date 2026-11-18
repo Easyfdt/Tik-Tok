@@ -166,51 +166,49 @@ async function render(tl, audio) {
   const server = http.createServer((req, res) => {
     const p = path.join(ROOT, decodeURIComponent(req.url.split('?')[0]));
     if (!p.startsWith(ROOT) || !fs.existsSync(p)) { res.writeHead(404); return res.end(); }
-    res.writeHead(200, { 'Content-Type': p.endsWith('.js') ? 'text/javascript' : p.endsWith('.html') ? 'text/html' : 'application/json' });
+    res.writeHead(200, { 'Content-Type': p.endsWith('.js') ? 'text/javascript' : p.endsWith('.html') ? 'text/html' : 'application/octet-stream' });
     fs.createReadStream(p).pipe(res);
   });
   await new Promise(r => server.listen(0, r));
-  const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
-  const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
-  page.on('pageerror', e => console.error('[page error]', e));
-  page.on('console', m => { if (m.text().startsWith('CHAR')) console.log(m.text()); });
-  await page.goto(`http://localhost:${server.address().port}/echo/engine.html?tl=/out/echo-${id}/timeline.json`);
-  await page.waitForFunction('window.ready === true', null, { timeout: 120000 });
+  const url = `http://localhost:${server.address().port}/echo/engine.html?tl=/out/echo-${id}/timeline.json`;
+  const openPage = async () => {
+    const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
+    const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
+    page.on('pageerror', e => console.error('[page error]', e));
+    await page.goto(url); await page.waitForFunction('window.ready === true', null, { timeout: 180000 });
+    return { browser, page };
+  };
   const frames = Math.round(tl.duration * FPS);
   if (preview) {
-    tl.shots.forEach((s, i) => { s._f = Math.round(((s.t0 + s.t1) / 2) * FPS); });
+    const { browser, page } = await openPage();
     for (const [i, s] of tl.shots.entries()) {
-      const b64 = await page.evaluate(f => window.renderFrame(f), s._f);
+      const b64 = await page.evaluate(f => window.renderFrame(f), Math.round(((s.t0 + s.t1) / 2) * FPS));
       fs.writeFileSync(path.join(WORK, `shot${String(i).padStart(2, '0')}.jpg`), Buffer.from(b64, 'base64'));
     }
+    await browser.close();
   } else {
-    const outFile = path.join(ROOT, 'out', CLIP ? `echo-folge-${id}-ausschnitt.mp4` : `echo-folge-${id}.mp4`);
-    const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-', ...(CLIP ? ['-ss', String(CLIP.start), '-t', String(CLIP.dur)] : []), '-i', audio,
-      '-c:v', 'libx264', '-preset', 'medium', '-crf', '21', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outFile], { stdio: ['pipe', 'inherit', 'inherit'] });
-    const t0 = Date.now();
+    const FR = path.join(WORK, 'frames'); fs.rmSync(FR, { recursive: true, force: true }); fs.mkdirSync(FR, { recursive: true });
     const f0 = CLIP ? Math.round(CLIP.start * FPS) : 0, f1 = CLIP ? f0 + Math.round(CLIP.dur * FPS) : frames;
-    for (let i = f0; i < f1; i++) {
-      const b64 = await page.evaluate(f => window.renderFrame(f), i);
-      if (!ff.stdin.write(Buffer.from(b64, 'base64'))) await new Promise(r => ff.stdin.once('drain', r));
-      if (i % 120 === 0) console.log(`Frame ${i}/${frames} (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
-    }
-    ff.stdin.end(); await new Promise(r => ff.on('close', r));
-    console.log('FERTIG', outFile);
+    const N = Math.max(1, Math.min(+(process.env.ECHO_WORKERS || 3), f1 - f0)), per = Math.ceil((f1 - f0) / N), t0 = Date.now();
+    let done = 0;
+    await Promise.all([...Array(N)].map(async (_, w) => {
+      const { browser, page } = await openPage();
+      for (let i = f0 + w * per; i < Math.min(f1, f0 + (w + 1) * per); i++) {
+        const b64 = await page.evaluate(f => window.renderFrame(f), i);
+        fs.writeFileSync(path.join(FR, `${String(i - f0).padStart(5, '0')}.jpg`), Buffer.from(b64, 'base64'));
+        if (++done % 120 === 0) console.log(`Frame ${done}/${f1 - f0} (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
+      }
+      await browser.close();
+    }));
+    const outFile = path.join(ROOT, 'out', CLIP ? `echo-folge-${id}-ausschnitt.mp4` : `echo-folge-${id}.mp4`);
+    sh('ffmpeg', ['-y', '-v', 'error', '-framerate', String(FPS), '-i', path.join(FR, '%05d.jpg'), ...(CLIP ? ['-ss', String(CLIP.start), '-t', String(CLIP.dur)] : []), '-i', audio,
+      '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outFile]);
+    fs.rmSync(FR, { recursive: true, force: true });
+    console.log('FERTIG', outFile, `${((Date.now() - t0) / 60000).toFixed(1)} min`);
   }
-  await browser.close(); server.close();
+  server.close();
 }
 
-// --lines: listet alle Sprechzeilen mit Cache-Datei, damit sie über den ElevenLabs-Connector erzeugt werden können
-if (process.argv.includes('--lines')) {
-  const out = [];
-  for (const s of ep.shots) for (const line of s.lines || []) {
-    const text = line.say || line.text;
-    const key = require('crypto').createHash('sha1').update(line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
-    const file = path.join(EL_CACHE, `${key}.mp3`);
-    if (!fs.existsSync(file)) out.push({ file, voice_id: EL_VOICES[line.who], prompt: (line.tone ? line.tone + ' ' : '') + text });
-  }
-  console.log(JSON.stringify(out, null, 1)); process.exit(0);
-}
 (async () => {
   ensureVoices();
   const tl = buildTimeline();

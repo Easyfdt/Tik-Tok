@@ -194,6 +194,22 @@ function grass(g, n, area, col, avoid) {
     e.set((rnd() - 0.5) * 0.4, rnd() * 6, (rnd() - 0.5) * 0.4); const sc = 0.6 + rnd() * 0.9; m4.compose(new THREE.Vector3(x, 0, z), q.setFromEuler(e), new THREE.Vector3(sc, sc, sc)); im.setMatrixAt(k++, m4); }
   im.receiveShadow = true; g.add(im);
 }
+// wehende Blätter
+function leaves(g, n, area, cols = [0xd8902a, 0xb8501e, 0xe0c040, 0x8a6a2a]) {
+  const ls = []; const geo = new THREE.PlaneGeometry(0.12, 0.08);
+  for (let i = 0; i < n; i++) { const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: cols[i % cols.length], side: THREE.DoubleSide, roughness: 0.8 })); m.userData = { x: (rnd() - 0.5) * area, y: rnd() * 4, z: (rnd() - 0.5) * area, v: 0.6 + rnd() * 1.2, ph: rnd() * 6.28 }; g.add(m); ls.push(m); }
+  onFrame(g, t => ls.forEach(m => { const u = m.userData; const x = ((u.x + area / 2 + u.v * t) % area + area) % area - area / 2; const y = ((u.y - t * 0.35 * u.v) % 4 + 4) % 4 + 0.1;
+    m.position.set(x, y + Math.sin(t * 2 + u.ph) * 0.2, u.z + Math.sin(t * 1.3 + u.ph) * 0.5); m.rotation.set(t * 3 + u.ph, t * 2.1 + u.ph, t * 1.7); }));
+}
+// Sternschnuppen am Himmel
+function shootingStars(g) {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(6, 0.06), new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, fog: false, depthWrite: false })); m.position.set(0, 40, -60); g.add(m);
+  onFrame(g, t => { const c = t % 7, a = c < 0.8 ? c / 0.8 : -1; m.visible = a >= 0; if (a < 0) return; m.position.set(-30 + a * 50 + (Math.floor(t / 7) % 3) * 15, 45 - a * 12, -70); m.rotation.z = -0.25; m.material.opacity = Math.sin(a * Math.PI); });
+}
+// Motten um Laternen
+function moths(g, x, y, z) { const n = 8, p = new Float32Array(n * 3), geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.BufferAttribute(p, 3));
+  g.add(new THREE.Points(geo, new THREE.PointsMaterial({ color: 0xfff0c0, size: 0.05, map: softTex, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false })));
+  onFrame(g, t => { for (let i = 0; i < n; i++) p.set([x + Math.sin(t * (3 + i) + i) * 0.4, y + Math.cos(t * (2.5 + i * 0.7)) * 0.3, z + Math.sin(t * (2 + i * 0.5) + i * 2) * 0.4], i * 3); geo.attributes.position.needsUpdate = true; }); }
 // Glühwürmchen / schwebende Funken
 function fireflies(g, n, area, col = 0xffd27a) {
   const base = []; const p = new Float32Array(n * 3); for (let i = 0; i < n; i++) base.push([(rnd() - 0.5) * area, 0.3 + rnd() * 2.2, (rnd() - 0.5) * area, rnd() * 6.28]);
@@ -203,8 +219,8 @@ function fireflies(g, n, area, col = 0xffd27a) {
 }
 // treibende Nebelschwaden
 function wisps(g, n, area, col = 0x8fa3c0, op = 0.1) {
-  const ws = []; for (let i = 0; i < n; i++) { const m = new THREE.Mesh(new THREE.PlaneGeometry(6, 2.2), new THREE.MeshBasicMaterial({ map: softTex, color: col, transparent: true, opacity: op, depthWrite: false })); m.position.set((rnd() - 0.5) * area, 0.4 + rnd() * 1.2, (rnd() - 0.5) * area); m.userData.v = 0.15 + rnd() * 0.25; g.add(m); ws.push(m); }
-  onFrame(g, t => ws.forEach(m => { m.quaternion.copy(camera.quaternion); m.position.x += m.userData.v / TL.fps; if (m.position.x > area / 2) m.position.x = -area / 2; }));
+  const ws = []; for (let i = 0; i < n; i++) { const m = new THREE.Mesh(new THREE.PlaneGeometry(6, 2.2), new THREE.MeshBasicMaterial({ map: softTex, color: col, transparent: true, opacity: op, depthWrite: false })); m.position.set((rnd() - 0.5) * area, 0.4 + rnd() * 1.2, (rnd() - 0.5) * area); m.userData.v = 0.15 + rnd() * 0.25; m.userData.x0 = m.position.x; g.add(m); ws.push(m); }
+  onFrame(g, t => ws.forEach(m => { m.quaternion.copy(camera.quaternion); m.position.x = ((m.userData.x0 + area / 2 + m.userData.v * t) % area + area) % area - area / 2; }));
 }
 // Krähen, die über den Himmel ziehen
 function crows(g, n, cx, cz, h) {
@@ -237,9 +253,9 @@ const sharedDust = (() => { const N = 1500, p = new Float32Array(N * 3); for (le
 addSet('wald', g => {
   g.add(ground(0x26302a));
   for (let i = 0; i < 160; i++) { const x = (rnd() - 0.5) * 60, z = (rnd() - 0.5) * 60; if (Math.abs(x) < 2.2 && z > -14 && z < 12) continue; const t = tree(4 + rnd() * 5); t.position.set(x, 0, z); t.rotation.y = rnd() * 6; g.add(t); }
-  for (let i = 0; i < 30; i++) { const r = rock(0.2 + rnd() * 0.5, 0x2c302c); r.position.set((rnd() - 0.5) * 30, 0.1, (rnd() - 0.5) * 30); g.add(r); }
+  for (let i = 0; i < 30; i++) { const r = rock(0.2 + rnd() * 0.5, 0x6a6a64); const x = (rnd() - 0.5) * 30; if (Math.abs(x) < 3) continue; r.position.set(x, 0.1, (rnd() - 0.5) * 30); g.add(r); }
   grass(g, 5000, 34, 0x3fae4a, (x, z) => Math.abs(x) < 0.9 && z > -12 && z < 10);
-  fireflies(g, 70, 18); wisps(g, 14, 30); crows(g, 5, 0, -10, 12);
+  fireflies(g, 70, 18); wisps(g, 14, 30); crows(g, 5, 0, -10, 12); leaves(g, 60, 16); shootingStars(g);
   const moonDisc = new THREE.Mesh(new THREE.CircleGeometry(3, 40), new THREE.MeshBasicMaterial({ color: 0xdfe8ff, fog: false })); moonDisc.position.set(-30, 32, -70); g.add(moonDisc);
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: softTex, color: 0x8aa0d0, transparent: true, opacity: 0.5, fog: false })); halo.scale.set(22, 22, 1); halo.position.copy(moonDisc.position); g.add(halo);
   const moon = new THREE.DirectionalLight(0x9fb6e8, 2.2); moon.position.set(-8, 14, 10); moon.castShadow = true; g.add(moon);
@@ -253,7 +269,7 @@ addSet('hoehle', g => {
   const hole = new THREE.Mesh(new THREE.CircleGeometry(2.3, 32, 0, Math.PI), new THREE.MeshBasicMaterial({ color: 0x000000 })); hole.position.set(0, 0, -4.2); g.add(hole);
   const glow = new THREE.PointLight(0x4a7cff, 14, 10, 1.4); glow.position.set(0, 1.2, -5); g.add(glow); g.userData.glow = glow;
   for (let i = 0; i < 60; i++) { const t = tree(4 + rnd() * 4); const x = (rnd() - 0.5) * 40, z = 2 + rnd() * 25; if (Math.abs(x) < 7 && z < 14) continue; t.position.set(x, 0, z); g.add(t); }
-  grass(g, 2500, 26, 0x3a9a44, (x, z) => z < -2.5 && Math.abs(x) < 5); fireflies(g, 40, 12, 0x9fc4ff); wisps(g, 10, 22, 0x7f90b0, 0.12); crows(g, 3, 0, 4, 10);
+  grass(g, 2500, 26, 0x3a9a44, (x, z) => z < -2.5 && Math.abs(x) < 5); fireflies(g, 40, 12, 0x9fc4ff); wisps(g, 10, 22, 0x7f90b0, 0.12); crows(g, 3, 0, 4, 10); leaves(g, 40, 12); shootingStars(g);
   const scarf = new THREE.Mesh(new THREE.TorusGeometry(0.18, 0.06, 8, 20), std(0xc0262a, { emissive: 0x300000 })); const sr = rock(0.45); sr.position.set(1.2, 0.2, -2.5); scarf.position.set(1.2, 0.62, -2.5); scarf.rotation.x = 1.2; g.add(sr, scarf);
   const moon = new THREE.DirectionalLight(0x9fb2e0, 2.0); moon.position.set(5, 12, 8); moon.castShadow = true; g.add(moon);
   g.add(new THREE.HemisphereLight(0x45588a, 0x0c0c0c, 1.3));
@@ -280,6 +296,8 @@ addSet('uhrturm', g => {
   for (let i = 0; i < 6; i++) smoke(g, i % 2 ? 9 : -9, 11, 4 - i * 6);
   crows(g, 7, 0, -8, 20); wisps(g, 10, 30, 0x8a96b0, 0.08);
   carWithLights(g, 0x2a3a5a, (car, t) => { const z = 30 - ((t * 7) % 60); car.position.set(2.2, 0, z); car.rotation.y = Math.PI; });
+  carWithLights(g, 0xd04a3a, (car, t) => { const z = -30 + ((t * 5 + 25) % 60); car.position.set(-1.4, 0, z); });
+  for (let i = 0; i < 4; i++) moths(g, i % 2 ? 4 : -4, 4, 4 - i * 5); leaves(g, 30, 14);
   const pm = new THREE.MeshStandardMaterial({ map: poster('VERMISST', 'Lena Berger'), roughness: 0.9 });
   for (const [x, z] of [[-4.05, 1.5], [4.05, -3.5], [-4.05, -8.5]]) { const ps = new THREE.Mesh(new THREE.PlaneGeometry(0.5, 0.7), pm); ps.position.set(x, 1.8, z); ps.rotation.y = x < 0 ? Math.PI / 2 : -Math.PI / 2; g.add(ps); }
   for (let i = 0; i < 4; i++) { const l = new THREE.PointLight(0xffb366, 8, 12, 1.8); l.position.set(i % 2 ? 4 : -4, 4, 4 - i * 5); g.add(l); const post = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 4, 6), std(0x111111)); post.position.set(l.position.x, 2, l.position.z); g.add(post); }
@@ -304,6 +322,7 @@ addSet('zimmer', g => {
   const bed = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.5, 3), std(0x3b4652)); bed.position.set(-3, 0.25, 0); g.add(bed);
   const zp = new THREE.Mesh(new THREE.PlaneGeometry(0.7, 1), new THREE.MeshStandardMaterial({ map: poster('VERMISST', 'Lena Berger') })); zp.position.set(1.9, 2.1, -2.98); g.add(zp);
   for (let i = 0; i < 5; i++) { const ph = new THREE.Mesh(new THREE.PlaneGeometry(0.25, 0.18), std([0xd8d0c0, 0xc8c0b0, 0xe0d8c8][i % 3])); ph.position.set(1.0 + (i % 3) * 0.3, 1.55 + Math.floor(i / 3) * 0.25, -2.97); ph.rotation.z = (rnd() - 0.5) * 0.3; g.add(ph); }
+  const fan = new THREE.Group(); fan.position.set(0, 3.7, 0); for (let i = 0; i < 4; i++) { const bl = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.03, 0.18), new THREE.MeshStandardMaterial({ color: 0x8a5a3a })); bl.position.x = 0.55; const arm = new THREE.Group(); arm.rotation.y = i * Math.PI / 2; arm.add(bl); fan.add(arm); } g.add(fan); onFrame(g, t => { fan.rotation.y = t * 3; });
   const cl = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 2), new THREE.MeshStandardMaterial({ color: 0x3a2030, side: THREE.DoubleSide, roughness: 1 })); cl.position.set(-1.8, 2.2, -2.85); g.add(cl); onFrame(g, t => { cl.rotation.x = Math.sin(t * 1.3) * 0.05; cl.position.z = -2.85 + Math.sin(t * 1.1) * 0.03; });
   const moonIn = new THREE.SpotLight(0x6f8fd0, 15, 10, 0.5, 0.6); moonIn.position.set(-1.8, 2.4, -4); moonIn.target.position.set(0, 0, 0); g.add(moonIn, moonIn.target);
   g.add(new THREE.HemisphereLight(0x485468, 0x141414, 0.9));
@@ -431,10 +450,10 @@ const BLOCKY = {
 const chars = Object.fromEntries(Object.entries(BLOCKY).map(([n, d]) => [n, makeBlocky(n, d)]));
 // Passanten mit Regenschirmen, damit die Stadt lebt
 { const P = [[0xf2a03a, 0x35425a, 0xf0c8a0, 0x1f6fd1], [0x7a3fc4, 0x2a2a30, 0x8a5a3a, null], [0x2fb3a0, 0x5a3a2a, 0xffd0b0, 0xe03a5a], [0xe8e8e8, 0x1f2f4f, 0xc08860, null], [0xffd23a, 0x3a3a3a, 0xf0c0a0, 0x3ab04a]];
-  for (const [setName, xs] of [['uhrturm', [-3.2, 3.4, -2.6, 2.9, -3.6]], ['strasse1989', [-3.3, 3.2, -3.0]]]) xs.forEach((x, i) => {
+  for (const [setName, xs] of [['uhrturm', [-3.2, 3.4, -2.6, 2.9, -3.6, 3.1]], ['strasse1989', [-3.3, 3.2, -3.0, 3.5]]]) xs.forEach((x, i) => {
     const [sh, pa, sk, um] = P[i % 5]; const pd = makeBlocky('passant' + i, { skin: sk, shirt: sh, kind: 'plain', pants: pa, shoes: 0x222222, hair: [0x2a1a10, 0xd8b050, 0x101010][i % 3], umbrella: um, size: 0.9 + (i % 3) * 0.06 });
     const dir = i % 2 ? 1 : -1, speed = 1.2 + i * 0.12, g = sets[setName].g; g.add(pd);
-    onFrame(g, t => { const z = ((t * speed * dir + i * 13) % 50 + 50) % 50 - 30; pd.position.set(x, 0, z); pd.rotation.y = dir > 0 ? 0 : Math.PI; pd.userData.animate('walk', t + i); }); }); }
+    onFrame(g, t => { if (i === 5 || i === 3 && setName === 'strasse1989') { pd.position.set(x, 0, -4 - i); pd.rotation.y = -Math.PI / 2 * Math.sign(x); pd.userData.animate('look', t + i); return; } const z = ((t * speed * dir + i * 13) % 50 + 50) % 50 - 30; pd.position.set(x, 0, z); pd.rotation.y = dir > 0 ? 0 : Math.PI; pd.userData.animate('walk', t + i); }); }); }
 Object.values(chars).forEach(c => { c.visible = false; scene.add(c); });
 
 // ---------- Kamera ----------
@@ -476,7 +495,7 @@ function placeCamera(shot, lt, p, t) {
   camera.rotation.y += (Math.sin(t * 1.3 + 1) + Math.sin(t * 2.9) * 0.5) * shake;
   camera.fov = shot.fov ?? fov; camera.updateProjectionMatrix();
   bokeh.uniforms.focus.value = cam === 'pov' ? 8 : camera.position.distanceTo(tgt);
-  bokeh.uniforms.aperture.value = ['close', 'extreme'].includes(cam) ? 0.004 : 0.0012;
+  bokeh.enabled = ['close', 'extreme'].includes(cam); bokeh.uniforms.aperture.value = 0.004;
 }
 
 // ---------- Overlay (2D) ----------
@@ -549,7 +568,7 @@ window.renderFrame = (i) => {
   const set = sets[shot.set];
   windU.value = t; swayers.forEach(s => { s.g.rotation.z = Math.sin(t * 0.9 + s.ph) * s.a; s.g.rotation.x = Math.cos(t * 0.7 + s.ph) * s.a * 0.6; });
   set.g.userData.upd.forEach(fn => fn(t));
-  if (set.g.userData.gears) set.g.userData.gears.children.forEach(g => g.rotation.z += g.userData.spin / TL.fps);
+  if (set.g.userData.gears) set.g.userData.gears.children.forEach(g => g.rotation.z = g.userData.spin * t);
   if (set.g.userData.glow) set.g.userData.glow.intensity = (shot.set === 'stollen' ? 25 : 6) * (0.8 + 0.4 * Math.sin(t * 2.3));
   if (set.g.userData.dial) { const on = !fx.includes('flicker') || hash(Math.floor(t * 14)) > 0.3; set.g.userData.dial.material.color.setHex(on ? 0xffb04a : 0x2a1a08); set.g.userData.radioLight.intensity = on ? 3 + Math.sin(t * 20) : 0.2; set.g.userData.lamp.intensity = fx.includes('dark') ? 0.6 : 10; }
   placeCamera(shot, lt, p, t);
