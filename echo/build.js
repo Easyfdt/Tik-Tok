@@ -183,6 +183,17 @@ async function render(tl, audio) {
   await browser.close(); server.close();
 }
 
+// --lines: listet alle Sprechzeilen mit Cache-Datei, damit sie über den ElevenLabs-Connector erzeugt werden können
+if (process.argv.includes('--lines')) {
+  const out = [];
+  for (const s of ep.shots) for (const line of s.lines || []) {
+    const text = line.say || line.text;
+    const key = require('crypto').createHash('sha1').update(line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
+    const file = path.join(EL_CACHE, `${key}.mp3`);
+    if (!fs.existsSync(file)) out.push({ file, voice_id: EL_VOICES[line.who], prompt: (line.tone ? line.tone + ' ' : '') + text });
+  }
+  console.log(JSON.stringify(out, null, 1)); process.exit(0);
+}
 (async () => {
   ensureVoices();
   const tl = buildTimeline();
