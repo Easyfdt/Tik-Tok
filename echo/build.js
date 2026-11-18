@@ -37,11 +37,11 @@ const VOICE_FX = {
   radio: 'aresample=44100,highpass=f=400,lowpass=f=3000,acrusher=bits=10:mix=0.35,aecho=0.6:0.4:20:0.2,volume=1.6',
 };
 // Nachbearbeitung für ElevenLabs-Aufnahmen (schon 44,1 kHz, nur Raum/Charakter)
-const EL_FX = {
-  erz: 'aresample=44100,highpass=f=60,aecho=0.8:0.5:40:0.08,volume=1.1',
-  lena: 'aresample=44100,highpass=f=100,aecho=0.8:0.5:30:0.08',
-  mats: 'aresample=44100,highpass=f=90,aecho=0.8:0.5:30:0.08',
-  uhrmacher: 'aresample=44100,asetrate=44100*0.9,aresample=44100,atempo=1.05,aecho=0.8:0.85:70|140:0.3|0.2,volume=1.3',
+const CLEAN = 'aresample=44100,highpass=f=70,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=180:makeup=2';
+const EL_FX = { // saubere Stimmen: kein Hall, keine Tonhöhen-Verschiebung
+  erz: CLEAN, lena: CLEAN, mats: CLEAN,
+  uhrmacher: CLEAN + ',equalizer=f=140:t=q:w=1:g=2',
+  radio: 'aresample=44100,highpass=f=250,lowpass=f=5000,acompressor=threshold=-20dB:ratio=3:makeup=2',
 };
 const SPEED = { erz: 1.12, lena: 1.0, mats: 0.98, uhrmacher: 1.1 };
 // Lautstärke-Hüllkurve pro Videobild (0..1) für die Lippenbewegung
@@ -53,15 +53,16 @@ function envelope(f) {
 }
 function dur(f) { return parseFloat(sh('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f]).toString()); }
 // ElevenLabs-Stimmen (API-Key wird vom Netzwerk-Proxy eingesetzt). Fällt bei Fehlern auf Piper zurück.
-const EL_VOICES = { erz: 'DoHz70qrC3ss60PDk9cg', lena: 'Jpm0FNvrnzdW3k4rnWVH', mats: '5rcNUqWNX3O3CWtoa74o', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
+const EL_MODEL = process.env.ECHO_EL_MODEL || 'eleven_v3';
+const EL_VOICES = { erz: 'NBqeXKdZHweef6y0B67V', lena: 'Jpm0FNvrnzdW3k4rnWVH', mats: '5rcNUqWNX3O3CWtoa74o', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
 const EL_CACHE = path.join(ROOT, 'out', 'el-cache'); fs.mkdirSync(EL_CACHE, { recursive: true });
 let elOk = process.env.ECHO_TTS !== 'piper', usedEL = 0, usedPiper = 0;
-const elKey = (line, text) => require('crypto').createHash('sha1').update(EL_VOICES[line.who] + '|' + line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
+const elKey = (line, text) => require('crypto').createHash('sha1').update(EL_MODEL + '|' + EL_VOICES[line.who] + '|' + line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
 function elevenLabs(line, text) {
-  const key = elKey(line, text); const _unused = require('crypto').createHash('sha1').update(EL_VOICES[line.who] + '|' + line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
+  const key = elKey(line, text); const _unused = require('crypto').createHash('sha1').update(EL_MODEL + '|' + EL_VOICES[line.who] + '|' + line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
   const mp3 = path.join(EL_CACHE, `${key}.mp3`);
   if (fs.existsSync(mp3)) return mp3; // nie doppelt Credits ausgeben
-  const body = JSON.stringify({ text: (line.tone ? line.tone + ' ' : '') + text, model_id: process.env.ECHO_EL_MODEL || 'eleven_v4', language_code: 'de' });
+  const body = JSON.stringify({ text: (line.tone ? line.tone + ' ' : '') + text, model_id: EL_MODEL, language_code: 'de' });
   const code = sh('curl', ['-sS', '-o', mp3 + '.tmp', '-w', '%{http_code}', '-X', 'POST', `https://api.elevenlabs.io/v1/text-to-speech/${EL_VOICES[line.who]}?output_format=mp3_44100_128`,
     '-H', 'xi-api-key: sk_proxy_injected', '-H', 'Content-Type: application/json', '-d', body]).toString();
   if (code !== '200') { console.warn('ElevenLabs fehlgeschlagen (' + code + '): ' + fs.readFileSync(mp3 + '.tmp', 'utf8').slice(0, 200)); fs.rmSync(mp3 + '.tmp', { force: true }); return null; }
@@ -76,7 +77,7 @@ function voiceLine(line, k) {
     sh('python3', ['-m', 'piper', '-m', model, '-f', raw, '--length-scale', String(SPEED[line.who] || 1), '--noise-scale', '0.6', '--sentence-silence', '0.25'], { input: text });
     src = raw;
   } else usedEL++;
-  const fx = line.radio ? VOICE_FX.radio : (src === raw ? VOICE_FX[line.who] : EL_FX[line.who]);
+  const fx = src === raw ? (line.radio ? VOICE_FX.radio : VOICE_FX[line.who]) : (line.radio ? EL_FX.radio : EL_FX[line.who]);
   sh('ffmpeg', ['-y', '-v', 'error', '-i', raw, '-af', `${fx},silenceremove=start_periods=1:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse,apad=pad_dur=0.05`, '-ac', '2', fin]);
   return { file: fin, d: dur(fin) };
 }
@@ -148,11 +149,11 @@ function mixAudio(tl) {
   }
   const vo = tl.voices.map((v, i) => { const idx = addIn(v.file, false); chains.push(`[${idx}:a]aformat=channel_layouts=stereo:sample_rates=44100,volume=${v.vol},adelay=${Math.round(v.at * 1000)}:all=1[v${i}]`); return `[v${i}]`; });
   // Musik: Titelthema (oder synthetischer Teppich), wird unter der Stimme automatisch leiser
-  if (fs.existsSync(THEME)) { const idx = addIn(THEME, true); chains.push(`[${idx}:a]aformat=channel_layouts=stereo:sample_rates=44100,atrim=0:${D},volume=0.55[mraw]`); }
+  if (fs.existsSync(THEME)) { const idx = addIn(THEME, true); chains.push(`[${idx}:a]aformat=channel_layouts=stereo:sample_rates=44100,atrim=0:${D},volume=0.4[mraw]`); }
   else chains.push(`${musicBed(D)},volume=0.9[mraw]`);
   chains.push(`${vo.join('')}amix=inputs=${vo.length}:normalize=0,asplit=2[vom][vsc]`);
   chains.push(`[mraw][vsc]sidechaincompress=threshold=0.03:ratio=6:attack=80:release=600[mduck]`);
-  chains.push(`${fx.join('')}amix=inputs=${fx.length}:normalize=0,volume=0.8[fxm]`);
+  chains.push(`${fx.join('')}amix=inputs=${fx.length}:normalize=0,volume=0.6[fxm]`);
   chains.push(`[mduck][fxm][vom]amix=inputs=3:normalize=0,apad=whole_dur=${D},atrim=0:${D},afade=out:st=${(tl.duration - 1.5).toFixed(2)}:d=1.5,loudnorm=I=-14:TP=-1.5:LRA=11[a]`);
   const script = path.join(WORK, 'mix.txt'); fs.writeFileSync(script, chains.join(';\n'));
   const outA = path.join(WORK, 'audio.wav');
@@ -214,7 +215,7 @@ async function render(tl, audio) {
 if (process.argv.includes('--lines')) {
   const out = [];
   for (const sh of ep.shots) for (const line of sh.lines || []) { const text = line.say || line.text; const file = path.join(EL_CACHE, `${elKey(line, text)}.mp3`);
-    if (!fs.existsSync(file)) out.push({ file, voice_id: EL_VOICES[line.who], prompt: (line.tone ? line.tone + ' ' : '') + text }); }
+    if (!fs.existsSync(file)) out.push({ file, model: EL_MODEL, voice_id: EL_VOICES[line.who], prompt: (line.tone ? line.tone + ' ' : '') + text }); }
   console.log(JSON.stringify(out, null, 1)); process.exit(0);
 }
 (async () => {

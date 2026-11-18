@@ -41,7 +41,7 @@ Eigenständige Mystery-Serie im Stil düsterer deutscher Zeitreise-Thriller.
 - **Shot 2 = Titelkarte** `"title": "ECHO", "sub": "FOLGE N · TITEL"` mit `hit` + `clock`.
 - **Alle 5–8 Sekunden ein neuer Haken**: neue Frage, Entdeckung, Gefahr, Zeitstempel. Jeder Shot endet offen.
 - **Letzter Shot = schwarze Endkarte** `"black": true, "sub": "FOLGE N+1 – MORGEN"` + Frage an die Zuschauer.
-- Kurze Sätze. Zahlen für die Stimme in `say` ausschreiben. `tone` = ElevenLabs-Regieanweisung auf Englisch in eckigen Klammern.
+- Kurze Sätze. Zahlen für die Stimme in `say` ausschreiben. Stimmen-Modell: **eleven_v3**. `tone` = ElevenLabs-Regieanweisung auf Englisch in eckigen Klammern.
 - Sets: `wald`, `hoehle`, `stollen`, `uhrturm`, `zimmer`, `strasse1989`, `leere`. Kameras: `dolly`, `push`, `close`, `extreme`, `orbit`, `crane`, `high`, `low`, `pov`, `wide`.
 - FX: `rain`, `fog`, `flicker`, `dark`, `glitch`, `glitch-end`, `lightning`, `dream`. SFX: `wind`, `rain`, `radio`, `clock`, `heartbeat`, `drip`, `hum`, `steps`, `crowd`, `thunder`, `hit`, `whoosh`, `static`, `riser`.
 - Figuren: `{ "who": "lena|mats|uhrmacher", "pos": [x, z], "move": [dx, dz], "face": Grad, "pose": "stand|walk|run|look|reach|fear|down" }`.
