@@ -121,35 +121,41 @@ const ONE_SHOT = new Set(['thunder', 'hit', 'whoosh', 'static', 'riser']);
 // Musik-Teppich: dunkler Drone, der in der zweiten Hälfte anzieht
 const musicBed = (D) => `aevalsrc='0.16*sin(2*PI*36.7*t)*(0.7+0.3*sin(2*PI*0.08*t))+0.1*sin(2*PI*55*t+2*sin(2*PI*0.11*t))+0.05*sin(2*PI*82.4*t)*(0.5+0.5*sin(2*PI*0.05*t))+0.04*sin(2*PI*110*t)*min(1\\,t/${D})|0.16*sin(2*PI*36.9*t)*(0.7+0.3*sin(2*PI*0.07*t))+0.1*sin(2*PI*55.3*t+2*sin(2*PI*0.1*t))+0.05*sin(2*PI*82.9*t)*(0.5+0.5*sin(2*PI*0.06*t))+0.04*sin(2*PI*110.4*t)*min(1\\,t/${D})':d=${D}:s=44100:c=stereo`;
 
+// Echte Sounds (ElevenLabs, echo/assets/sfx) – Ambiences werden geloopt, Einzel-Effekte einmal abgespielt
+const SFX_DIR = path.join(__dirname, 'assets', 'sfx'), THEME = path.join(__dirname, 'assets', 'music', 'theme.mp3');
+const SFX_VOL = { rain: 0.55, wind: 0.5, forest: 0.6, crowd: 0.45, room: 0.6, radio: 0.4, clock: 0.45, heartbeat: 0.8, drip: 0.6, hum: 0.5, steps: 0.6, crows: 0.6, car: 0.6, thunder: 0.9, hit: 0.85, whoosh: 0.6, static: 0.5, riser: 0.6 };
 function mixAudio(tl) {
-  const inputs = [], chains = [], labels = []; let n = 0;
+  const inputs = [], chains = [], fx = []; let n = 0;
   const D = tl.duration.toFixed(2);
-  chains.push(`${musicBed(D)},volume=0.9[m]`); labels.push('[m]');
+  const addIn = (file, loop) => { inputs.push(...(loop ? ['-stream_loop', '-1'] : []), '-i', file); return inputs.filter(x => x === '-i').length - 1; };
   for (const s of tl.shots) {
-    const d = (s.t1 - s.t0).toFixed(2);
+    const d = s.t1 - s.t0;
     for (const name of s.sfx || []) {
-      if (!SFX[name]) continue;
-      const one = ONE_SHOT.has(name);
-      const rd = Math.min(4, s.t1 - s.t0).toFixed(2);
-      const at = name === 'riser' ? s.t1 - rd : s.t0;
-      const src = name === 'riser' ? SFX.riser(rd) : SFX[name](d);
-      const L = `s${n++}`;
-      chains.push(`${src},aformat=channel_layouts=stereo:sample_rates=44100${one ? '' : `,afade=in:d=0.4,afade=out:st=${Math.max(0, d - 0.4)}:d=0.4`},adelay=${Math.round(at * 1000)}:all=1[${L}]`);
-      labels.push(`[${L}]`);
+      const file = path.join(SFX_DIR, `${name}.mp3`), one = ONE_SHOT.has(name) || ['thunder', 'crows', 'car'].includes(name);
+      const L = `s${n++}`, vol = SFX_VOL[name] ?? 0.6;
+      if (fs.existsSync(file)) {
+        const idx = addIn(file, !one); const fd = dur(file);
+        const at = name === 'riser' ? Math.max(s.t0, s.t1 - fd) : s.t0;
+        const len = one ? fd : d;
+        chains.push(`[${idx}:a]aformat=channel_layouts=stereo:sample_rates=44100,atrim=0:${len.toFixed(2)},asetpts=PTS-STARTPTS${one ? '' : `,afade=in:d=0.5,afade=out:st=${Math.max(0, len - 0.5).toFixed(2)}:d=0.5`},volume=${vol},adelay=${Math.round(at * 1000)}:all=1[${L}]`);
+      } else if (SFX[name]) {
+        const rd = Math.min(4, d).toFixed(2), at = name === 'riser' ? s.t1 - rd : s.t0;
+        chains.push(`${name === 'riser' ? SFX.riser(rd) : SFX[name](d.toFixed(2))},aformat=channel_layouts=stereo:sample_rates=44100${one ? '' : `,afade=in:d=0.4,afade=out:st=${Math.max(0, d - 0.4)}:d=0.4`},adelay=${Math.round(at * 1000)}:all=1[${L}]`);
+      } else continue;
+      fx.push(`[${L}]`);
     }
   }
-  tl.voices.forEach((v, i) => {
-    inputs.push('-i', v.file);
-    const L = `v${i}`; chains.push(`[${i}:a]volume=${v.vol},adelay=${Math.round(v.at * 1000)}:all=1[${L}]`); labels.push(`[${L}]`);
-  });
-  // Stimmen duckt die Effekte leicht: Effekte gesamt leiser, Stimme vorne
-  const fx = labels.filter(l => !l.startsWith('[v')), vo = labels.filter(l => l.startsWith('[v'));
-  chains.push(`${fx.join('')}amix=inputs=${fx.length}:normalize=0,volume=0.75[fxm]`);
-  chains.push(`${vo.join('')}amix=inputs=${vo.length}:normalize=0[vom]`);
-  chains.push(`[fxm][vom]amix=inputs=2:normalize=0,atrim=0:${D},afade=out:st=${(tl.duration - 1.2).toFixed(2)}:d=1.2,loudnorm=I=-14:TP=-1.5:LRA=11[a]`);
+  const vo = tl.voices.map((v, i) => { const idx = addIn(v.file, false); chains.push(`[${idx}:a]aformat=channel_layouts=stereo:sample_rates=44100,volume=${v.vol},adelay=${Math.round(v.at * 1000)}:all=1[v${i}]`); return `[v${i}]`; });
+  // Musik: Titelthema (oder synthetischer Teppich), wird unter der Stimme automatisch leiser
+  if (fs.existsSync(THEME)) { const idx = addIn(THEME, true); chains.push(`[${idx}:a]aformat=channel_layouts=stereo:sample_rates=44100,atrim=0:${D},volume=0.55[mraw]`); }
+  else chains.push(`${musicBed(D)},volume=0.9[mraw]`);
+  chains.push(`${vo.join('')}amix=inputs=${vo.length}:normalize=0,asplit=2[vom][vsc]`);
+  chains.push(`[mraw][vsc]sidechaincompress=threshold=0.03:ratio=6:attack=80:release=600[mduck]`);
+  chains.push(`${fx.join('')}amix=inputs=${fx.length}:normalize=0,volume=0.8[fxm]`);
+  chains.push(`[mduck][fxm][vom]amix=inputs=3:normalize=0,apad=whole_dur=${D},atrim=0:${D},afade=out:st=${(tl.duration - 1.5).toFixed(2)}:d=1.5,loudnorm=I=-14:TP=-1.5:LRA=11[a]`);
   const script = path.join(WORK, 'mix.txt'); fs.writeFileSync(script, chains.join(';\n'));
   const outA = path.join(WORK, 'audio.wav');
-  sh('ffmpeg', ['-y', '-v', 'error', ...inputs, '-filter_complex_script', script, '-map', '[a]', '-ar', '44100', outA]);
+  sh('ffmpeg', ['-y', '-v', 'error', ...inputs, '-filter_complex_script', script, '-map', '[a]', '-t', D, '-ar', '44100', outA]);
   return outA;
 }
 
@@ -210,5 +216,6 @@ if (process.argv.includes('--lines')) {
   const tl = buildTimeline();
   console.log(`Folge ${nr} „${ep.titel}“: ${tl.duration.toFixed(1)} s, ${tl.shots.length} Shots – Stimmen: ${usedEL}x ElevenLabs, ${usedPiper}x Piper`);
   const audio = mixAudio(tl);
+  if (process.argv.includes('--audio')) { sh('ffmpeg', ['-y', '-v', 'error', '-i', audio, '-b:a', '192k', path.join(ROOT, 'out', `echo-folge-${id}-ton.mp3`)]); console.log('TON FERTIG'); return; }
   await render(tl, audio);
 })().catch(e => { console.error(e.stderr ? e.stderr.toString() : e); process.exit(1); });

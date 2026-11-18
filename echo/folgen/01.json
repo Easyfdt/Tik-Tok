@@ -14,7 +14,8 @@
    ],
    "sfx": [
     "radio",
-    "static"
+    "static",
+    "room"
    ],
    "cut": "hard",
    "pre": 0.6,
@@ -65,7 +66,8 @@
    "sfx": [
     "rain",
     "wind",
-    "clock"
+    "clock",
+    "crowd"
    ],
    "stamp": "23:13",
    "lines": [
@@ -99,7 +101,8 @@
    ],
    "sfx": [
     "radio",
-    "heartbeat"
+    "heartbeat",
+    "room"
    ],
    "lines": [
     {
@@ -126,7 +129,8 @@
    "sfx": [
     "radio",
     "static",
-    "riser"
+    "riser",
+    "room"
    ],
    "lines": [
     {
@@ -162,7 +166,8 @@
     "dark"
    ],
    "sfx": [
-    "hit"
+    "hit",
+    "room"
    ],
    "cut": "hard",
    "min": 1.6,
@@ -201,7 +206,8 @@
     "rain",
     "wind",
     "steps",
-    "whoosh"
+    "whoosh",
+    "forest"
    ],
    "stamp": "22:58",
    "lines": [
@@ -239,7 +245,9 @@
    "sfx": [
     "rain",
     "thunder",
-    "heartbeat"
+    "heartbeat",
+    "forest",
+    "crows"
    ],
    "lines": [
     {
@@ -271,7 +279,8 @@
    "sfx": [
     "wind",
     "drip",
-    "hum"
+    "hum",
+    "forest"
    ],
    "lines": [
     {
@@ -301,7 +310,8 @@
    ],
    "sfx": [
     "drip",
-    "heartbeat"
+    "heartbeat",
+    "forest"
    ],
    "lines": [
     {
@@ -376,7 +386,8 @@
    ],
    "sfx": [
     "heartbeat",
-    "riser"
+    "riser",
+    "forest"
    ],
    "lines": [
     {
@@ -438,7 +449,9 @@
    "sfx": [
     "hit",
     "wind",
-    "hum"
+    "hum",
+    "crowd",
+    "car"
    ],
    "stamp": "23:13 · 1989",
    "cut": "hard",
@@ -474,7 +487,9 @@
     "glitch-end"
    ],
    "sfx": [
-    "riser"
+    "riser",
+    "crowd",
+    "car"
    ],
    "lines": [
     {
