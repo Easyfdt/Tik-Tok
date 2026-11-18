@@ -158,6 +158,7 @@ async function render(tl, audio) {
   const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
   page.on('pageerror', e => console.error('[page error]', e));
+  page.on('console', m => { if (m.text().startsWith('CHAR')) console.log(m.text()); });
   await page.goto(`http://localhost:${server.address().port}/echo/engine.html?tl=/out/echo-${id}/timeline.json`);
   await page.waitForFunction('window.ready === true', null, { timeout: 120000 });
   const frames = Math.round(tl.duration * FPS);

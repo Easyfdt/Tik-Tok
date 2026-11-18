@@ -146,7 +146,7 @@
    "set": "zimmer",
    "cam": "close",
    "focus": "mats",
-   "angle": 150,
+   "angle": 20,
    "chars": [
     {
      "who": "mats",
@@ -154,7 +154,7 @@
       0.4,
       -1.4
      ],
-     "face": 160,
+     "face": 20,
      "pose": "fear"
     }
    ],
