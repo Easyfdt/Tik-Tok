@@ -41,7 +41,7 @@ const CLEAN = 'aresample=44100';
 const EL_FX = { // saubere Stimmen: kein Hall, keine Tonhöhen-Verschiebung
   erz: CLEAN, lena: CLEAN, mats: CLEAN,
   uhrmacher: CLEAN,
-  radio: 'aresample=44100,highpass=f=200,lowpass=f=6500',
+  radio: 'aresample=44100',
 };
 const SPEED = { erz: 1.12, lena: 1.0, mats: 0.98, uhrmacher: 1.1 };
 // Lautstärke-Hüllkurve pro Videobild (0..1) für die Lippenbewegung
@@ -126,10 +126,21 @@ const ONE_SHOT = new Set(['thunder', 'hit', 'whoosh', 'static', 'riser']);
 // Musik-Teppich: dunkler Drone, der in der zweiten Hälfte anzieht
 const musicBed = (D) => `aevalsrc='0.16*sin(2*PI*36.7*t)*(0.7+0.3*sin(2*PI*0.08*t))+0.1*sin(2*PI*55*t+2*sin(2*PI*0.11*t))+0.05*sin(2*PI*82.4*t)*(0.5+0.5*sin(2*PI*0.05*t))+0.04*sin(2*PI*110*t)*min(1\\,t/${D})|0.16*sin(2*PI*36.9*t)*(0.7+0.3*sin(2*PI*0.07*t))+0.1*sin(2*PI*55.3*t+2*sin(2*PI*0.1*t))+0.05*sin(2*PI*82.9*t)*(0.5+0.5*sin(2*PI*0.06*t))+0.04*sin(2*PI*110.4*t)*min(1\\,t/${D})':d=${D}:s=44100:c=stereo`;
 
+// Nur die Original-Stimmen, unbearbeitet, an ihren Zeitpunkten – kein Geräusch, keine Musik, keine Lautheitsanpassung
+function mixVoicesOnly(tl) {
+  const inputs = [], chains = [];
+  tl.voices.forEach((v, i) => { inputs.push('-i', v.file); chains.push(`[${i}:a]adelay=${Math.round(v.at * 1000)}:all=1[v${i}]`); });
+  chains.push(`${tl.voices.map((_, i) => `[v${i}]`).join('')}amix=inputs=${tl.voices.length}:normalize=0,apad=whole_dur=${tl.duration.toFixed(2)}[a]`);
+  const script = path.join(WORK, 'mix.txt'); fs.writeFileSync(script, chains.join(';\n'));
+  const outA = path.join(WORK, 'audio.wav');
+  sh('ffmpeg', ['-y', '-v', 'error', ...inputs, '-filter_complex_script', script, '-map', '[a]', '-t', tl.duration.toFixed(2), '-ar', '44100', outA]);
+  return outA;
+}
 // Echte Sounds (ElevenLabs, echo/assets/sfx) – Ambiences werden geloopt, Einzel-Effekte einmal abgespielt
 const SFX_DIR = path.join(__dirname, 'assets', 'sfx'), THEME = path.join(__dirname, 'assets', 'music', 'theme.mp3');
 const SFX_VOL = { rain: 0.55, wind: 0.5, forest: 0.6, crowd: 0.45, room: 0.6, radio: 0.4, clock: 0.45, heartbeat: 0.8, drip: 0.6, hum: 0.5, steps: 0.6, crows: 0.6, car: 0.6, thunder: 0.9, hit: 0.85, whoosh: 0.6, static: 0.5, riser: 0.6 };
 function mixAudio(tl) {
+  if (process.env.ECHO_SFX !== '1' && process.env.ECHO_MUSIC !== '1') return mixVoicesOnly(tl);
   const inputs = [], chains = [], fx = []; let n = 0;
   const D = tl.duration.toFixed(2);
   const addIn = (file, loop) => { inputs.push(...(loop ? ['-stream_loop', '-1'] : []), '-i', file); return inputs.filter(x => x === '-i').length - 1; };
