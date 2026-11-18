@@ -71,6 +71,9 @@ function elevenLabs(line, text) {
 function voiceLine(line, k) {
   const raw = path.join(WORK, `v${k}.raw.wav`), fin = path.join(WORK, `v${k}.wav`);
   const text = line.say || line.text; // "say" = Aussprache-Variante (z.B. Zahlen ausgeschrieben)
+  // Eigene Aufnahmen haben Vorrang: echo/stimmen/<Folge>/<NN>.mp3 – werden unverändert übernommen
+  const own = path.join(__dirname, 'stimmen', id, `${String(k + 1).padStart(2, '0')}.mp3`);
+  if (fs.existsSync(own)) { sh('ffmpeg', ['-y', '-v', 'error', '-i', own, '-af', 'aresample=44100', '-ac', '2', fin]); usedEL++; return { file: fin, d: dur(fin) }; }
   let src = elOk ? elevenLabs(line, text) : null;
   if (!src) { elOk = false; usedPiper++;
     const v = VOICES[line.who]; const model = path.join(VOICE_DIR, v, `${v}.onnx`);
