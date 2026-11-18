@@ -11,10 +11,10 @@ Eigenständige Mystery-Serie im Stil düsterer deutscher Zeitreise-Thriller.
 ## Figuren (genau drei)
 | Figur | Stimme (ElevenLabs) | Look | Kern |
 |---|---|---|---|
-| **Lena Berger (17)** | Rika Sturm `Jpm0FNvrnzdW3k4rnWVH` | rote Jacke, roter Schal, Pferdeschwanz | mutig, stur; steckt 1989 fest |
-| **Mats Keller (17)** | Daniel `5rcNUqWNX3O3CWtoa74o` | grüne Jacke, Taschenlampe | loyal, ängstlich, gibt nie auf |
+| **Lena Berger (17)** | Maya `h5v6xrdIQqGLrT6nHNdj` | rote Jacke, roter Schal, Pferdeschwanz | mutig, stur; steckt 1989 fest |
+| **Mats Keller (17)** | Matthew `IjnA9kwZJHJ20Fp7Vmy6` | grüne Jacke, Taschenlampe | loyal, ängstlich, gibt nie auf |
 | **Der Uhrmacher** | Jones Thriller `6t8LORFSPwBBPJsBLSYZ` | schwarzer Mantel, Hut, Ziffernblatt statt Gesicht | weiß alles, spricht in Rätseln |
-| Erzähler | Vincent Crowe `18X2yBovneA0q06wd8E9` | – | ruhig, unheimlich |
+| Erzähler | New MM `DoHz70qrC3ss60PDk9cg` | – | ruhig, unheimlich |
 
 **Großes Geheimnis (erst in Folge 14/15 enthüllen):** Der Uhrmacher ist der alte Mats aus der Zukunft, der seit Jahrzehnten versucht, Lena zu retten – und dabei die Schleife selbst erzeugt.
 

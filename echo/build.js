@@ -37,11 +37,11 @@ const VOICE_FX = {
   radio: 'aresample=44100,highpass=f=400,lowpass=f=3000,acrusher=bits=10:mix=0.35,aecho=0.6:0.4:20:0.2,volume=1.6',
 };
 // Nachbearbeitung für ElevenLabs-Aufnahmen (schon 44,1 kHz, nur Raum/Charakter)
-const CLEAN = 'aresample=44100,highpass=f=70,acompressor=threshold=-20dB:ratio=2.5:attack=8:release=180:makeup=2';
+const CLEAN = 'aresample=44100';
 const EL_FX = { // saubere Stimmen: kein Hall, keine Tonhöhen-Verschiebung
   erz: CLEAN, lena: CLEAN, mats: CLEAN,
-  uhrmacher: CLEAN + ',equalizer=f=140:t=q:w=1:g=2',
-  radio: 'aresample=44100,highpass=f=250,lowpass=f=5000,acompressor=threshold=-20dB:ratio=3:makeup=2',
+  uhrmacher: CLEAN,
+  radio: 'aresample=44100,highpass=f=200,lowpass=f=6500',
 };
 const SPEED = { erz: 1.12, lena: 1.0, mats: 0.98, uhrmacher: 1.1 };
 // Lautstärke-Hüllkurve pro Videobild (0..1) für die Lippenbewegung
@@ -54,7 +54,7 @@ function envelope(f) {
 function dur(f) { return parseFloat(sh('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f]).toString()); }
 // ElevenLabs-Stimmen (API-Key wird vom Netzwerk-Proxy eingesetzt). Fällt bei Fehlern auf Piper zurück.
 const EL_MODEL = process.env.ECHO_EL_MODEL || 'eleven_v3';
-const EL_VOICES = { erz: 'NBqeXKdZHweef6y0B67V', lena: 'Jpm0FNvrnzdW3k4rnWVH', mats: '5rcNUqWNX3O3CWtoa74o', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
+const EL_VOICES = { erz: 'DoHz70qrC3ss60PDk9cg', lena: 'h5v6xrdIQqGLrT6nHNdj', mats: 'IjnA9kwZJHJ20Fp7Vmy6', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
 const EL_CACHE = path.join(ROOT, 'out', 'el-cache'); fs.mkdirSync(EL_CACHE, { recursive: true });
 let elOk = process.env.ECHO_TTS !== 'piper', usedEL = 0, usedPiper = 0;
 const elKey = (line, text) => require('crypto').createHash('sha1').update(EL_MODEL + '|' + EL_VOICES[line.who] + '|' + line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
@@ -152,11 +152,12 @@ function mixAudio(tl) {
   }
   const vo = tl.voices.map((v, i) => { const idx = addIn(v.file, false); chains.push(`[${idx}:a]aformat=channel_layouts=stereo:sample_rates=44100,volume=${v.vol},adelay=${Math.round(v.at * 1000)}:all=1[v${i}]`); return `[v${i}]`; });
   // Musik: Titelthema (oder synthetischer Teppich), wird unter der Stimme automatisch leiser
-  if (fs.existsSync(THEME)) { const idx = addIn(THEME, true); chains.push(`[${idx}:a]aformat=channel_layouts=stereo:sample_rates=44100,atrim=0:${D},volume=0.4[mraw]`); }
+  if (fs.existsSync(THEME)) { const idx = addIn(THEME, true); chains.push(`[${idx}:a]aformat=channel_layouts=stereo:sample_rates=44100,atrim=0:${D},volume=0.3[mraw]`); }
   else chains.push(`${musicBed(D)},volume=0.9[mraw]`);
-  chains.push(`${vo.join('')}amix=inputs=${vo.length}:normalize=0,asplit=2[vom][vsc]`);
-  chains.push(`[mraw][vsc]sidechaincompress=threshold=0.03:ratio=6:attack=80:release=600[mduck]`);
-  chains.push(`${fx.join('')}amix=inputs=${fx.length}:normalize=0,volume=0.6[fxm]`);
+  chains.push(`${vo.join('')}amix=inputs=${vo.length}:normalize=0,asplit=3[vom][vsc][vsc2]`);
+  chains.push(`[mraw][vsc]sidechaincompress=threshold=0.02:ratio=10:attack=60:release=700[mduck]`);
+  chains.push(`${fx.join('')}amix=inputs=${fx.length}:normalize=0,volume=0.35[fxraw]`);
+  chains.push(`[fxraw][vsc2]sidechaincompress=threshold=0.02:ratio=10:attack=40:release=500[fxm]`);
   chains.push(`[mduck][fxm][vom]amix=inputs=3:normalize=0,apad=whole_dur=${D},atrim=0:${D},afade=out:st=${(tl.duration - 1.5).toFixed(2)}:d=1.5,loudnorm=I=-14:TP=-1.5:LRA=11[a]`);
   const script = path.join(WORK, 'mix.txt'); fs.writeFileSync(script, chains.join(';\n'));
   const outA = path.join(WORK, 'audio.wav');
