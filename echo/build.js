@@ -43,6 +43,13 @@ const EL_FX = {
   uhrmacher: 'aresample=44100,asetrate=44100*0.9,aresample=44100,atempo=1.05,aecho=0.8:0.85:70|140:0.3|0.2,volume=1.3',
 };
 const SPEED = { erz: 1.12, lena: 1.0, mats: 0.98, uhrmacher: 1.1 };
+// Lautstärke-Hüllkurve pro Videobild (0..1) für die Lippenbewegung
+function envelope(f) {
+  const raw = sh('ffmpeg', ['-v', 'error', '-i', f, '-ac', '1', '-ar', '9600', '-f', 's16le', '-']);
+  const per = 9600 / FPS, n = Math.floor(raw.length / 2 / per), env = [];
+  for (let i = 0; i < n; i++) { let sum = 0; for (let j = 0; j < per; j++) { const v = raw.readInt16LE((i * per + j) * 2) / 32768; sum += v * v; } env.push(Math.sqrt(sum / per)); }
+  const mx = Math.max(...env, 1e-4); return env.map((v, i) => +Math.min(1, (0.6 * v + 0.4 * (env[i - 1] || 0)) / mx * 1.3).toFixed(3));
+}
 function dur(f) { return parseFloat(sh('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f]).toString()); }
 // ElevenLabs-Stimmen (API-Key wird vom Netzwerk-Proxy eingesetzt). Fällt bei Fehlern auf Piper zurück.
 const EL_VOICES = { erz: '18X2yBovneA0q06wd8E9', lena: 'Jpm0FNvrnzdW3k4rnWVH', mats: '5rcNUqWNX3O3CWtoa74o', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
@@ -74,20 +81,21 @@ function voiceLine(line, k) {
 
 // ---------- 2. Timeline ----------
 function buildTimeline() {
-  let t = 0, k = 0; const shots = [], subs = [], voices = [];
+  let t = 0, k = 0; const shots = [], subs = [], voices = [], mouth = [];
   for (const s of ep.shots) {
     const t0 = t; let cur = t + (s.pre ?? 0.45);
     for (const line of s.lines || []) {
       const v = voiceLine(line, k++);
       voices.push({ file: v.file, at: cur, vol: line.vol ?? 1 });
-      subs.push({ t0: cur, t1: cur + v.d + 0.15, who: line.radio ? 'lena' : line.who, text: line.text });
+      if (!line.radio) mouth.push({ who: line.who, t0: cur, env: envelope(v.file) });
+      subs.push({ t0: cur, t1: cur + v.d + 0.15, who: line.radio ? 'lena' : line.who, text: line.text, tone: line.tone || '' });
       cur += v.d + (line.gap ?? 0.3);
     }
     const t1 = Math.max(cur + (s.post ?? 0.5), t0 + (s.min ?? 2.2));
     shots.push({ ...s, lines: undefined, t0, t1 });
     t = t1;
   }
-  return { nr, titel: ep.titel, fps: FPS, duration: t, shots, subs, voices };
+  return { nr, titel: ep.titel, fps: FPS, duration: t, shots, subs, voices, mouth };
 }
 
 // ---------- 3. Sounddesign ----------

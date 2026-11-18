@@ -282,9 +282,9 @@
   },
   {
    "set": "hoehle",
-   "cam": "close",
+   "cam": "dolly",
    "focus": "scarf",
-   "angle": -15,
+   "angle": 35,
    "chars": [
     {
      "who": "mats",
@@ -425,8 +425,8 @@
     {
      "who": "lena",
      "pos": [
-      0.5,
-      0.3
+      -1.6,
+      3.5
      ],
      "face": 20,
      "pose": "look"
@@ -458,15 +458,15 @@
    "set": "strasse1989",
    "cam": "close",
    "focus": "lena",
-   "angle": 10,
+   "angle": -20,
    "chars": [
     {
      "who": "lena",
      "pos": [
-      0.5,
-      0.3
+      -1.6,
+      3.5
      ],
-     "face": 10,
+     "face": -20,
      "pose": "fear"
     }
    ],
