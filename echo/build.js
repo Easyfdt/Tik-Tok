@@ -35,14 +35,39 @@ const VOICE_FX = {
   uhrmacher: 'asetrate=16000*0.8,aresample=44100,atempo=1.12,lowpass=f=5000,aecho=0.8:0.85:70|140:0.35|0.22,volume=1.6',
   radio: 'aresample=44100,highpass=f=400,lowpass=f=3000,acrusher=bits=10:mix=0.35,aecho=0.6:0.4:20:0.2,volume=1.6',
 };
+// Nachbearbeitung für ElevenLabs-Aufnahmen (schon 44,1 kHz, nur Raum/Charakter)
+const EL_FX = {
+  erz: 'aresample=44100,highpass=f=60,aecho=0.8:0.5:40:0.08,volume=1.1',
+  lena: 'aresample=44100,highpass=f=100,aecho=0.8:0.5:30:0.08',
+  mats: 'aresample=44100,highpass=f=90,aecho=0.8:0.5:30:0.08',
+  uhrmacher: 'aresample=44100,asetrate=44100*0.9,aresample=44100,atempo=1.05,aecho=0.8:0.85:70|140:0.3|0.2,volume=1.3',
+};
 const SPEED = { erz: 1.12, lena: 1.0, mats: 0.98, uhrmacher: 1.1 };
 function dur(f) { return parseFloat(sh('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f]).toString()); }
+// ElevenLabs-Stimmen (API-Key wird vom Netzwerk-Proxy eingesetzt). Fällt bei Fehlern auf Piper zurück.
+const EL_VOICES = { erz: '18X2yBovneA0q06wd8E9', lena: 'Jpm0FNvrnzdW3k4rnWVH', mats: '5rcNUqWNX3O3CWtoa74o', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
+const EL_CACHE = path.join(ROOT, 'out', 'el-cache'); fs.mkdirSync(EL_CACHE, { recursive: true });
+let elOk = process.env.ECHO_TTS !== 'piper', usedEL = 0, usedPiper = 0;
+function elevenLabs(line, text) {
+  const key = require('crypto').createHash('sha1').update(line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
+  const mp3 = path.join(EL_CACHE, `${key}.mp3`);
+  if (fs.existsSync(mp3)) return mp3; // nie doppelt Credits ausgeben
+  const body = JSON.stringify({ text: (line.tone ? line.tone + ' ' : '') + text, model_id: process.env.ECHO_EL_MODEL || 'eleven_v4', language_code: 'de' });
+  const code = sh('curl', ['-sS', '-o', mp3 + '.tmp', '-w', '%{http_code}', '-X', 'POST', `https://api.elevenlabs.io/v1/text-to-speech/${EL_VOICES[line.who]}?output_format=mp3_44100_128`,
+    '-H', 'xi-api-key: sk_proxy_injected', '-H', 'Content-Type: application/json', '-d', body]).toString();
+  if (code !== '200') { console.warn('ElevenLabs fehlgeschlagen (' + code + '): ' + fs.readFileSync(mp3 + '.tmp', 'utf8').slice(0, 200)); fs.rmSync(mp3 + '.tmp', { force: true }); return null; }
+  fs.renameSync(mp3 + '.tmp', mp3); return mp3;
+}
 function voiceLine(line, k) {
   const raw = path.join(WORK, `v${k}.raw.wav`), fin = path.join(WORK, `v${k}.wav`);
-  const v = VOICES[line.who]; const model = path.join(VOICE_DIR, v, `${v}.onnx`);
   const text = line.say || line.text; // "say" = Aussprache-Variante (z.B. Zahlen ausgeschrieben)
-  sh('python3', ['-m', 'piper', '-m', model, '-f', raw, '--length-scale', String(SPEED[line.who] || 1), '--noise-scale', '0.6', '--sentence-silence', '0.25'], { input: text });
-  const fx = line.radio ? VOICE_FX.radio : VOICE_FX[line.who];
+  let src = elOk ? elevenLabs(line, text) : null;
+  if (!src) { elOk = false; usedPiper++;
+    const v = VOICES[line.who]; const model = path.join(VOICE_DIR, v, `${v}.onnx`);
+    sh('python3', ['-m', 'piper', '-m', model, '-f', raw, '--length-scale', String(SPEED[line.who] || 1), '--noise-scale', '0.6', '--sentence-silence', '0.25'], { input: text });
+    src = raw;
+  } else usedEL++;
+  const fx = line.radio ? VOICE_FX.radio : (src === raw ? VOICE_FX[line.who] : EL_FX[line.who]);
   sh('ffmpeg', ['-y', '-v', 'error', '-i', raw, '-af', `${fx},silenceremove=start_periods=1:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse,apad=pad_dur=0.05`, '-ac', '2', fin]);
   return { file: fin, d: dur(fin) };
 }
@@ -161,7 +186,7 @@ async function render(tl, audio) {
 (async () => {
   ensureVoices();
   const tl = buildTimeline();
-  console.log(`Folge ${nr} „${ep.titel}“: ${tl.duration.toFixed(1)} s, ${tl.shots.length} Shots`);
+  console.log(`Folge ${nr} „${ep.titel}“: ${tl.duration.toFixed(1)} s, ${tl.shots.length} Shots – Stimmen: ${usedEL}x ElevenLabs, ${usedPiper}x Piper`);
   const audio = mixAudio(tl);
   await render(tl, audio);
 })().catch(e => { console.error(e.stderr ? e.stderr.toString() : e); process.exit(1); });

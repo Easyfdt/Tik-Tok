@@ -1,0 +1,508 @@
+{
+ "nr": 1,
+ "titel": "Die Stunde, die fehlt",
+ "beschreibung": "Lena ist seit drei Tagen verschwunden. Dann meldet sie sich – aus einem Funkgerät, das seit 1989 kaputt ist. 🕰️ Folge 1/15",
+ "shots": [
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "radio",
+   "angle": 20,
+   "fx": [
+    "flicker",
+    "dark"
+   ],
+   "sfx": [
+    "radio",
+    "static"
+   ],
+   "cut": "hard",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "lena",
+     "radio": true,
+     "text": "Mats … wenn du das hörst … ich bin noch hier.",
+     "tone": "[whispering, scared]"
+    },
+    {
+     "who": "lena",
+     "radio": true,
+     "text": "Nur nicht jetzt.",
+     "tone": "[whispering]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream"
+   ],
+   "sfx": [
+    "hit",
+    "clock"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 1 · DIE STUNDE, DIE FEHLT",
+   "pre": 1.2,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Grauwald. Eine Stadt, in der jede Nacht um 23 Uhr 13 die Uhren stehen bleiben.",
+     "say": "Grauwald. Eine Stadt, in der jede Nacht um dreiundzwanzig Uhr dreizehn die Uhren stehen bleiben."
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "crane",
+   "focus": "clock",
+   "fx": [
+    "rain",
+    "fog"
+   ],
+   "sfx": [
+    "rain",
+    "wind",
+    "clock"
+   ],
+   "stamp": "23:13",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Vor drei Tagen ist Lena Berger verschwunden. Die Polizei sucht nicht mehr nach ihr."
+    },
+    {
+     "who": "erz",
+     "text": "Nur einer glaubt noch, dass sie lebt."
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "dolly",
+   "angle": 40,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 180,
+     "pose": "down"
+    }
+   ],
+   "fx": [
+    "flicker"
+   ],
+   "sfx": [
+    "radio",
+    "heartbeat"
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Das ist ihre Stimme. Das ist unmöglich.",
+     "tone": "[shocked, breathless]"
+    },
+    {
+     "who": "erz",
+     "text": "Das Funkgerät gehörte seinem Großvater. Es ist seit 1989 kaputt.",
+     "say": "Das Funkgerät gehörte seinem Großvater. Es ist seit neunzehnhundertneunundachtzig kaputt."
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "radio",
+   "angle": -25,
+   "fx": [
+    "glitch",
+    "flicker"
+   ],
+   "sfx": [
+    "radio",
+    "static",
+    "riser"
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "radio": true,
+     "text": "Geh nicht in den Stollen. Egal, was er dir erzählt.",
+     "tone": "[urgent, scared]"
+    },
+    {
+     "who": "mats",
+     "text": "Wer? Lena – wer?!",
+     "tone": "[desperate, shouting]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 150,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 160,
+     "pose": "fear"
+    }
+   ],
+   "fx": [
+    "dark"
+   ],
+   "sfx": [
+    "hit"
+   ],
+   "cut": "hard",
+   "min": 1.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Dann ist nur noch Rauschen."
+    }
+   ]
+  },
+  {
+   "set": "wald",
+   "cam": "dolly",
+   "angle": 160,
+   "focus": "mats",
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      4
+     ],
+     "move": [
+      0,
+      -3
+     ],
+     "face": 180,
+     "pose": "walk"
+    }
+   ],
+   "fx": [
+    "rain",
+    "fog"
+   ],
+   "sfx": [
+    "rain",
+    "wind",
+    "steps",
+    "whoosh"
+   ],
+   "stamp": "22:58",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Natürlich geht er in den Stollen."
+    },
+    {
+     "who": "mats",
+     "text": "Lena? Lena!",
+     "tone": "[shouting into the dark]"
+    }
+   ]
+  },
+  {
+   "set": "wald",
+   "cam": "pov",
+   "from": 3,
+   "travel": 4,
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      1.5,
+      -9
+     ],
+     "face": 0
+    }
+   ],
+   "fx": [
+    "rain",
+    "fog",
+    "lightning"
+   ],
+   "sfx": [
+    "rain",
+    "thunder",
+    "heartbeat"
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Zwischen den Bäumen steht jemand. Und er hat kein Gesicht.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "dolly",
+   "focus": "mats",
+   "angle": 25,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.2,
+      -1.2
+     ],
+     "face": 160,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "sfx": [
+    "wind",
+    "drip",
+    "hum"
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Am Eingang findet Mats etwas, das nicht hier sein dürfte."
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "close",
+   "focus": "scarf",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -1.6
+     ],
+     "face": 135,
+     "pose": "reach"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "sfx": [
+    "drip",
+    "heartbeat"
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Ihr Schal.",
+     "tone": "[whispering]"
+    },
+    {
+     "who": "mats",
+     "text": "Er ist trocken. Es regnet seit Stunden … wie kann er trocken sein?",
+     "tone": "[confused, afraid]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "close",
+   "focus": "uhrmacher",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "fx": [
+    "glitch"
+   ],
+   "sfx": [
+    "clock",
+    "hum",
+    "hit"
+   ],
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Weil sie ihn erst morgen verlieren wird.",
+     "tone": "[calm, menacing, slow]"
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "push",
+   "focus": "mats",
+   "angle": 25,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.3,
+      -0.6
+     ],
+     "face": 25,
+     "pose": "fear"
+    },
+    {
+     "who": "uhrmacher",
+     "pos": [
+      -0.4,
+      -3.0
+     ],
+     "face": 10
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "sfx": [
+    "heartbeat",
+    "riser"
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Wer sind Sie?",
+     "tone": "[terrified]"
+    },
+    {
+     "who": "uhrmacher",
+     "text": "Die Frage ist nicht, wer ich bin, Mats. Die Frage ist: wann.",
+     "tone": "[slow, quiet, menacing]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "pov",
+   "from": 2,
+   "travel": 14,
+   "fx": [
+    "glitch-end"
+   ],
+   "sfx": [
+    "hum",
+    "clock",
+    "riser"
+   ],
+   "stamp": "23:13",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Um 23 Uhr 13 bleibt Mats' Uhr stehen.",
+     "say": "Um dreiundzwanzig Uhr dreizehn bleibt Mats' Uhr stehen."
+    },
+    {
+     "who": "erz",
+     "text": "Und der Stollen beginnt zu leuchten."
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "orbit",
+   "focus": "lena",
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.5,
+      0.3
+     ],
+     "face": 20,
+     "pose": "look"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "sfx": [
+    "hit",
+    "wind",
+    "hum"
+   ],
+   "stamp": "23:13 · 1989",
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Siebenunddreißig Jahre entfernt öffnet Lena Berger die Augen."
+    },
+    {
+     "who": "lena",
+     "text": "Wo … bin ich?",
+     "tone": "[confused, frightened whisper]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.5,
+      0.3
+     ],
+     "face": 10,
+     "pose": "fear"
+    }
+   ],
+   "fx": [
+    "glitch-end"
+   ],
+   "sfx": [
+    "riser"
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats? Das ist dein Haus … aber da steht ein anderer Name dran.",
+     "tone": "[scared, trembling]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "sfx": [
+    "hit"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 2 – MORGEN",
+   "cut": "hard",
+   "pre": 0.8,
+   "post": 1.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Wem gehört das Haus? Folge zwei – morgen.",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
+ ]
+}
