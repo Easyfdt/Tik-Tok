@@ -7,6 +7,7 @@ const { execFileSync, spawn } = require('child_process');
 const ROOT = path.resolve(__dirname, '..');
 const nr = parseInt(process.argv[2] || '1', 10);
 const preview = process.argv.includes('--preview');
+const clipArg = process.argv.indexOf('--clip'); const CLIP = clipArg > 0 ? { start: +process.argv[clipArg + 1], dur: +process.argv[clipArg + 2] } : null;
 const id = String(nr).padStart(2, '0');
 const ep = JSON.parse(fs.readFileSync(path.join(__dirname, 'folgen', `${id}.json`), 'utf8'));
 const FPS = 24;
@@ -177,11 +178,12 @@ async function render(tl, audio) {
       fs.writeFileSync(path.join(WORK, `shot${String(i).padStart(2, '0')}.jpg`), Buffer.from(b64, 'base64'));
     }
   } else {
-    const outFile = path.join(ROOT, 'out', `echo-folge-${id}.mp4`);
-    const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-', '-i', audio,
+    const outFile = path.join(ROOT, 'out', CLIP ? `echo-folge-${id}-ausschnitt.mp4` : `echo-folge-${id}.mp4`);
+    const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-', ...(CLIP ? ['-ss', String(CLIP.start), '-t', String(CLIP.dur)] : []), '-i', audio,
       '-c:v', 'libx264', '-preset', 'medium', '-crf', '21', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outFile], { stdio: ['pipe', 'inherit', 'inherit'] });
     const t0 = Date.now();
-    for (let i = 0; i < frames; i++) {
+    const f0 = CLIP ? Math.round(CLIP.start * FPS) : 0, f1 = CLIP ? f0 + Math.round(CLIP.dur * FPS) : frames;
+    for (let i = f0; i < f1; i++) {
       const b64 = await page.evaluate(f => window.renderFrame(f), i);
       if (!ff.stdin.write(Buffer.from(b64, 'base64'))) await new Promise(r => ff.stdin.once('drain', r));
       if (i % 120 === 0) console.log(`Frame ${i}/${frames} (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
