@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Easyfdt/Tik-Tok#readme",
   "dependencies": {
+    "ammo.js": "github:kripken/ammo.js",
     "three": "^0.170.0"
   }
 }
