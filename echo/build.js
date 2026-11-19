@@ -81,7 +81,7 @@ function voiceLine(line, k) {
     src = raw;
   } else usedEL++;
   const fx = src === raw ? (line.radio ? VOICE_FX.radio : VOICE_FX[line.who]) : (line.radio ? EL_FX.radio : EL_FX[line.who]);
-  sh('ffmpeg', ['-y', '-v', 'error', '-i', raw, '-af', `${fx},silenceremove=start_periods=1:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse,apad=pad_dur=0.05`, '-ac', '2', fin]);
+  sh('ffmpeg', ['-y', '-v', 'error', '-i', src, '-af', `${fx},silenceremove=start_periods=1:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse,apad=pad_dur=0.05`, '-ac', '2', fin]);
   return { file: fin, d: dur(fin) };
 }
 

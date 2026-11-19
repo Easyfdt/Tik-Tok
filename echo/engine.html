@@ -489,6 +489,11 @@ function placeCamera(shot, lt, p, t) {
     camera.position.set(tgt.x + Math.sin(az) * dist, tgt.y + height, tgt.z + Math.cos(az) * dist);
     camera.lookAt(tgt);
   }
+  // Jump-Cut-Punch-Ins alle ~2,5 s innerhalb langer Shots (Abwechslung für die Zuschauer-Bindung)
+  if (cam !== 'pov' && shot.punch !== false && (shot.t1 - shot.t0) > 3.2) {
+    const seg = Math.floor(lt / 2.5), k = [1, 0.8, 1.12, 0.88][seg % 4];
+    camera.position.lerp(tgt, 1 - k);
+  }
   // Handkamera-Wackeln
   const shake = (shot.shake ?? 0.4) * 0.012;
   camera.rotation.x += (Math.sin(t * 1.7) + Math.sin(t * 3.3) * 0.5) * shake;
@@ -519,6 +524,42 @@ function subtitle(s, t) {
     out.textAlign = 'left'; out.lineWidth = 12; out.strokeStyle = 'rgba(0,0,0,.9)';
     out.strokeText(vis, x0, y0 + i * lh); out.fillStyle = s.who === 'erz' ? '#f2f2f2' : '#ffffff'; out.fillText(vis, x0, y0 + i * lh);
   });
+  out.restore();
+}
+function hookText(text, t, t0, t1) {
+  const lt = t - t0, a = Math.min(1, lt / 0.12, (t1 - t) / 0.2); if (a <= 0) return;
+  const pop = 1 + 0.25 * Math.max(0, 1 - lt / 0.22);
+  out.save(); out.globalAlpha = a; out.translate(W / 2, 380); out.scale(pop, pop); out.rotate(-0.03);
+  out.font = '900 88px "DejaVu Sans", sans-serif'; out.textAlign = 'center'; out.textBaseline = 'middle'; out.lineJoin = 'round';
+  const lines = wrap(text.toUpperCase(), W * 0.86);
+  lines.forEach((l, i) => { const y = (i - (lines.length - 1) / 2) * 100; const w = out.measureText(l).width + 50;
+    out.fillStyle = '#ffd400'; out.fillRect(-w / 2, y - 52, w, 100);
+    out.fillStyle = '#111'; out.fillText(l, 0, y + 4); });
+  out.restore();
+}
+function photoCard(ph, t, t0, t1) {
+  const p = Math.min(1, (t - t0) / (t1 - t0)), a = Math.min(1, (t - t0) / 0.4);
+  const zoomTo = ph.zoom === 'hat' ? [0.32, 0.38] : ph.zoom === 'lena' ? [0.62, 0.55] : [0.5, 0.5];
+  const z = 1 + (ph.zoom ? 1.6 : 0.15) * ease(p);
+  const pw = 760, phh = 900;
+  out.save(); out.globalAlpha = a; out.translate(W / 2, H * 0.43); out.rotate(-0.04 + 0.02 * Math.sin(t)); out.scale(z, z);
+  out.translate(-(zoomTo[0] - 0.5) * pw * (1 - 1 / z) * 1.4, -(zoomTo[1] - 0.5) * phh * (1 - 1 / z) * 1.4);
+  out.fillStyle = '#efe6d2'; out.shadowColor = 'rgba(0,0,0,.7)'; out.shadowBlur = 40; out.fillRect(-pw / 2 - 30, -phh / 2 - 30, pw + 60, phh + 150); out.shadowBlur = 0;
+  out.save(); out.beginPath(); out.rect(-pw / 2, -phh / 2, pw, phh); out.clip(); out.translate(-pw / 2, -phh / 2);
+  const g = out.createLinearGradient(0, 0, 0, phh); g.addColorStop(0, '#3a2a22'); g.addColorStop(1, '#8a6a4a'); out.fillStyle = g; out.fillRect(0, 0, pw, phh);
+  out.fillStyle = '#5a4030'; out.fillRect(0, 120, 180, 560); out.fillRect(560, 80, 200, 600); // Häuser
+  out.fillStyle = '#e8b060'; for (let i = 0; i < 6; i++) out.fillRect(30 + (i % 2) * 80, 180 + Math.floor(i / 2) * 140, 40, 60); for (let i = 0; i < 6; i++) out.fillRect(600 + (i % 2) * 80, 140 + Math.floor(i / 2) * 150, 40, 60);
+  out.fillStyle = '#2a2a2a'; out.fillRect(380, 200, 14, 500); out.fillStyle = '#ffd890'; out.beginPath(); out.arc(387, 200, 22, 0, 7); out.fill(); // Laterne
+  out.fillStyle = '#3a3530'; out.fillRect(0, 680, pw, 220); // Straße
+  const fig = (x, y, s, body, head, hat) => { out.fillStyle = body; out.fillRect(x - 40 * s, y - 230 * s, 80 * s, 110 * s); out.fillRect(x - 40 * s, y - 120 * s, 36 * s, 120 * s); out.fillRect(x + 4 * s, y - 120 * s, 36 * s, 120 * s);
+    out.fillRect(x - 62 * s, y - 228 * s, 22 * s, 100 * s); out.fillRect(x + 40 * s, y - 228 * s, 22 * s, 100 * s); out.fillStyle = head; out.fillRect(x - 28 * s, y - 290 * s, 56 * s, 56 * s);
+    if (hat) { out.fillStyle = '#0a0a0a'; out.fillRect(x - 44 * s, y - 296 * s, 88 * s, 10 * s); out.fillRect(x - 26 * s, y - 350 * s, 52 * s, 56 * s); } };
+  const hatAlpha = ph.zoom === 'hat' ? 0.35 + 0.65 * ease(p) : 0.35;
+  out.globalAlpha = a * hatAlpha; fig(240, 700, 1.05, '#141414', '#1a1a1a', true);
+  out.globalAlpha = a; fig(470, 720, 1.0, '#a8302a', '#e0b090', false); out.fillStyle = '#e0b020'; out.fillRect(430, 485, 80, 22); // Lena mit Schal
+  out.globalCompositeOperation = 'multiply'; out.fillStyle = 'rgba(190,150,100,.55)'; out.fillRect(0, 0, pw, phh); out.globalCompositeOperation = 'source-over';
+  out.restore();
+  out.fillStyle = '#333'; out.font = 'italic 700 46px "DejaVu Serif", serif'; out.textAlign = 'center'; out.fillText(ph.caption || 'Grauwald, 1989', 0, phh / 2 + 80);
   out.restore();
 }
 function titleCard(text, sub, t, t0, t1) {
@@ -592,7 +633,9 @@ window.renderFrame = (i) => {
   const fadeIn = Math.min(1, lt / (shot.cut === 'hard' ? 0.04 : 0.3)), fadeOut = Math.min(1, (shot.t1 - t) / (shot.fadeOut ?? 0.15));
   const vis = Math.min(fadeIn, fadeOut); if (vis < 1) { out.fillStyle = `rgba(0,0,0,${1 - vis})`; out.fillRect(0, 0, W, H); }
   if (shot.black) { out.fillStyle = '#000'; out.fillRect(0, 0, W, H); }
+  if (shot.photo) photoCard(shot.photo, t, shot.t0, shot.t1);
   if (shot.title) titleCard(shot.title, shot.sub, t, shot.t0, shot.t1);
+  if (shot.hook && t - shot.t0 < (shot.hookDur ?? 2.6)) hookText(shot.hook, t, shot.t0, shot.t0 + (shot.hookDur ?? 2.6));
   // Kopfzeile: Serie + Folge
   out.save(); out.globalAlpha = 0.8; out.textAlign = 'center'; out.font = '700 30px "DejaVu Sans", sans-serif'; out.letterSpacing = '10px'; out.fillStyle = '#e8e2d6';
   out.fillText(`ECHO · FOLGE ${TL.nr}`, W / 2, 165); out.letterSpacing = '0px';

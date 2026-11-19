@@ -1,0 +1,59 @@
+{
+ "nr": 2,
+ "titel": "Keller",
+ "beschreibung": "Lena steckt im Jahr 1989 fest – vor dem Haus von Mats. Doch auf dem Klingelschild steht ein Name, den sie kennt. 🕰️ Folge 2/15 #ECHO #mystery #zeitreise #serie",
+ "shots": [
+  { "set": "strasse1989", "cam": "close", "focus": "lena", "angle": -20, "chars": [ { "who": "lena", "pos": [-1.6, 3.5], "face": -20, "pose": "fear" } ], "fx": ["glitch"], "cut": "hard", "pre": 0.3,
+    "hook": "Sie ist im Jahr 1989 gefangen",
+    "lines": [ { "who": "lena", "text": "Keller … hier steht Keller.", "tone": "[whispering, shocked]" } ] },
+
+  { "set": "leere", "cam": "dolly", "fx": ["dream"], "title": "ECHO", "sub": "FOLGE 2 · KELLER", "pre": 0.8,
+    "lines": [ { "who": "erz", "text": "Gestern Nacht verschwand Lena im Stollen. Heute wacht sie 1989 auf.", "say": "Gestern Nacht verschwand Lena im Stollen. Heute wacht sie neunzehnhundertneunundachtzig auf." } ] },
+
+  { "set": "strasse1989", "cam": "wide", "focus": "lena", "chars": [ { "who": "lena", "pos": [0, 4], "move": [0, -3], "face": 180, "pose": "walk" } ], "fx": ["fog"], "stamp": "23:21 · 1989",
+    "lines": [ { "who": "erz", "text": "Gleiche Straße. Gleiche Häuser. Aber nichts ist so, wie sie es kennt." } ] },
+
+  { "set": "strasse1989", "cam": "close", "focus": "lena", "angle": 15, "chars": [ { "who": "lena", "pos": [0, 1], "face": 15, "pose": "look" } ],
+    "lines": [ { "who": "lena", "text": "Das ist Mats' Haus. Aber Mats ist noch nicht mal geboren.", "tone": "[scared, disbelieving]" } ] },
+
+  { "set": "strasse1989", "cam": "low", "focus": "lena", "angle": 30, "chars": [ { "who": "lena", "pos": [0, 1], "face": 30, "pose": "fear" } ], "fx": ["flicker"],
+    "lines": [ { "who": "erz", "text": "Hinter der Tür hört sie Schritte.", "tone": "[slow, tense]" } ] },
+
+  { "set": "leere", "cam": "close", "black": true, "cut": "hard", "min": 1.8,
+    "lines": [ { "who": "erz", "text": "Dann geht das Licht aus.", "tone": "[quiet]" } ] },
+
+  { "set": "zimmer", "cam": "dolly", "angle": 40, "chars": [ { "who": "mats", "pos": [0.4, -1.4], "face": 180, "pose": "down" } ], "fx": ["flicker"], "stamp": "23:21 · 2026", "cut": "hard",
+    "lines": [ { "who": "erz", "text": "Zur selben Zeit. Siebenunddreißig Jahre später." },
+               { "who": "mats", "text": "Lena? Bitte … sag was.", "tone": "[desperate, quiet]" } ] },
+
+  { "set": "zimmer", "cam": "close", "focus": "radio", "angle": -25, "fx": ["glitch", "flicker"],
+    "lines": [ { "who": "lena", "radio": true, "text": "Mats … dein Großvater … heißt der Keller?", "tone": "[urgent, scared, breaking up]" } ] },
+
+  { "set": "zimmer", "cam": "close", "focus": "mats", "angle": 20, "chars": [ { "who": "mats", "pos": [0.4, -1.4], "face": 20, "pose": "fear" } ],
+    "lines": [ { "who": "mats", "text": "Woher weißt du das?", "tone": "[shocked]" } ] },
+
+  { "set": "zimmer", "cam": "extreme", "focus": "radio", "angle": 20, "fx": ["glitch-end", "dark"],
+    "lines": [ { "who": "erz", "text": "Dann bricht die Verbindung ab." } ] },
+
+  { "set": "zimmer", "cam": "close", "focus": "radio", "angle": 30, "chars": [ { "who": "mats", "pos": [0.5, -1.6], "face": 160, "pose": "reach" } ],
+    "lines": [ { "who": "erz", "text": "Im Funkgerät klemmt etwas. Ein altes Foto." },
+               { "who": "mats", "text": "Das war vorher nicht da.", "tone": "[whispering, confused]" } ] },
+
+  { "set": "zimmer", "cam": "dolly", "fx": ["dark"], "photo": { "caption": "Grauwald, 1989" }, "punch": false,
+    "lines": [ { "who": "erz", "text": "Grauwald, 1989. Die Straße vor seinem Haus.", "say": "Grauwald, neunzehnhundertneunundachtzig. Die Straße vor seinem Haus." } ] },
+
+  { "set": "zimmer", "cam": "dolly", "fx": ["dark"], "photo": { "zoom": "lena", "caption": "Grauwald, 1989" }, "punch": false,
+    "lines": [ { "who": "mats", "text": "Das … das ist Lena.", "tone": "[shocked, breathless]" },
+               { "who": "mats", "text": "Aber sie ist doch erst seit drei Tagen weg.", "tone": "[confused, afraid]" } ] },
+
+  { "set": "leere", "cam": "close", "focus": "uhrmacher", "chars": [ { "who": "uhrmacher", "pos": [0, 0], "face": 0 } ], "fx": ["glitch"], "cut": "hard",
+    "lines": [ { "who": "uhrmacher", "text": "Zeit ist kein Fluss, Mats. Sie ist ein Kreis.", "tone": "[calm, menacing, slow]" } ] },
+
+  { "set": "zimmer", "cam": "dolly", "fx": ["dark", "glitch-end"], "photo": { "zoom": "hat", "caption": "Grauwald, 1989" }, "punch": false,
+    "lines": [ { "who": "erz", "text": "Dann sieht er es.", "tone": "[slow, ominous]" },
+               { "who": "mats", "text": "Wer steht da hinter ihr?", "tone": "[terrified whisper]" } ] },
+
+  { "set": "leere", "cam": "dolly", "black": true, "title": "ECHO", "sub": "FOLGE 3 – MORGEN", "cut": "hard", "pre": 0.8, "post": 1.6,
+    "lines": [ { "who": "erz", "text": "Wer ist der Mann mit dem Hut? Folge drei – morgen.", "tone": "[quiet, ominous]" } ] }
+ ]
+}
