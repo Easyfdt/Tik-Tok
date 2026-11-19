@@ -1,0 +1,55 @@
+{
+ "nr": 3,
+ "titel": "Rauschen",
+ "beschreibung": "Jede Nacht um 23:13 hat Mats genau eine Minute, um mit Lena im Jahr 1989 zu sprechen. Heute läuft die Uhr rückwärts. 🕰️ Folge 3/15 #ECHO #mystery #zeitreise #serie",
+ "shots": [
+  { "set": "zimmer", "cam": "close", "focus": "radio", "angle": 25, "chars": [ { "who": "mats", "pos": [0.4, -1.4], "face": 160, "pose": "down" } ], "fx": ["flicker", "glitch"], "cut": "hard", "pre": 0.2,
+    "hook": "Er spricht mit einem Mädchen von 1989", "stamp": "23:13:00",
+    "lines": [ { "who": "erz", "text": "Jede Nacht um 23 Uhr 13 spricht Mats mit einem Mädchen, das seit 37 Jahren verschwunden ist.", "say": "Jede Nacht um dreiundzwanzig Uhr dreizehn spricht Mats mit einem Mädchen, das seit siebenunddreißig Jahren verschwunden ist.", "tone": "[slow, ominous]" } ] },
+
+  { "set": "leere", "cam": "dolly", "fx": ["dream"], "title": "ECHO", "sub": "FOLGE 3 · RAUSCHEN", "pre": 0.6,
+    "lines": [ { "who": "erz", "text": "Eine Minute. Mehr Zeit haben sie nicht." } ] },
+
+  { "set": "zimmer", "cam": "close", "focus": "radio", "angle": -25, "fx": ["flicker"], "stamp": "23:13:08",
+    "lines": [ { "who": "lena", "radio": true, "text": "Mats? Bist du da?", "tone": "[urgent, whispering]" } ] },
+
+  { "set": "zimmer", "cam": "close", "focus": "mats", "angle": 20, "chars": [ { "who": "mats", "pos": [0.4, -1.4], "face": 20, "pose": "stand" } ],
+    "lines": [ { "who": "mats", "text": "Ich bin da. Ich hab das Foto gefunden.", "tone": "[urgent, quiet]" } ] },
+
+  { "set": "strasse1989", "cam": "close", "focus": "lena", "angle": -20, "chars": [ { "who": "lena", "pos": [-1.6, 3.5], "face": -20, "pose": "look" } ], "cut": "hard",
+    "lines": [ { "who": "lena", "text": "Welches Foto?", "tone": "[confused]" } ] },
+
+  { "set": "zimmer", "cam": "close", "focus": "mats", "angle": 35, "chars": [ { "who": "mats", "pos": [0.4, -1.4], "face": 35, "pose": "fear" } ], "photo": { "zoom": "hat", "caption": "Grauwald, 1989" }, "punch": false,
+    "lines": [ { "who": "mats", "text": "Du, vor meinem Haus. Und hinter dir … ein Mann mit Hut.", "tone": "[scared, quiet]" } ] },
+
+  { "set": "strasse1989", "cam": "orbit", "focus": "lena", "chars": [ { "who": "lena", "pos": [-1.6, 3.5], "face": 0, "pose": "look" } ], "fx": ["fog"],
+    "lines": [ { "who": "lena", "text": "Hier ist niemand.", "tone": "[nervous whisper]" } ] },
+
+  { "set": "leere", "cam": "close", "focus": "uhrmacher", "chars": [ { "who": "uhrmacher", "pos": [0, 0], "face": 0 } ], "fx": ["glitch"], "cut": "hard",
+    "lines": [ { "who": "uhrmacher", "text": "Du glaubst, ein altes Radio kann die Zeit überlisten?", "tone": "[mocking, slow, menacing]" } ] },
+
+  { "set": "zimmer", "cam": "push", "focus": "mats", "angle": 15, "chars": [ { "who": "mats", "pos": [0.4, -1.4], "face": 15, "pose": "stand" } ],
+    "lines": [ { "who": "mats", "text": "Ich hol sie zurück.", "tone": "[determined, stubborn]" } ] },
+
+  { "set": "uhrturm", "cam": "crane", "focus": "clock", "fx": ["fog"], "stamp": "23:13:40",
+    "lines": [ { "who": "erz", "text": "Noch zwanzig Sekunden." } ] },
+
+  { "set": "zimmer", "cam": "extreme", "focus": "radio", "angle": 20, "fx": ["glitch", "flicker"],
+    "lines": [ { "who": "lena", "radio": true, "text": "Mats, die Uhr am Turm … sie läuft rückwärts!", "tone": "[panicked]" } ] },
+
+  { "set": "uhrturm", "cam": "close", "focus": "clock", "angle": 0, "fx": ["glitch-end"], "stamp": "23:13:47",
+    "lines": [ { "who": "erz", "text": "Funkwellen schaffen 300.000 Kilometer pro Sekunde. Durch die Zeit schafft es eigentlich keine einzige.", "say": "Funkwellen schaffen dreihunderttausend Kilometer pro Sekunde. Durch die Zeit schafft es eigentlich keine einzige." } ] },
+
+  { "set": "strasse1989", "cam": "wide", "focus": "lena", "chars": [ { "who": "lena", "pos": [0, 2], "face": 0, "pose": "fear" }, { "who": "uhrmacher", "pos": [-1.5, -4], "face": 20 } ], "fx": ["fog", "flicker"],
+    "lines": [ { "who": "erz", "text": "Hinter Lena geht eine Tür auf.", "tone": "[slow, tense]" } ] },
+
+  { "set": "strasse1989", "cam": "close", "focus": "lena", "angle": 10, "chars": [ { "who": "lena", "pos": [0, 2], "face": 10, "pose": "fear" } ], "fx": ["glitch-end"],
+    "lines": [ { "who": "lena", "text": "Mats … hier ist jemand, der genauso aussieht wie du.", "tone": "[terrified whisper]" } ] },
+
+  { "set": "zimmer", "cam": "close", "focus": "mats", "angle": 20, "chars": [ { "who": "mats", "pos": [0.4, -1.4], "face": 20, "pose": "fear" } ], "fx": ["glitch", "dark"], "cut": "hard", "stamp": "23:14:00",
+    "lines": [ { "who": "mats", "text": "Lena? Lena!", "tone": "[desperate, shouting]" } ] },
+
+  { "set": "leere", "cam": "dolly", "black": true, "title": "ECHO", "sub": "FOLGE 4 – MORGEN", "cut": "hard", "pre": 0.6, "post": 0.4,
+    "lines": [ { "who": "erz", "text": "Wer ist der Junge, der aussieht wie Mats? Folge vier – morgen. Denn jede Nacht um 23 Uhr 13 …", "say": "Wer ist der Junge, der aussieht wie Mats? Folge vier – morgen. Denn jede Nacht um dreiundzwanzig Uhr dreizehn …", "tone": "[quiet, ominous]" } ] }
+ ]
+}

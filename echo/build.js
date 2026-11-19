@@ -44,6 +44,22 @@ const EL_FX = { // saubere Stimmen: kein Hall, keine Tonhöhen-Verschiebung
   radio: 'aresample=44100',
 };
 const SPEED = { erz: 1.12, lena: 1.0, mats: 0.98, uhrmacher: 1.1 };
+// Echte Mundformen (Viseme, Lippenschluss bei M/B/P, Blinzeln, Emotion) mit lipsync.py aus dem 3d-animator-Skill
+const LIPSYNC = [path.join(ROOT, 'tools', 'lipsync.py'), '/home/user/claude/.claude/skills/3d-animator/scripts/lipsync.py'].find(f => fs.existsSync(f));
+function faceCurves(file, line, k) {
+  if (!LIPSYNC) return null;
+  const out = path.join(WORK, `face${k}.json`);
+  try { sh('python3', [LIPSYNC, '--audio', file, '--text', `${line.tone || ''} ${line.say || line.text}`.trim(), '--lang', 'de', '--whisper', 'none', '--out', out]); }
+  catch (e) { if (!fs.existsSync(out)) { console.warn('lipsync fehlgeschlagen', k); return null; } }
+  const d = JSON.parse(fs.readFileSync(out, 'utf8')), c = d.curves, lead = d.lead_in || 0, fps = d.fps || 60;
+  const avg = (a, b) => (c[a] || []).map((v, i) => (v + ((c[b] || [])[i] || 0)) / 2);
+  const src = { jaw: c.jawOpen, close: c.mouthClose, funnel: c.mouthFunnel, pucker: c.mouthPucker, stretch: avg('mouthStretchLeft', 'mouthStretchRight'),
+    smile: avg('mouthSmileLeft', 'mouthSmileRight'), frown: avg('mouthFrownLeft', 'mouthFrownRight'), blink: avg('eyeBlinkLeft', 'eyeBlinkRight'),
+    browUp: c.browInnerUp, browDown: avg('browDownLeft', 'browDownRight'), wide: avg('eyeWideLeft', 'eyeWideRight') };
+  const n = Math.ceil(d.duration * FPS), res = {};
+  for (const [key, arr] of Object.entries(src)) { if (!arr) continue; res[key] = []; for (let j = 0; j < n; j++) { const i = Math.min(arr.length - 1, Math.round((j / FPS + lead) * fps)); res[key].push(+(arr[i] || 0).toFixed(3)); } }
+  return res;
+}
 // Lautstärke-Hüllkurve pro Videobild (0..1) für die Lippenbewegung
 function envelope(f) {
   const raw = sh('ffmpeg', ['-v', 'error', '-i', f, '-ac', '1', '-ar', '9600', '-f', 's16le', '-']);
@@ -93,7 +109,7 @@ function buildTimeline() {
     for (const line of s.lines || []) {
       const v = voiceLine(line, k++);
       voices.push({ file: v.file, at: cur, vol: line.vol ?? 1 });
-      if (!line.radio) mouth.push({ who: line.who, t0: cur, env: envelope(v.file) });
+      if (!line.radio) mouth.push({ who: line.who, t0: cur, env: envelope(v.file), face: faceCurves(v.file, line, k - 1) });
       subs.push({ t0: cur, t1: cur + v.d + 0.15, who: line.radio ? 'lena' : line.who, text: line.text, tone: line.tone || '' });
       cur += v.d + (line.gap ?? 0.3);
     }

@@ -361,6 +361,7 @@ addSet('leere', g => {
 // Figuren-Instanzen
 const MOUTH = TL.mouth || [];
 function speaking(who, t) { for (const m of MOUTH) { if (m.who !== who || t < m.t0) continue; const i = Math.floor((t - m.t0) * TL.fps); if (i < m.env.length) return m.env[i]; } return 0; }
+function faceAt(who, t) { for (const m of MOUTH) { if (m.who !== who || !m.face || t < m.t0) continue; const i = Math.floor((t - m.t0) * TL.fps); if (i < (m.face.jaw || []).length) { const o = {}; for (const k in m.face) o[k] = m.face[k][i] || 0; return o; } } return null; }
 function moodAt(who, t) { let best = null; for (const s of TL.subs) if (s.who === who && s.t0 - 1 < t && t < s.t1 + 2.5) best = s; return (best && best.tone) || ''; }
 
 // ================= BLOCKY-FIGUREN (Roblox-ähnlicher Stil, eigene Figuren) =================
@@ -384,8 +385,8 @@ function drawFace(c, st) {
   const bi = st.brow; // >0 innen hoch (Angst), <0 innen runter (Wut)
   c.beginPath(); c.moveTo(62, 66 + bi * 6); c.lineTo(108, 66 - bi * 16); c.stroke();
   c.beginPath(); c.moveTo(194, 66 + bi * 6); c.lineTo(148, 66 - bi * 16); c.stroke();
-  const o = st.open; // Mund
-  if (o > 0.08) { c.fillStyle = '#2a0f12'; c.beginPath(); c.ellipse(128, 180, 22 + o * 16 + st.stretch * 14, 6 + o * 30, 0, 0, 7); c.fill();
+  const o = st.open, rnd = st.round || 0; // Mund
+  if (o > 0.08 && !(st.closed > 0.5)) { c.fillStyle = '#2a0f12'; c.beginPath(); c.ellipse(128, 180, Math.max(8, 22 + o * 16 + st.stretch * 14 - rnd * 18), 6 + o * 30 + rnd * 8, 0, 0, 7); c.fill();
     c.fillStyle = '#e65a6a'; c.beginPath(); c.ellipse(128, 192 + o * 12, 14 + o * 6, 5 + o * 7, 0, 0, Math.PI); c.fill();
     c.fillStyle = '#fff'; c.fillRect(110 - o * 6, 168 - o * 12, 36 + o * 12, 7); }
   else { c.lineWidth = 9; c.beginPath(); const sm = st.smile; c.moveTo(98, 180 - sm * 4); c.quadraticCurveTo(128, 180 + sm * 22, 158, 180 - sm * 4); c.stroke(); }
@@ -435,7 +436,11 @@ function makeBlocky(name, d) {
       const ph = (t + seed) % 3.4, blink = ph < 0.13 ? 1 - Math.abs(ph - 0.065) / 0.065 : 0;
       const scared = /scared|afraid|terrified|frightened|shocked|desperate|trembling|urgent/.test(tone) || pose === 'fear';
       const evil = /menacing|ominous/.test(tone);
-      drawFace(fctx, { blink, look: Math.sin(t * 0.6 + seed), brow: scared ? 1 : evil ? -1 : /confused/.test(tone) ? 0.6 : 0,
+      const fc = faceAt(name, t);
+      if (fc) drawFace(fctx, { blink: Math.max(blink * 0.3, fc.blink || 0), look: Math.sin(t * 0.6 + seed), brow: Math.max(-1, Math.min(1, (fc.browUp || 0) * 1.6 - (fc.browDown || 0) * 1.6 + (scared ? 0.5 : evil ? -0.5 : 0))),
+        open: Math.min(1, (fc.jaw || 0) * 1.7), round: Math.min(1, ((fc.funnel || 0) + (fc.pucker || 0)) * 1.4), closed: fc.close || 0,
+        smile: (fc.smile || 0) - (fc.frown || 0) + (evil ? 0.4 : scared ? -0.4 : 0.15), stretch: (fc.stretch || 0) + (scared ? 0.3 : 0), wide: scared || (fc.wide || 0) > 0.3, clock: d.clock });
+      else drawFace(fctx, { blink, look: Math.sin(t * 0.6 + seed), brow: scared ? 1 : evil ? -1 : /confused/.test(tone) ? 0.6 : 0,
         open: Math.min(1, sp * 1.2 * whisper), smile: scared ? -0.6 : evil ? 0.6 : 0.25, stretch: scared ? 0.6 : 0, wide: scared, clock: d.clock });
       ftex.needsUpdate = true;
     } };
