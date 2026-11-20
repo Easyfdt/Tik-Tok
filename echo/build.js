@@ -16,7 +16,7 @@ const sh = (cmd, args, opt = {}) => execFileSync(cmd, args, { stdio: ['pipe', 'p
 
 // ---------- 1. Stimmen ----------
 const VOICE_DIR = path.join(os.homedir(), '.cache', 'echo-voices');
-const VOICES = { erz: 'de-thorsten-low', uhrmacher: 'de-thorsten-low', lena: 'de-kerstin-low', mats: 'de-pavoque-low' };
+const VOICES = { jakob: 'de-pavoque-low', erz: 'de-thorsten-low', uhrmacher: 'de-thorsten-low', lena: 'de-kerstin-low', mats: 'de-pavoque-low' };
 function ensureVoices() {
   try { sh('python3', ['-c', 'import piper']); } catch { sh('pip', ['install', '-q', 'piper-tts']); }
   for (const v of new Set(Object.values(VOICES))) {
@@ -39,7 +39,7 @@ const VOICE_FX = {
 // Nachbearbeitung für ElevenLabs-Aufnahmen (schon 44,1 kHz, nur Raum/Charakter)
 const CLEAN = 'aresample=44100';
 const EL_FX = { // saubere Stimmen: kein Hall, keine Tonhöhen-Verschiebung
-  erz: CLEAN, lena: CLEAN, mats: CLEAN,
+  erz: CLEAN, lena: CLEAN, mats: CLEAN, jakob: CLEAN,
   uhrmacher: CLEAN,
   radio: 'aresample=44100',
 };
@@ -70,7 +70,7 @@ function envelope(f) {
 function dur(f) { return parseFloat(sh('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f]).toString()); }
 // ElevenLabs-Stimmen (API-Key wird vom Netzwerk-Proxy eingesetzt). Fällt bei Fehlern auf Piper zurück.
 const EL_MODEL = process.env.ECHO_EL_MODEL || 'eleven_v3';
-const EL_VOICES = { erz: 'DoHz70qrC3ss60PDk9cg', lena: 'h5v6xrdIQqGLrT6nHNdj', mats: 'IjnA9kwZJHJ20Fp7Vmy6', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
+const EL_VOICES = { erz: 'DoHz70qrC3ss60PDk9cg', lena: 'h5v6xrdIQqGLrT6nHNdj', mats: 'IjnA9kwZJHJ20Fp7Vmy6', jakob: 'IjnA9kwZJHJ20Fp7Vmy6', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
 const EL_CACHE = path.join(ROOT, 'out', 'el-cache'); fs.mkdirSync(EL_CACHE, { recursive: true });
 let elOk = process.env.ECHO_TTS !== 'piper', usedEL = 0, usedPiper = 0;
 const elKey = (line, text) => require('crypto').createHash('sha1').update(EL_MODEL + '|' + EL_VOICES[line.who] + '|' + line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);

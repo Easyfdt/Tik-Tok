@@ -1,0 +1,61 @@
+{
+ "nr": 4,
+ "titel": "Der Junge von 1989",
+ "beschreibung": "Er hat das Gesicht von Mats – aber es ist 1989. Und sein Tagebuch kennt die Zukunft. 🕰️ Folge 4/15 #ECHO #mystery #zeitreise #serie",
+ "shots": [
+  { "set": "strasse1989", "cam": "close", "focus": "jakob", "angle": 15, "chars": [ { "who": "jakob", "pos": [0.6, 1.8], "face": 15, "pose": "stand" } ], "fx": ["fog"], "cut": "hard", "pre": 0.2,
+    "hook": "Er sieht aus wie Mats – aber es ist 1989", "stamp": "23:02 · 1989",
+    "lines": [ { "who": "jakob", "text": "Wer bist du? Und woher kennst du meinen Namen?", "tone": "[suspicious, tense]" } ] },
+
+  { "set": "leere", "cam": "dolly", "fx": ["dream"], "title": "ECHO", "sub": "FOLGE 4 · DER JUNGE VON 1989", "pre": 0.6,
+    "lines": [ { "who": "erz", "text": "Lena steht vor einem Jungen, der Mats' Gesicht trägt.", "tone": "[slow, ominous]" } ] },
+
+  { "set": "strasse1989", "cam": "close", "focus": "lena", "angle": -20, "chars": [ { "who": "lena", "pos": [-0.8, 2.6], "face": -20, "pose": "fear" } ], "cut": "hard",
+    "lines": [ { "who": "lena", "text": "Mats? … Nein. Du bist nicht Mats.", "tone": "[confused, frightened]" } ] },
+
+  { "set": "strasse1989", "cam": "orbit", "focus": "jakob", "chars": [ { "who": "jakob", "pos": [0.6, 1.8], "face": -60, "pose": "look" }, { "who": "lena", "pos": [-0.8, 2.6], "face": 120, "pose": "stand" } ],
+    "lines": [ { "who": "jakob", "text": "Ich heiße Jakob. Jakob Keller.", "tone": "[cautious]" } ] },
+
+  { "set": "leere", "cam": "close", "black": true, "trans": "flash", "min": 2.2,
+    "lines": [ { "who": "erz", "text": "Jakob Keller. Mats' Großvater. Siebzehn Jahre alt.", "tone": "[quiet, heavy]" } ] },
+
+  { "set": "strasse1989", "cam": "low", "focus": "jakob", "angle": 25, "chars": [ { "who": "jakob", "pos": [0.6, 1.8], "face": 25, "pose": "stand" } ], "fx": ["flicker"],
+    "lines": [ { "who": "jakob", "text": "Seit Tagen schleichen Fremde um den Stollen. Gehörst du zu denen?", "tone": "[hostile, low]" } ] },
+
+  { "set": "strasse1989", "cam": "extreme", "focus": "lena", "angle": -15, "chars": [ { "who": "lena", "pos": [-0.8, 2.6], "face": -15, "pose": "fear" } ],
+    "lines": [ { "who": "lena", "text": "Ich komme nicht von hier. Ich komme von … später.", "tone": "[whispering, scared]" } ] },
+
+  { "set": "zimmer", "cam": "dolly", "angle": 40, "chars": [ { "who": "mats", "pos": [0.4, -1.4], "face": 180, "pose": "reach" } ], "fx": ["flicker"], "trans": "flash", "stamp": "23:02 · 2026",
+    "lines": [ { "who": "erz", "text": "Siebenunddreißig Jahre später durchsucht Mats die alten Kisten seines Großvaters." } ] },
+
+  { "set": "zimmer", "cam": "close", "focus": "mats", "angle": 25, "chars": [ { "who": "mats", "pos": [0.4, -1.4], "face": 25, "pose": "stand" } ],
+    "lines": [ { "who": "mats", "text": "Ein Tagebuch. Jakob Keller, neunzehnhundertneunundachtzig.", "tone": "[whispering, curious]" } ] },
+
+  { "set": "zimmer", "cam": "dolly", "fx": ["dark"], "punch": false, "trans": "wipe",
+    "diary": { "title": "13. Oktober 1989", "text": "Heute stand ein Mädchen vor unserem Haus. Sie hatte einen roten Schal. Sie wusste meinen Namen." },
+    "lines": [ { "who": "jakob", "text": "Heute stand ein Mädchen vor unserem Haus. Sie hatte einen roten Schal. Sie wusste meinen Namen.", "tone": "[quiet, reading a diary]" } ] },
+
+  { "set": "strasse1989", "cam": "close", "focus": "jakob", "angle": 10, "chars": [ { "who": "jakob", "pos": [0.6, 1.8], "face": 10, "pose": "stand" } ], "trans": "flash",
+    "lines": [ { "who": "jakob", "text": "Wenn du von später kommst … dann beweis es.", "tone": "[challenging]" } ] },
+
+  { "set": "strasse1989", "cam": "close", "focus": "lena", "angle": -10, "chars": [ { "who": "lena", "pos": [-0.8, 2.6], "face": -10, "pose": "stand" } ],
+    "lines": [ { "who": "lena", "text": "Dein Enkel heißt Mats. Und er sucht mich. Genau jetzt.", "tone": "[determined, emotional]" } ] },
+
+  { "set": "leere", "cam": "close", "focus": "uhrmacher", "chars": [ { "who": "uhrmacher", "pos": [0, 0], "face": 0 } ], "fx": ["glitch"], "cut": "hard",
+    "lines": [ { "who": "uhrmacher", "text": "Jedes Wort, das du sagst, Lena … schreibt die Zeit neu.", "tone": "[calm, menacing, slow]" } ] },
+
+  { "set": "zimmer", "cam": "dolly", "fx": ["dark", "glitch-end"], "punch": false, "trans": "clock",
+    "diary": { "title": "Letzte Seite", "text": "Heute Nacht verschwindet das Mädchen mit dem roten Schal.", "red": true },
+    "lines": [ { "who": "erz", "text": "Mats blättert zur letzten Seite.", "tone": "[slow, tense]" },
+               { "who": "mats", "text": "Heute Nacht verschwindet das Mädchen mit dem roten Schal.", "tone": "[reading, horrified whisper]" } ] },
+
+  { "set": "zimmer", "cam": "push", "focus": "mats", "angle": 15, "chars": [ { "who": "mats", "pos": [0.4, -1.4], "face": 15, "pose": "fear" } ], "cut": "hard",
+    "lines": [ { "who": "mats", "text": "Das ist heute. Das ist … jetzt.", "tone": "[panicked, breathless]" } ] },
+
+  { "set": "strasse1989", "cam": "wide", "focus": "lena", "chars": [ { "who": "lena", "pos": [-0.8, 2.6], "face": 0, "pose": "fear" }, { "who": "jakob", "pos": [0.6, 1.8], "face": 0, "pose": "look" }, { "who": "uhrmacher", "pos": [-1.2, -3.5], "face": 10 } ], "fx": ["fog", "flicker", "glitch-end"], "stamp": "23:13 · 1989",
+    "lines": [ { "who": "erz", "text": "In Grauwald schlägt die Uhr dreiundzwanzig Uhr dreizehn. Und hinter den beiden steht jemand.", "tone": "[slow, ominous]" } ] },
+
+  { "set": "leere", "cam": "dolly", "black": true, "title": "ECHO", "sub": "FOLGE 5 – MORGEN", "cut": "hard", "pre": 0.6, "post": 0.4,
+    "lines": [ { "who": "erz", "text": "Wer verschwindet heute Nacht wirklich? Folge fünf – morgen. Denn heute Nacht …", "tone": "[quiet, ominous]" } ] }
+ ]
+}

@@ -449,6 +449,8 @@ function makeBlocky(name, d) {
 const BLOCKY = {
   lena: { skin: 0xf2c9a8, shirt: 0xd62a2a, kind: 'jacket', pants: 0x2f4f8f, shoes: 0xf2f2f2, hair: 0x5a3220, pony: true, long: true, scarf: 0xf2c230, size: 0.92 },
   mats: { skin: 0xe8b48e, shirt: 0x3f8f4a, kind: 'parka', pants: 0x3a3f4a, shoes: 0x6a4424, beanie: 0x2b5fb8, lamp: true },
+  // Jakob Keller, Mats' Großvater mit 17 (1989) – gleiches Gesicht wie Mats, 80er-Jeansjacke
+  jakob: { skin: 0xe8b48e, shirt: 0x4a6fa5, kind: 'jacket', pants: 0x2a2a2e, shoes: 0xf0f0f0, hair: 0x5a3a1e },
   uhrmacher: { skin: 0x161616, shirt: 0x141418, kind: 'coat', pants: 0x111114, shoes: 0x050505, coat: true, tophat: true, clock: true, size: 1.12 },
 };
 
@@ -512,7 +514,7 @@ function placeCamera(shot, lt, p, t) {
 const out = document.getElementById('out').getContext('2d');
 const grain = document.createElement('canvas'); grain.width = grain.height = 256;
 { const g = grain.getContext('2d'), d = g.createImageData(256, 256); for (let i = 0; i < d.data.length; i += 4) { const v = rnd() * 255; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; } g.putImageData(d, 0, 0); }
-const SPK = { lena: ['LENA', '#ff6b6b'], mats: ['MATS', '#8fd18a'], uhrmacher: ['DER UHRMACHER', '#ffd27a'], erz: [null, '#ffffff'] };
+const SPK = { lena: ['LENA', '#ff6b6b'], mats: ['MATS', '#8fd18a'], jakob: ['JAKOB', '#7fb2ff'], uhrmacher: ['DER UHRMACHER', '#ffd27a'], erz: [null, '#ffffff'] };
 function wrap(text, maxW) { const words = text.split(' '), lines = []; let l = ''; for (const w of words) { const t = l ? l + ' ' + w : w; if (out.measureText(t).width > maxW && l) { lines.push(l); l = w; } else l = t; } lines.push(l); return lines; }
 function subtitle(s, t) {
   const p = (t - s.t0) / (s.t1 - s.t0), a = Math.min(1, (t - s.t0) / 0.15, (s.t1 - t) / 0.15);
@@ -574,6 +576,23 @@ function photoCard(ph, t, t0, t1) {
   out.globalCompositeOperation = 'multiply'; out.fillStyle = 'rgba(190,150,100,.55)'; out.fillRect(0, 0, pw, phh); out.globalCompositeOperation = 'source-over';
   out.restore();
   out.fillStyle = '#333'; out.font = 'italic 700 46px "DejaVu Serif", serif'; out.textAlign = 'center'; out.fillText(ph.caption || 'Grauwald, 1989', 0, phh / 2 + 80);
+  out.restore();
+}
+function diaryCard(d, t, t0, t1) {
+  const lt = t - t0, a = Math.min(1, lt / 0.35), p = Math.min(1, lt / ((t1 - t0) * 0.85));
+  const pw = 820, ph = 1000;
+  out.save(); out.globalAlpha = a; out.translate(W / 2, H * 0.42); out.rotate(0.03 + 0.01 * Math.sin(t * 0.8)); out.scale(1 + 0.06 * p, 1 + 0.06 * p);
+  out.shadowColor = 'rgba(0,0,0,.75)'; out.shadowBlur = 50; const g = out.createLinearGradient(0, -ph / 2, 0, ph / 2); g.addColorStop(0, '#efe2c2'); g.addColorStop(1, '#d9c79c');
+  out.fillStyle = g; out.fillRect(-pw / 2, -ph / 2, pw, ph); out.shadowBlur = 0;
+  out.strokeStyle = 'rgba(70,90,140,.25)'; out.lineWidth = 2; for (let y = -ph / 2 + 190; y < ph / 2 - 30; y += 66) { out.beginPath(); out.moveTo(-pw / 2 + 40, y); out.lineTo(pw / 2 - 40, y); out.stroke(); }
+  out.strokeStyle = 'rgba(180,60,60,.35)'; out.beginPath(); out.moveTo(-pw / 2 + 110, -ph / 2); out.lineTo(-pw / 2 + 110, ph / 2); out.stroke();
+  out.fillStyle = '#2a2440'; out.textAlign = 'left'; out.font = 'italic 700 44px "DejaVu Serif", serif'; out.fillText(d.title || 'Jakob Keller – 1989', -pw / 2 + 130, -ph / 2 + 120);
+  out.font = 'italic 40px "DejaVu Serif", serif';
+  const text = d.text || '', shown = text.slice(0, Math.floor(text.length * p)); let y = -ph / 2 + 245, line = '';
+  for (const w of shown.split(' ')) { const tst = line ? line + ' ' + w : w; if (out.measureText(tst).width > pw - 190) { out.fillText(line, -pw / 2 + 130, y); y += 66; line = w; } else line = tst; }
+  out.fillStyle = d.red && p > 0.6 ? '#9b1010' : '#2a2440'; out.fillText(line, -pw / 2 + 130, y);
+  if (d.red && p >= 1) { out.strokeStyle = '#9b1010'; out.lineWidth = 5; out.beginPath(); out.moveTo(-pw / 2 + 130, y + 14); out.lineTo(-pw / 2 + 130 + out.measureText(line).width, y + 18); out.stroke(); }
+  const vg = out.createRadialGradient(0, 0, 200, 0, 0, 760); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(30,15,0,.45)'); out.fillStyle = vg; out.fillRect(-pw / 2, -ph / 2, pw, ph);
   out.restore();
 }
 function titleCard(text, sub, t, t0, t1) {
@@ -663,6 +682,7 @@ window.renderFrame = (i) => {
   const fadeOut = Math.min(1, (shot.t1 - t) / (shot.fadeOut ?? 0.12)); if (fadeOut < 1) { out.fillStyle = `rgba(0,0,0,${1 - fadeOut})`; out.fillRect(0, 0, W, H); }
   if (shot.black) { out.fillStyle = '#000'; out.fillRect(0, 0, W, H); }
   if (shot.photo) photoCard(shot.photo, t, shot.t0, shot.t1);
+  if (shot.diary) diaryCard(shot.diary, t, shot.t0, shot.t1);
   if (shot.title) titleCard(shot.title, shot.sub, t, shot.t0, shot.t1);
   if (shot.hook && t - shot.t0 < (shot.hookDur ?? 2.6)) hookText(shot.hook, t, shot.t0, shot.t0 + (shot.hookDur ?? 2.6));
   // Kopfzeile: Serie + Folge
