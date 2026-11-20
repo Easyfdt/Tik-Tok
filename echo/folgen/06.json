@@ -1,0 +1,484 @@
+{
+ "nr": 6,
+ "titel": "Zweimal Lena",
+ "beschreibung": "Mats geht durch den Stollen – und landet im Jahr 1952. Dort wartet ein kleines Mädchen, das seinen Namen kennt. 🕳️ Folge 6/15 #ECHO #mystery #horror #zeitreise #serie",
+ "shots": [
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "flicker",
+    "glitch"
+   ],
+   "cut": "hard",
+   "pre": 0.2,
+   "hook": "Er geht durch – und landet im falschen Jahr",
+   "stamp": "23:13 · 2026",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Ja. Ich bin bereit.",
+     "tone": "[quiet, determined, scared]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream",
+    "glitch-end"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 6 · ZWEIMAL LENA",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Der Stollen hat ihn gehört.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "pov",
+   "from": -6,
+   "travel": 12,
+   "fx": [
+    "glitch",
+    "flicker"
+   ],
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Das blaue Licht verschluckt ihn. Für eine Sekunde ist alles still.",
+     "tone": "[slow, tense]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "close",
+   "black": true,
+   "cut": "hard",
+   "min": 2.2,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Dann hört er Hämmer. Hunderte.",
+     "tone": "[whispering, creepy]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "wide",
+   "focus": "mats",
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 0,
+     "pose": "look"
+    }
+   ],
+   "fx": [
+    "flicker"
+   ],
+   "stamp": "06:40 · 1952",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Der Stollen ist nicht mehr verlassen. Es ist 1952.",
+     "say": "Der Stollen ist nicht mehr verlassen. Es ist neunzehnhundertzweiundfünfzig.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": -15,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Das ist nicht 1989. Das ist … falsch.",
+     "say": "Das ist nicht neunzehnhundertneunundachtzig. Das ist … falsch.",
+     "tone": "[panicked whisper]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "push",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "fx": [
+    "glitch"
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Der Stollen bringt dich nicht dahin, wo du hinwillst. Sondern dahin, wo du gebraucht wirst.",
+     "tone": "[calm, menacing, slow]"
+    }
+   ]
+  },
+  {
+   "set": "wald",
+   "cam": "dolly",
+   "focus": "mats",
+   "angle": 160,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      4
+     ],
+     "move": [
+      0,
+      -3
+     ],
+     "face": 180,
+     "pose": "walk"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "trans": "wipe",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Draußen liegt ein Dorf, das er kaum wiedererkennt.",
+     "tone": "[quiet, tense]"
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "crane",
+   "focus": "clock",
+   "fx": [
+    "fog"
+   ],
+   "trans": "clock",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Die Uhr am Turm ist neu. Und sie zeigt 23 Uhr 13. Am frühen Morgen.",
+     "say": "Die Uhr am Turm ist neu. Und sie zeigt dreiundzwanzig Uhr dreizehn. Am frühen Morgen.",
+     "tone": "[slow, creepy]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 25,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 25,
+     "pose": "look"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "stamp": "Grauwald · 1952",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Grauwald … vor über siebzig Jahren.",
+     "tone": "[breathless, disbelieving]"
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      -1.0,
+      -1.2
+     ],
+     "face": 15,
+     "pose": "fear"
+    }
+   ],
+   "fx": [
+    "fog",
+    "glitch"
+   ],
+   "noScarf": true,
+   "trans": "flash",
+   "stamp": "23:14 · 1989",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats? Mats! Der Stollen ist zu!",
+     "tone": "[panicked, shouting]"
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "close",
+   "focus": "clock",
+   "angle": 0,
+   "fx": [
+    "fog",
+    "flicker"
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "1952 hat Grauwald 412 Einwohner. Elf von ihnen überleben diese Woche nicht.",
+     "say": "Neunzehnhundertzweiundfünfzig hat Grauwald vierhundertzwölf Einwohner. Elf von ihnen überleben diese Woche nicht.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "wide",
+   "focus": "maedchen",
+   "angle": -10,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      3.4,
+      -4.5
+     ],
+     "face": -90,
+     "pose": "stand"
+    },
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 120,
+     "pose": "look"
+    }
+   ],
+   "fx": [
+    "fog",
+    "flicker"
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Auf der anderen Straßenseite steht ein kleines Mädchen. Sie starrt ihn an.",
+     "tone": "[whispering, tense]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 30,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 60,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Hey … hast du dich verlaufen?",
+     "tone": "[nervous, gentle]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "close",
+   "focus": "maedchen",
+   "angle": -25,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      3.4,
+      -4.5
+     ],
+     "face": -25,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog",
+    "glitch-end"
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Du bist zu spät, Mats.",
+     "tone": "[childlike, small girl, whispering, eerie calm]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 25,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 25,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Woher … kennst du meinen Namen?",
+     "tone": "[terrified whisper]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "extreme",
+   "focus": "maedchen",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      3.4,
+      -4.5
+     ],
+     "face": -15,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog",
+    "flicker"
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Um ihren Hals trägt sie einen roten Schal.",
+     "tone": "[slow, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "extreme",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "fx": [
+    "glitch",
+    "glitch-end"
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Zweimal Lena, Mats. Und nur eine kann leben.",
+     "tone": "[whispering, slow, menacing]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "title": "ECHO",
+   "sub": "FOLGE 7 – MORGEN",
+   "cut": "hard",
+   "pre": 0.6,
+   "post": 0.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Wer ist das Mädchen mit dem roten Schal? Folge sieben – morgen. Denn 1952 …",
+     "say": "Wer ist das Mädchen mit dem roten Schal? Folge sieben – morgen. Denn neunzehnhundertzweiundfünfzig …",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
+ ]
+}
