@@ -388,7 +388,7 @@ addSet('strasse1989', g => {
   carWithLights(g, 0xc8b070, (c, t) => { const z = -40 + ((t * 9) % 80); c.position.set(1.4, 0, z); });
   const neon = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 0.8), new THREE.MeshBasicMaterial({ map: canvasTex(384, 128, c => { c.fillStyle = '#000'; c.fillRect(0, 0, 384, 128); c.font = '900 84px DejaVu Sans'; c.textAlign = 'center'; c.fillStyle = '#ff3b6b'; c.shadowColor = '#ff3b6b'; c.shadowBlur = 20; c.fillText('KINO', 192, 95); }) }));
   neon.position.set(-4.48, 4.5, 3); neon.rotation.y = Math.PI / 2; g.add(neon); const nl = new THREE.PointLight(0xff3b6b, 6, 8); nl.position.set(-3.8, 4.5, 3); g.add(nl);
-  onFrame(g, t => { const on = Math.sin(t * 13) > -0.85 || Math.sin(t * 2.1) > 0; neon.material.color.setHex(on ? 0xffffff : 0x222222); nl.intensity = on ? 6 : 0.3; });
+  onFrame(g, t => { const on = true; neon.material.color.setHex(on ? 0xffffff : 0x222222); nl.intensity = on ? 6 : 0.3; });
   smoke(g, 0.5, 0, -3); wisps(g, 8, 24, 0xc0a080, 0.07);
   g.add(new THREE.HemisphereLight(0x5a4a50, 0x141008, 0.9));
   return { main: [0, 1.4, 0] };
@@ -668,7 +668,8 @@ window.meta = { fps: TL.fps, duration: TL.duration };
 window.renderFrame = (i) => {
   const t = i / TL.fps, shot = shotAt(t), lt = t - shot.t0, p = Math.min(1, lt / (shot.t1 - shot.t0));
   for (const [n, s] of Object.entries(sets)) s.g.visible = n === shot.set;
-  const fx = shot.fx || [];
+  // Kein Flackern/Glitch/Blitz mehr (Wunsch: ruhiges, normales Bild)
+  const fx = (shot.fx || []).filter(f => !['flicker', 'glitch', 'glitch-end', 'lightning'].includes(f));
   // Figuren platzieren
   for (const [n, c] of Object.entries(chars)) {
     const spec = (shot.chars || []).find(x => x.who === n); c.visible = !!spec; if (!spec) continue;
