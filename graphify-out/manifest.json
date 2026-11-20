@@ -1,0 +1,50 @@
+{
+  "echo/build.js": {
+    "mtime": 1795160222.992031,
+    "seen": 1795186800.6203468,
+    "ast_hash": "df6d1de70bcbdd5c4a5b9c87a8af588c",
+    "semantic_hash": "df6d1de70bcbdd5c4a5b9c87a8af588c"
+  },
+  "echo/folgen/01.json": {
+    "mtime": 1795036839.3470933,
+    "seen": 1795186800.6203547,
+    "ast_hash": "341eff92cace72fa0bfb2f7808b47994",
+    "semantic_hash": "341eff92cace72fa0bfb2f7808b47994"
+  },
+  "echo/folgen/02.json": {
+    "mtime": 1795052578.0296712,
+    "seen": 1795186800.620358,
+    "ast_hash": "2f6fba7d33a7147dfcf3cd9284e5ce50",
+    "semantic_hash": "2f6fba7d33a7147dfcf3cd9284e5ce50"
+  },
+  "echo/folgen/03.json": {
+    "mtime": 1795132160.9742246,
+    "seen": 1795186800.62036,
+    "ast_hash": "8356c6a1bdb96633788f400964e40467",
+    "semantic_hash": "8356c6a1bdb96633788f400964e40467"
+  },
+  "echo/folgen/04.json": {
+    "mtime": 1795169353.381343,
+    "seen": 1795186800.6203616,
+    "ast_hash": "bd8833e302e3631893e418462d6fa134",
+    "semantic_hash": "bd8833e302e3631893e418462d6fa134"
+  },
+  "echo/folgen/05.json": {
+    "mtime": 1795176815.0070233,
+    "seen": 1795186800.6203628,
+    "ast_hash": "eb719e86a193758deaa5f396f55d2099",
+    "semantic_hash": "eb719e86a193758deaa5f396f55d2099"
+  },
+  "echo/SERIE.md": {
+    "mtime": 1795044289.216393,
+    "seen": 1795186800.6203642,
+    "ast_hash": "65170f6f708d1aaf88bedaecee6c6ee8",
+    "semantic_hash": "65170f6f708d1aaf88bedaecee6c6ee8"
+  },
+  "echo/folgen/01-texte.md": {
+    "mtime": 1795043905.148432,
+    "seen": 1795186800.6203659,
+    "ast_hash": "5b37122dfafc131b8b2e084dcbd90db2",
+    "semantic_hash": "5b37122dfafc131b8b2e084dcbd90db2"
+  }
+}
