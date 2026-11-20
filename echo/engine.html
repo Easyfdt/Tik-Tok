@@ -331,8 +331,54 @@ addSet('zimmer', g => {
 addSet('strasse1989', g => {
   g.add(ground(0x26231f));
   const road = new THREE.Mesh(new THREE.PlaneGeometry(6, 80), std(0x1b1b1b, { roughness: 0.4, metalness: 0.2 })); road.rotation.x = -Math.PI / 2; road.position.y = 0.01; road.receiveShadow = true; g.add(road);
-  for (let i = 0; i < 16; i++) { const side = i % 2 ? 1 : -1, w = 5 + rnd() * 3, h = 6 + rnd() * 6; const b = new THREE.Mesh(new THREE.BoxGeometry(5, h, w), new THREE.MeshStandardMaterial({ color: [0xc8743a, 0x8a5aa0, 0x3a8a8a, 0xd0b060, 0xa04040][i % 5], roughness: 0.5 })); b.position.set(side * 7, h / 2, 20 - (i >> 1) * 7); b.castShadow = true; g.add(b);
-    for (let j = 0; j < 3; j++) if (rnd() < 0.5) { const wn = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 1.2), new THREE.MeshBasicMaterial({ color: 0xffb35c })); wn.position.set(side * 4.49, 2 + j * 2.2, b.position.z + (rnd() - 0.5) * 3); wn.rotation.y = -side * Math.PI / 2; g.add(wn); } }
+  // Häuserzeilen: Fassaden mit Fensterrahmen, Fensterbänken, Türen, Läden; Ziegeldächer, Schornsteine
+  const roofTex = canvasTex(256, 256, c => { c.fillStyle = '#5a2418'; c.fillRect(0, 0, 256, 256); for (let y = 0; y < 256; y += 16) for (let x = (y / 16 % 2) * 12; x < 268; x += 24) { c.fillStyle = ['#9a3a24', '#8a3220', '#a8442a', '#7a2c1c'][(x * 7 + y) % 4]; c.beginPath(); c.ellipse(x, y + 10, 11, 9, 0, 0, Math.PI); c.fill(); c.strokeStyle = 'rgba(0,0,0,.35)'; c.lineWidth = 2; c.stroke(); } });
+  roofTex.wrapS = roofTex.wrapT = THREE.RepeatWrapping; roofTex.repeat.set(0.45, 0.45);
+  const FAS = ['#d9a066', '#c46a4a', '#e4d2a8', '#8fb0a0', '#b8a0c8', '#d8c070', '#a86848', '#c8c8b8'];
+  const SHOP = ['BÄCKEREI', 'APOTHEKE', 'FRISEUR', 'UHREN', 'KIOSK', 'METZGEREI', 'POST', 'CAFÉ'];
+  function facade(w, h, floors, seed, shop) {
+    const PX = 64, cw = Math.round(w * PX), ch = Math.round(h * PX); const lit = [];
+    const r = n => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280 * n; };
+    const base = FAS[Math.floor(r(FAS.length))];
+    const draw = (c, emis) => {
+      c.fillStyle = emis ? '#000' : base; c.fillRect(0, 0, cw, ch);
+      if (!emis) { for (let i = 0; i < 900; i++) { c.fillStyle = `rgba(${r(1) < .5 ? '0,0,0' : '255,255,255'},${r(0.06)})`; c.fillRect(r(cw), r(ch), 2 + r(6), 2 + r(3)); }
+        c.fillStyle = 'rgba(0,0,0,.18)'; c.fillRect(0, ch - 0.9 * PX, cw, 0.9 * PX); // Sockel
+        for (let f = 1; f < floors; f++) { c.fillStyle = 'rgba(255,255,255,.22)'; c.fillRect(0, ch - f * (h / floors) * PX - 4, cw, 6); } // Gesims
+        c.fillStyle = 'rgba(0,0,0,.25)'; c.fillRect(0, 0, cw, 10); }
+      const cols = Math.max(2, Math.floor(w / 1.7)), fh = h / floors;
+      for (let f = 0; f < floors; f++) for (let k = 0; k < cols; k++) {
+        const x = (k + 0.5) * cw / cols, yb = ch - f * fh * PX, ww = 0.8 * PX, wh = 1.15 * PX, y = yb - fh * PX * 0.5 - wh / 2;
+        if (f === 0) { // Erdgeschoss: Tür + Laden
+          if (k === 0) { if (!emis) { c.fillStyle = '#3a2416'; c.fillRect(x - 0.45 * PX, yb - 2.1 * PX, 0.9 * PX, 2.1 * PX); c.fillStyle = '#d0a040'; c.fillRect(x + 0.25 * PX, yb - 1.1 * PX, 6, 6); c.fillStyle = '#ffe0a0'; c.fillRect(x - 0.3 * PX, yb - 2.0 * PX, 0.6 * PX, 0.3 * PX); } else { c.fillStyle = '#ffcf80'; c.fillRect(x - 0.3 * PX, yb - 2.0 * PX, 0.6 * PX, 0.3 * PX); } continue; }
+          if (shop && k === 1) { const sw = Math.min(cw / cols * 0.85, 2.4 * PX); c.fillStyle = emis ? '#ffd08a' : '#ffe2a8'; c.fillRect(x - sw / 2, yb - 1.9 * PX, sw, 1.4 * PX); if (!emis) { c.fillStyle = '#2a1a10'; c.fillRect(x - sw / 2 - 4, yb - 2.5 * PX, sw + 8, 0.5 * PX); c.fillStyle = '#f0e0b0'; c.font = `900 ${0.32 * PX}px DejaVu Sans`; c.textAlign = 'center'; c.fillText(shop, x, yb - 2.13 * PX); for (let a = 0; a < 6; a++) { c.fillStyle = ['#c84a3a', '#3a7ac8', '#e8c040', '#5ab05a'][a % 4]; c.fillRect(x - sw / 2 + 8 + a * sw / 6.5, yb - 0.85 * PX, sw / 9, 0.3 * PX); } } else { c.fillStyle = '#ffeab0'; c.font = `900 ${0.32 * PX}px DejaVu Sans`; c.textAlign = 'center'; c.fillText(shop, x, yb - 2.13 * PX); } continue; }
+        }
+        const on = r(1) < 0.42; if (on) lit.push(1);
+        if (!emis) { c.fillStyle = 'rgba(0,0,0,.35)'; c.fillRect(x - ww / 2 - 7, y - 7, ww + 14, wh + 16); c.fillStyle = '#efe6d6'; c.fillRect(x - ww / 2 - 5, y - 5, ww + 10, wh + 10); c.fillStyle = '#d8d0c0'; c.fillRect(x - ww / 2 - 9, y + wh + 3, ww + 18, 7); }
+        if (on) { const g2 = c.createLinearGradient(0, y, 0, y + wh); g2.addColorStop(0, emis ? '#ffc070' : '#ffd890'); g2.addColorStop(1, emis ? '#d07a30' : '#e89a50'); c.fillStyle = g2; c.fillRect(x - ww / 2, y, ww, wh);
+          const kind = r(1); c.fillStyle = emis ? '#000' : '#3a2a20';
+          if (kind < 0.3) { c.beginPath(); c.arc(x + (r(1) - .5) * ww * .4, y + wh * 0.42, ww * 0.13, 0, 7); c.fill(); c.fillRect(x - ww * 0.18 + (r(1) - .5) * 4, y + wh * 0.55, ww * 0.36, wh * 0.45); } // Mensch am Fenster
+          else if (kind < 0.55) { c.fillStyle = emis ? 'rgba(0,0,0,.6)' : 'rgba(150,60,40,.75)'; c.fillRect(x - ww / 2, y, ww * 0.28, wh); c.fillRect(x + ww / 2 - ww * 0.28, y, ww * 0.28, wh); } // Vorhänge
+          else if (kind < 0.7) { c.fillStyle = emis ? '#000' : '#2a6a2a'; c.fillRect(x - ww * 0.3, y + wh * 0.72, ww * 0.6, wh * 0.28); } // Pflanze
+        } else if (!emis) { const g2 = c.createLinearGradient(x - ww / 2, y, x + ww / 2, y + wh); g2.addColorStop(0, '#2a3450'); g2.addColorStop(0.5, '#4a5a7a'); g2.addColorStop(1, '#141a2a'); c.fillStyle = g2; c.fillRect(x - ww / 2, y, ww, wh); if (r(1) < 0.5) { c.fillStyle = '#6a4a3a'; c.fillRect(x - ww / 2 - 6, y - 4, ww * 0.38, wh + 8); c.fillRect(x + ww / 2 - ww * 0.38 + 6, y - 4, ww * 0.38, wh + 8); } }
+        if (!emis) { c.fillStyle = '#efe6d6'; c.fillRect(x - 3, y, 6, wh); c.fillRect(x - ww / 2, y + wh * 0.38, ww, 5); }
+        if (!emis && r(1) < 0.18) { c.fillStyle = '#5a3a20'; c.fillRect(x - ww / 2 - 4, y + wh + 6, ww + 8, 12); for (let a = 0; a < 5; a++) { c.fillStyle = ['#e04a5a', '#f0c040', '#ffffff'][a % 3]; c.beginPath(); c.arc(x - ww / 2 + 6 + a * ww / 4.5, y + wh + 4, 6, 0, 7); c.fill(); } }
+      }
+    };
+    const s0 = seed; const map = canvasTex(cw, ch, c => draw(c, false)); seed = s0; const em = canvasTex(cw, ch, c => draw(c, true));
+    return new THREE.MeshStandardMaterial({ map, emissive: 0xffffff, emissiveMap: em, emissiveIntensity: 1.1, roughness: 0.85 });
+  }
+  const wallM = new THREE.MeshStandardMaterial({ color: 0x6a5a50, roughness: 0.9 }), roofM = new THREE.MeshStandardMaterial({ map: roofTex, roughness: 0.7, color: 0xffffff });
+  let shopI = 0;
+  for (let i = 0; i < 20; i++) { const side = i % 2 ? 1 : -1, k = i >> 1, w = 6.4, floors = 2 + ((i * 7) % 3), h = floors * 2.6 + 0.6, z = 24 - k * 6.6;
+    const shop = (k % 2 === (side > 0 ? 0 : 1)) ? SHOP[shopI++ % SHOP.length] : null;
+    const fm = facade(w, h, floors, 1000 + i * 77, shop); const mats = [wallM, wallM, wallM, wallM, wallM, wallM]; mats[side < 0 ? 0 : 1] = fm;
+    const b = new THREE.Mesh(new THREE.BoxGeometry(5, h, w), mats); b.position.set(side * 7, h / 2, z); b.castShadow = b.receiveShadow = true; g.add(b);
+    const sh = new THREE.Shape(); sh.moveTo(-2.75, 0); sh.lineTo(2.75, 0); sh.lineTo(0, 2.2 + (i % 3) * 0.4); sh.closePath();
+    const roof = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: w + 0.3, bevelEnabled: false }), [roofM, roofM]); roof.position.set(side * 7, h, z - (w + 0.3) / 2); roof.castShadow = true; g.add(roof);
+    const ch2 = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.6, 0.5), std(0x7a3a2a)); ch2.position.set(side * 7 + (i % 2 ? 0.9 : -0.9), h + 1.4, z + 1.5); g.add(ch2); if (i % 3 === 0) smoke(g, ch2.position.x, h + 2.2, ch2.position.z); }
+  for (const sx of [-1, 1]) { const sw = new THREE.Mesh(new THREE.BoxGeometry(1.5, 0.14, 140), std(0x5a5650, { roughness: 0.9 })); sw.position.set(sx * 3.75, 0.07, 0); sw.receiveShadow = true; g.add(sw);
+    for (let z = -40; z < 30; z += 9) { const lp = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.09, 4.2, 8), std(0x151515)); lp.position.set(sx * 3.2, 2.1, z + (sx > 0 ? 4.5 : 0)); g.add(lp); const gl = new THREE.Mesh(new THREE.SphereGeometry(0.2, 10, 10), new THREE.MeshBasicMaterial({ color: 0xffc070 })); gl.position.set(sx * 3.2, 4.25, lp.position.z); g.add(gl); } }
   const lampL = new THREE.SpotLight(0xffa04a, 35, 14, 0.6, 0.6, 1.4); lampL.position.set(1.5, 5, 0); lampL.target.position.set(0, 0, 0); lampL.castShadow = true; g.add(lampL, lampL.target);
   const post = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.1, 5, 8), std(0x111111)); post.position.set(1.8, 2.5, 0); g.add(post);
   const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.08, 10, 10), new THREE.MeshBasicMaterial({ color: 0xc08a50 })); bulb.position.set(1.5, 5, 0); g.add(bulb);
@@ -457,10 +503,10 @@ const BLOCKY = {
 const chars = Object.fromEntries(Object.entries(BLOCKY).map(([n, d]) => [n, makeBlocky(n, d)]));
 // Passanten mit Regenschirmen, damit die Stadt lebt
 { const P = [[0xf2a03a, 0x35425a, 0xf0c8a0, 0x1f6fd1], [0x7a3fc4, 0x2a2a30, 0x8a5a3a, null], [0x2fb3a0, 0x5a3a2a, 0xffd0b0, 0xe03a5a], [0xe8e8e8, 0x1f2f4f, 0xc08860, null], [0xffd23a, 0x3a3a3a, 0xf0c0a0, 0x3ab04a]];
-  for (const [setName, xs] of [['uhrturm', [-3.2, 3.4, -2.6, 2.9, -3.6, 3.1]], ['strasse1989', [-3.3, 3.2, -3.0, 3.5]]]) xs.forEach((x, i) => {
+  for (const [setName, xs] of [['uhrturm', [-3.2, 3.4, -2.6, 2.9, -3.6, 3.1]], ['strasse1989', [-3.3, 3.2, -3.0, 3.5, -3.6, 3.4, -3.1, 3.0, -3.5, 3.6, -2.9, 3.3]]]) xs.forEach((x, i) => {
     const [sh, pa, sk, um] = P[i % 5]; const pd = makeBlocky('passant' + i, { skin: sk, shirt: sh, kind: 'plain', pants: pa, shoes: 0x222222, hair: [0x2a1a10, 0xd8b050, 0x101010][i % 3], umbrella: um, size: 0.9 + (i % 3) * 0.06 });
     const dir = i % 2 ? 1 : -1, speed = 1.2 + i * 0.12, g = sets[setName].g; g.add(pd);
-    onFrame(g, t => { if (i === 5 || i === 3 && setName === 'strasse1989') { pd.position.set(x, 0, -4 - i); pd.rotation.y = -Math.PI / 2 * Math.sign(x); pd.userData.animate('look', t + i); return; } const z = ((t * speed * dir + i * 13) % 50 + 50) % 50 - 30; pd.position.set(x, 0, z); pd.rotation.y = dir > 0 ? 0 : Math.PI; pd.userData.animate('walk', t + i); }); }); }
+    onFrame(g, t => { if (i === 5 && setName === 'uhrturm' || setName === 'strasse1989' && [3, 6, 7, 10].includes(i)) { pd.position.set(x, 0, setName === 'strasse1989' ? [0, 0, 0, -7, 0, 0, -12, -12.8, 0, 0, -20][i] : -4 - i); if (setName === 'strasse1989') { pd.rotation.y = i === 7 ? -Math.PI / 2 * Math.sign(x) + 2.6 : -Math.PI / 2 * Math.sign(x) + (i === 6 ? 0.6 : 0); pd.userData.animate('look', t + i); return; } pd.rotation.y = -Math.PI / 2 * Math.sign(x); pd.userData.animate('look', t + i); return; } const z = ((t * speed * dir + i * 13) % 50 + 50) % 50 - 30; pd.position.set(x, 0, z); pd.rotation.y = dir > 0 ? 0 : Math.PI; pd.userData.animate('walk', t + i); }); }); }
 Object.values(chars).forEach(c => { c.visible = false; scene.add(c); });
 
 // ---------- Kamera ----------
