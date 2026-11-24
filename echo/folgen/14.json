@@ -75,7 +75,7 @@
    "set": "stollen",
    "cam": "extreme",
    "focus": "lena",
-   "angle": 170,
+   "angle": 15,
    "chars": [
     {
      "who": "lena",
@@ -83,7 +83,7 @@
       0.3,
       -12.6
      ],
-     "face": 0,
+     "face": 15,
      "pose": "fear"
     }
    ],
@@ -239,7 +239,7 @@
    "set": "stollen",
    "cam": "close",
    "focus": "lena",
-   "angle": 165,
+   "angle": 15,
    "chars": [
     {
      "who": "lena",
@@ -247,7 +247,7 @@
       0.3,
       -12.6
      ],
-     "face": 0,
+     "face": 15,
      "pose": "stand"
     }
    ],
@@ -361,7 +361,7 @@
    "set": "stollen",
    "cam": "extreme",
    "focus": "lena",
-   "angle": 170,
+   "angle": 15,
    "chars": [
     {
      "who": "lena",
@@ -369,7 +369,7 @@
       0.3,
       -12.6
      ],
-     "face": 0,
+     "face": 15,
      "pose": "down"
     }
    ],

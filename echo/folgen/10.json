@@ -184,10 +184,10 @@
   },
   {
    "set": "strasse1989",
-   "cam": "extreme",
+   "cam": "close",
    "era": 1952,
    "focus": "maedchen",
-   "angle": 15,
+   "angle": 35,
    "chars": [
     {
      "who": "maedchen",
@@ -195,7 +195,7 @@
       -3.0,
       0.8
      ],
-     "face": 15,
+     "face": 35,
      "pose": "stand"
     }
    ],
