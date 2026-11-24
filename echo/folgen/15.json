@@ -389,10 +389,82 @@
    "lines": [
     {
      "who": "lena",
-     "text": "Mats … hier ist Lena. Es ist 2089. Und ich hab dich gefunden.",
-     "say": "Mats … hier ist Lena. Es ist zweitausendneunundachtzig. Und ich hab dich gefunden.",
-     "tone": "[whispering, warm, mysterious]",
+     "text": "Mats … hier ist Lena. Bitte … mach das Licht nicht aus.",
+     "tone": "[whispering, terrified]",
      "radio": true
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "radio",
+   "angle": 20,
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Der Uhrmacher war nie in 1952 gefangen. Er war die ganze Zeit … bei dir.",
+     "tone": "[panicked whisper, breaking]",
+     "radio": true,
+     "say": "Der Uhrmacher war nie in neunzehnhundertzweiundfünfzig gefangen. Er war die ganze Zeit … bei dir."
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 20,
+     "pose": "look"
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Das Funkgerät verstummt. Und hinter Mats … tickt etwas.",
+     "tone": "[slow, chilling whisper]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "push",
+   "focus": "uhrmacher",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 20,
+     "pose": "stand"
+    },
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0.4,
+      -3.2
+     ],
+     "face": 20,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Dreihundertdreizehn.",
+     "tone": "[deep, slow, whispering right behind]"
     }
    ]
   },
@@ -403,12 +475,12 @@
    "title": "ECHO",
    "sub": "ENDE … ODER?",
    "cut": "hard",
-   "pre": 0.6,
-   "post": 0.4,
+   "pre": 0.8,
+   "post": 0.6,
    "lines": [
     {
      "who": "erz",
-     "text": "Ende der ersten Staffel. Aber jede Schleife … hat ein Echo.",
+     "text": "Die Schleife ist nicht gebrochen. Sie hat nur … von vorn angefangen.",
      "tone": "[quiet, ominous]"
     }
    ]
