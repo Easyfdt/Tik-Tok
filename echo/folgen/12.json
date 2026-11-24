@@ -1,0 +1,446 @@
+{
+ "nr": 12,
+ "titel": "Das Unglück",
+ "beschreibung": "14. Oktober 1952, 23:13. Mats will das Unglück verhindern – und erfährt, wer das kleine Mädchen wirklich ist. ⛏️ Folge 12/15 #ECHO #mystery #horror #zeitreise #serie",
+ "shots": [
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "run"
+    }
+   ],
+   "fx": [
+    "beben"
+   ],
+   "cut": "hard",
+   "pre": 0.2,
+   "hook": "Noch 3 Minuten bis zum Unglück",
+   "stamp": "23:10 · 1952",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Alle raus! Der Stollen bricht ein!",
+     "tone": "[shouting, panicked]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 12 · DAS UNGLÜCK",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Elf Männer. Drei Minuten. Und ein Junge, der die Zukunft kennt.",
+     "tone": "[slow, tense]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "dolly",
+   "focus": "mats",
+   "angle": 160,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 180,
+     "pose": "look"
+    },
+    {
+     "who": "uhrbergmann",
+     "pos": [
+      0.3,
+      -16
+     ],
+     "face": 180,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Aber niemand glaubt einem Jungen mit einer Lampe aus dem Jahr 2026.",
+     "say": "Aber niemand glaubt einem Jungen mit einer Lampe aus dem Jahr zweitausendsechsundzwanzig.",
+     "tone": "[quiet, tense]"
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "close",
+   "focus": "maedchen",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      -0.9,
+      -1.0
+     ],
+     "face": 20,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Mats! Mein Papa ist noch da drin!",
+     "tone": "[childlike, small girl, crying, panicked]"
+    }
+   ],
+   "noScarf": true
+  },
+  {
+   "set": "hoehle",
+   "cam": "close",
+   "focus": "mats",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -0.6
+     ],
+     "face": -15,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Wie heißt du? Bitte. Jetzt.",
+     "tone": "[urgent, gentle]"
+    }
+   ],
+   "noScarf": true
+  },
+  {
+   "set": "hoehle",
+   "cam": "extreme",
+   "focus": "maedchen",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      -0.9,
+      -1.0
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Lene. Lene Berger.",
+     "tone": "[childlike, small girl, whispering]"
+    }
+   ],
+   "noScarf": true
+  },
+  {
+   "set": "hoehle",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -0.6
+     ],
+     "face": 20,
+     "pose": "fear"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Berger … Lenas Familie.",
+     "tone": "[shocked whisper]"
+    }
+   ],
+   "noScarf": true
+  },
+  {
+   "set": "leere",
+   "cam": "close",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Ihre Großmutter, Mats. Stirbt Lene heute Nacht, wird Lena nie geboren.",
+     "tone": "[calm, grave, slow]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "pov",
+   "from": -4,
+   "travel": 10,
+   "fx": [
+    "beben"
+   ],
+   "stamp": "23:12 · 1952",
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "23 Uhr 12. Mats rennt zurück in den Berg.",
+     "say": "Dreiundzwanzig Uhr zwölf. Mats rennt zurück in den Berg.",
+     "tone": "[urgent, tense]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": -20,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": -20,
+     "pose": "reach"
+    }
+   ],
+   "fx": [
+    "beben"
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Der Stützbalken! Wenn ich ihn festhalte …",
+     "tone": "[straining, breathless]"
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "crane",
+   "focus": "clock",
+   "fx": [
+    "fog"
+   ],
+   "trans": "clock",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Ein Grubenbalken aus Fichte trägt bis zu zwanzig Tonnen. Dieser trägt nichts mehr.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "fear"
+    }
+   ],
+   "fx": [
+    "beben"
+   ],
+   "stamp": "23:13 · 1952",
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Mats zieht. Der Balken gibt nach. Er selbst löst das Unglück aus.",
+     "tone": "[whispering, horrified]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "close",
+   "black": true,
+   "cut": "hard",
+   "min": 2.0,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Dann: Dunkelheit.",
+     "tone": "[whispering]"
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "close",
+   "focus": "maedchen",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      -0.9,
+      -1.0
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Mats? … Mats!",
+     "tone": "[childlike, small girl, crying, shouting]"
+    }
+   ],
+   "noScarf": true
+  },
+  {
+   "set": "leere",
+   "cam": "close",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Jetzt weißt du, warum ich es nie verhindern konnte.",
+     "tone": "[whispering, slow, sad]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 20,
+     "pose": "reach"
+    }
+   ],
+   "stamp": "23:14 · 1989",
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats? Ich bin noch da. Ich bin noch da!",
+     "tone": "[relieved, crying, shouting]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 10,
+     "pose": "down"
+    }
+   ],
+   "fx": [
+    "dark"
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Lena … ich bin unter dem Berg.",
+     "tone": "[weak, whispering, scared]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "title": "ECHO",
+   "sub": "FOLGE 13 – MORGEN",
+   "cut": "hard",
+   "pre": 0.6,
+   "post": 0.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Kommt Mats je wieder raus? Folge dreizehn – morgen. Denn unter dem Berg …",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
+ ]
+}

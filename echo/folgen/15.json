@@ -1,0 +1,417 @@
+{
+ "nr": 15,
+ "titel": "23:14",
+ "beschreibung": "Das Finale. Zum ersten Mal schlägt die Uhr 23:14. Doch die Geschichte ist noch nicht vorbei … 🕰️ Folge 15/15 #ECHO #mystery #finale #zeitreise #serie",
+ "shots": [
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "lena",
+   "angle": 170,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -12.6
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "pre": 0.2,
+   "hook": "Zum ersten Mal: 23:14",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Ich bleibe, Mats.",
+     "tone": "[quiet, calm, certain]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 15 · 23:14",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Manche Schleifen bricht man nicht mit Mut. Sondern mit Abschied.",
+     "tone": "[slow, emotional]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "reach"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Nein! Lena, nicht!",
+     "tone": "[shouting, desperate]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 165,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -12.6
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Lene braucht jemanden. 1952. Jemanden, der weiß, was kommt.",
+     "say": "Lene braucht jemanden. Neunzehnhundertzweiundfünfzig. Jemanden, der weiß, was kommt.",
+     "tone": "[gentle, firm]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 175,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -12.6
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Ich pass auf sie auf. Auf deine Zukunft. Und auf meine.",
+     "tone": "[soft, emotional]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "altmats",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "altmats",
+     "pos": [
+      0.3,
+      -15
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "altmats",
+     "text": "Das hat sie in keinem der 312 Male gesagt.",
+     "say": "Das hat sie in keinem der dreihundertzwölf Male gesagt.",
+     "tone": "[old man, amazed whisper]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Ich will dich nicht noch mal verlieren.",
+     "tone": "[crying, whispering]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 170,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -12.6
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Du verlierst mich nicht. Du findest mich. Nur … später.",
+     "tone": "[soft, smiling through tears]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "dolly",
+   "focus": "lena",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -14
+     ],
+     "face": 180,
+     "pose": "walk"
+    },
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 180,
+     "pose": "look"
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Lena geht ins blaue Licht. Und diesmal folgt ihr niemand.",
+     "tone": "[slow, emotional]"
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "close",
+   "focus": "clock",
+   "stamp": "23:14",
+   "trans": "clock",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Dann passiert es. Zum ersten Mal seit 1952 springt der Zeiger weiter.",
+     "say": "Dann passiert es. Zum ersten Mal seit neunzehnhundertzweiundfünfzig springt der Zeiger weiter.",
+     "tone": "[awed, slow]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "altmats",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "altmats",
+     "pos": [
+      0.3,
+      -15
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "altmats",
+     "text": "Danke, Lena.",
+     "tone": "[old man, whispering, peaceful]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "dolly",
+   "angle": 40,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 180,
+     "pose": "stand"
+    }
+   ],
+   "stamp": "07:00 · 2026",
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Mats wacht in seinem Zimmer auf. Es ist Morgen. Die Uhr läuft.",
+     "tone": "[soft, calm]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 20,
+     "pose": "look"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Lena …?",
+     "tone": "[confused, whispering]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "wide",
+   "focus": "mats",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 180,
+     "pose": "look"
+    }
+   ],
+   "trans": "wipe",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Keine Vermisstenplakate. Niemand in Grauwald kennt eine Lena Berger.",
+     "tone": "[quiet, unsettling]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 25,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 25,
+     "pose": "down"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Als hätte es sie nie gegeben.",
+     "tone": "[sad whisper]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "radio",
+   "angle": 20,
+   "stamp": "23:14 · 2026",
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Dann, um 23 Uhr 14, rauscht das alte Funkgerät.",
+     "say": "Dann, um dreiundzwanzig Uhr vierzehn, rauscht das alte Funkgerät.",
+     "tone": "[whispering, tense]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "radio",
+   "angle": -20,
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats … hier ist Lena. Es ist 2089. Und ich hab dich gefunden.",
+     "say": "Mats … hier ist Lena. Es ist zweitausendneunundachtzig. Und ich hab dich gefunden.",
+     "tone": "[whispering, warm, mysterious]",
+     "radio": true
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "title": "ECHO",
+   "sub": "ENDE … ODER?",
+   "cut": "hard",
+   "pre": 0.6,
+   "post": 0.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Ende der ersten Staffel. Aber jede Schleife … hat ein Echo.",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
+ ]
+}

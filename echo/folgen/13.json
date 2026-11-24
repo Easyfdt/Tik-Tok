@@ -1,0 +1,452 @@
+{
+ "nr": 13,
+ "titel": "Rückweg",
+ "beschreibung": "Zwischen den Zeiten treffen sich Mats und Lena endlich wieder. Doch nur einer kann zurück. Und der Uhrmacher hebt die Hand zum Hut. 🎩 Folge 13/15 #ECHO #mystery #horror #zeitreise #serie",
+ "shots": [
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "down"
+    }
+   ],
+   "cut": "hard",
+   "pre": 0.2,
+   "hook": "Zwischen den Zeiten – endlich",
+   "stamp": "--:-- · ----",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Unter dem Berg gibt es keine Zeit. Nur blaues Licht.",
+     "tone": "[slow, awed, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 13 · RÜCKWEG",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Und eine Stimme, die er seit Wochen sucht.",
+     "tone": "[quiet, hopeful, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "dolly",
+   "focus": "lena",
+   "angle": 180,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.6,
+      -13.5
+     ],
+     "face": 0,
+     "pose": "walk"
+    },
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 180,
+     "pose": "look"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats?",
+     "tone": "[whispering, hopeful]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Lena … bist du echt?",
+     "tone": "[emotional, whispering]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 165,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.6,
+      -13.5
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Ich hab mich durch das Funkgerät gezogen. Wie durch eine Tür.",
+     "tone": "[breathless, emotional]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "orbit",
+   "focus": "mats",
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 180,
+     "pose": "stand"
+    },
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -12.6
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Zum ersten Mal seit jener Nacht stehen sie sich gegenüber.",
+     "tone": "[soft, slow]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "reach"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Wir gehen zusammen zurück. Jetzt.",
+     "tone": "[determined]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "push",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Hast du die Regel vergessen, Mats? Nur einer kommt zurück.",
+     "tone": "[calm, menacing, slow]"
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "crane",
+   "focus": "clock",
+   "fx": [
+    "fog"
+   ],
+   "trans": "clock",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Bis zum Ausgang sind es 312 Schritte. Genug für einen Menschen.",
+     "say": "Bis zum Ausgang sind es dreihundertzwölf Schritte. Genug für einen Menschen.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 165,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -12.6
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Dann gehst du. Du hast ein Leben da draußen.",
+     "tone": "[sad, firm]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": -15,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Ohne dich nicht. Ich bleibe.",
+     "tone": "[emotional, stubborn]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "lena",
+   "angle": 170,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -12.6
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Nein, Mats. Diesmal entscheide ich.",
+     "tone": "[quiet, determined]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "dolly",
+   "focus": "uhrmacher",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": 0,
+     "pose": "stand"
+    },
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 180,
+     "pose": "fear"
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Da tritt der Uhrmacher zwischen sie.",
+     "tone": "[slow, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "uhrmacher",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Das habt ihr schon 312 Mal gesagt. Beide.",
+     "say": "Das habt ihr schon dreihundertzwölf Mal gesagt. Beide.",
+     "tone": "[whispering, slow, tired]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Wer bist du? Zeig mir endlich dein Gesicht!",
+     "tone": "[angry, shouting]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "push",
+   "focus": "uhrmacher",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Langsam hebt der Uhrmacher die Hand zum Hut.",
+     "tone": "[whispering, slow, tense]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "extreme",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Bist du sicher, dass du es sehen willst?",
+     "tone": "[whispering, slow, menacing]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "title": "ECHO",
+   "sub": "FOLGE 14 – MORGEN",
+   "cut": "hard",
+   "pre": 0.6,
+   "post": 0.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Wer ist der Uhrmacher? Folge vierzehn – morgen. Denn unter dem Hut …",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
+ ]
+}

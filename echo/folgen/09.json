@@ -1,0 +1,411 @@
+{
+ "nr": 9,
+ "titel": "Die andere Seite",
+ "beschreibung": "Lena verschwindet Stück für Stück. Sie baut eine Brücke durch die Zeit – nach einer Anleitung in Mats' Handschrift. 📻 Folge 9/15 #ECHO #mystery #horror #zeitreise #serie",
+ "shots": [
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 20,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "pre": 0.2,
+   "hook": "Lena verschwindet – Stück für Stück",
+   "stamp": "23:20 · 1989",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Jakob, sieh mich an. Bin ich noch da?",
+     "tone": "[scared, urgent whisper]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 9 · DIE ANDERE SEITE",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "1989. Im Haus der Familie Keller.",
+     "say": "Neunzehnhundertneunundachtzig. Im Haus der Familie Keller.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "jakob",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "jakob",
+     "pos": [
+      -1.0,
+      -0.4
+     ],
+     "face": -15,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "jakob",
+     "text": "Du bist … durchsichtig. An den Rändern.",
+     "tone": "[shocked whisper]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 25,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 25,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Dann muss ich mich beeilen.",
+     "tone": "[determined, quiet]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "dolly",
+   "focus": "radio",
+   "angle": -25,
+   "trans": "wipe",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Auf dem Tisch: Kabel, Röhren und ein kaputtes Funkgerät.",
+     "tone": "[quiet, tense]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "jakob",
+   "angle": -20,
+   "chars": [
+    {
+     "who": "jakob",
+     "pos": [
+      -1.0,
+      -0.4
+     ],
+     "face": -20,
+     "pose": "look"
+    }
+   ],
+   "lines": [
+    {
+     "who": "jakob",
+     "text": "Was baust du da?",
+     "tone": "[suspicious]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "lena",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Eine Brücke. Zu Mats.",
+     "tone": "[whispering, determined]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "dolly",
+   "diary": {
+    "title": "Bauanleitung",
+    "text": "Röhre 3 an Spule B. Frequenz 23,13. Und Lena: Hab keine Angst.",
+    "red": true
+   },
+   "punch": false,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Unter dem Gerät liegt ein Zettel. Eine Bauanleitung.",
+     "tone": "[slow, tense]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "lena",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 20,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Das ist … Mats' Handschrift.",
+     "tone": "[shocked, horrified whisper]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "push",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Natürlich ist es seine. Wer, glaubst du, hat sie dir hingelegt?",
+     "tone": "[calm, menacing, slow]"
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "crane",
+   "focus": "clock",
+   "fx": [
+    "fog"
+   ],
+   "trans": "clock",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Ein Funkgerät von 1989 sendet etwa fünfzig Kilometer weit. Dieses sendet 37 Jahre.",
+     "say": "Ein Funkgerät von neunzehnhundertneunundachtzig sendet etwa fünfzig Kilometer weit. Dieses sendet siebenunddreißig Jahre.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "radio",
+   "angle": 20,
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats? Hörst du mich? Hier ist Lena!",
+     "tone": "[urgent, hopeful]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "reach"
+    }
+   ],
+   "stamp": "1952",
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Lena?! Ich hör dich! Wo bist du?",
+     "tone": "[shouting, relieved, desperate]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 20,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Im Haus deines Großvaters. Mats … ich hab das Funkgerät gebaut. Ich war es. Von Anfang an.",
+     "tone": "[emotional, shocked, whispering]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "jakob",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "jakob",
+     "pos": [
+      -1.0,
+      -0.4
+     ],
+     "face": -15,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "jakob",
+     "text": "Lena … hinter dir.",
+     "tone": "[terrified whisper]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "dolly",
+   "focus": "lena",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 180,
+     "pose": "look"
+    },
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0.6,
+      -2.6
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Im Spiegel steht ein Mann mit Hut. Aber im Zimmer ist niemand.",
+     "tone": "[slow, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "extreme",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Du hast die Brücke gebaut, Lena. Jetzt kann ich sie überqueren.",
+     "tone": "[whispering, slow, menacing, pleased]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "title": "ECHO",
+   "sub": "FOLGE 10 – MORGEN",
+   "cut": "hard",
+   "pre": 0.6,
+   "post": 0.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Was hat Lena da gebaut? Folge zehn – morgen. Denn jede Brücke …",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
+ ]
+}

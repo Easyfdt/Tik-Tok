@@ -505,6 +505,7 @@ function makeBlocky(name, d) {
   return g;
 }
 const BLOCKY = {
+  altmats: { skin: 0xd8a888, shirt: 0x2a2a30, kind: 'coat', pants: 0x1a1a1e, shoes: 0x0a0a0a, coat: true, beanie: 0x8a8a8a, size: 1.05 },
   maedchen: { skin: 0xf2c9a8, shirt: 0x4a5a7a, kind: 'jacket', pants: 0x3a3a44, shoes: 0x2a1a10, hair: 0x5a3220, pony: true, long: true, scarf: 0xd01818, size: 0.62 },
   lena: { skin: 0xf2c9a8, shirt: 0xd62a2a, kind: 'jacket', pants: 0x2f4f8f, shoes: 0xf2f2f2, hair: 0x5a3220, pony: true, long: true, scarf: 0xf2c230, size: 0.92 },
   mats: { skin: 0xe8b48e, shirt: 0x3f8f4a, kind: 'parka', pants: 0x3a3f4a, shoes: 0x6a4424, beanie: 0x2b5fb8, lamp: true },
@@ -561,6 +562,7 @@ function placeCamera(shot, lt, p, t) {
     camera.position.set(tgt.x + Math.sin(az) * dist, tgt.y + height, tgt.z + Math.cos(az) * dist);
     camera.lookAt(tgt);
   }
+  if ((shot.fx || []).includes('beben')) { camera.position.x += Math.sin(t * 37) * 0.04; camera.position.y += Math.sin(t * 29 + 1) * 0.03; }
   // Jump-Cut-Punch-Ins alle ~2,5 s innerhalb langer Shots (Abwechslung für die Zuschauer-Bindung)
   if (cam !== 'pov' && shot.punch !== false && (shot.t1 - shot.t0) > 3.2) {
     const seg = Math.floor(lt / 2.5), k = [1, 0.8, 1.12, 0.88][seg % 4];
@@ -579,7 +581,7 @@ function placeCamera(shot, lt, p, t) {
 const out = document.getElementById('out').getContext('2d');
 const grain = document.createElement('canvas'); grain.width = grain.height = 256;
 { const g = grain.getContext('2d'), d = g.createImageData(256, 256); for (let i = 0; i < d.data.length; i += 4) { const v = rnd() * 255; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; } g.putImageData(d, 0, 0); }
-const SPK = { lena: ['LENA', '#ff6b6b'], mats: ['MATS', '#8fd18a'], jakob: ['JAKOB', '#7fb2ff'], maedchen: ['DAS MÄDCHEN', '#ff4a4a'], uhrmacher: ['DER UHRMACHER', '#ffd27a'], erz: [null, '#ffffff'] };
+const SPK = { lena: ['LENA', '#ff6b6b'], mats: ['MATS', '#8fd18a'], jakob: ['JAKOB', '#7fb2ff'], maedchen: ['DAS MÄDCHEN', '#ff4a4a'], altmats: ['DER ALTE MATS', '#c0c0c0'], stimme: ['STIMME AUS 2063', '#9fd0ff'], uhrmacher: ['DER UHRMACHER', '#ffd27a'], erz: [null, '#ffffff'] };
 function wrap(text, maxW) { const words = text.split(' '), lines = []; let l = ''; for (const w of words) { const t = l ? l + ' ' + w : w; if (out.measureText(t).width > maxW && l) { lines.push(l); l = w; } else l = t; } lines.push(l); return lines; }
 function subtitle(s, t) {
   const p = (t - s.t0) / (s.t1 - s.t0), a = Math.min(1, (t - s.t0) / 0.15, (s.t1 - t) / 0.15);

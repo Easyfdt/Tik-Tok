@@ -1,0 +1,391 @@
+{
+ "nr": 11,
+ "titel": "2063",
+ "beschreibung": "Die Stimme aus 2063 hat es schon 312 Mal versucht. Und Mats findet die Striche an der Stollenwand. 🕳️ Folge 11/15 #ECHO #mystery #horror #zeitreise #serie",
+ "shots": [
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "radio",
+   "angle": 20,
+   "cut": "hard",
+   "pre": 0.2,
+   "hook": "Eine Stimme aus dem Jahr 2063",
+   "stamp": "23:14 · 1989",
+   "lines": [
+    {
+     "who": "stimme",
+     "text": "Lena. Jedes Mal, wenn ihr euch retten wollt, wird es schlimmer.",
+     "tone": "[old man, slow, tired, ominous]",
+     "radio": true
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 11 · 2063",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Das Funkgerät empfängt die Zukunft.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 20,
+     "pose": "fear"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Woher weißt du das?",
+     "tone": "[scared, suspicious]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "radio",
+   "angle": -20,
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "stimme",
+     "text": "Weil ich es versucht habe. Wieder. Und wieder.",
+     "tone": "[old man, broken, whispering]",
+     "radio": true
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "close",
+   "black": true,
+   "min": 2.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Hinter der Stimme hört Lena ein Ticken. Hunderte Uhren.",
+     "tone": "[whispering, creepy]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "lena",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 15,
+     "pose": "fear"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Wie oft, Mats? Wie oft hast du es versucht?",
+     "tone": "[trembling whisper]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "radio",
+   "angle": 20,
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "stimme",
+     "text": "Dreihundertzwölf Mal.",
+     "tone": "[old man, long pause, whispering]",
+     "radio": true
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "dolly",
+   "focus": "mats",
+   "angle": 150,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 180,
+     "pose": "reach"
+    }
+   ],
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Zur selben Zeit, 1952, findet Mats Kratzer an der Stollenwand.",
+     "say": "Zur selben Zeit, neunzehnhundertzweiundfünfzig, findet Mats Kratzer an der Stollenwand.",
+     "tone": "[slow, tense]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "dolly",
+   "diary": {
+    "title": "Stollenwand",
+    "text": "|||| |||| |||| |||| |||| …  312",
+    "red": true
+   },
+   "punch": false,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Striche. Hunderte. Und daneben eine Zahl: 312.",
+     "say": "Striche. Hunderte. Und daneben eine Zahl: dreihundertzwölf.",
+     "tone": "[whispering, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Das … das ist meine Schrift.",
+     "tone": "[horrified whisper]"
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "crane",
+   "focus": "clock",
+   "fx": [
+    "fog"
+   ],
+   "trans": "clock",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "312 Nächte. Immer dieselbe Minute. Immer dasselbe Ende.",
+     "say": "Dreihundertzwölf Nächte. Immer dieselbe Minute. Immer dasselbe Ende.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "close",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Jetzt weißt du, warum ich keinen Namen mehr habe.",
+     "tone": "[whispering, slow, sad, menacing]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "lena",
+   "angle": -20,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": -20,
+     "pose": "fear"
+    }
+   ],
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Was passiert beim 313. Mal?",
+     "say": "Was passiert beim dreihundertdreizehnten Mal?",
+     "tone": "[scared whisper]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "radio",
+   "angle": 15,
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "stimme",
+     "text": "Beim 313. Mal … verschwindest du ganz, Lena. Und ich mit dir.",
+     "say": "Beim dreihundertdreizehnten Mal … verschwindest du ganz, Lena. Und ich mit dir.",
+     "tone": "[old man, whispering, grave]",
+     "radio": true
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "close",
+   "focus": "maedchen",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      -0.9,
+      -1.0
+     ],
+     "face": 20,
+     "pose": "stand"
+    },
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -0.6
+     ],
+     "face": -60,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "trans": "slide",
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Morgen Nacht ist das 313. Mal, Mats.",
+     "say": "Morgen Nacht ist das dreihundertdreizehnte Mal, Mats.",
+     "tone": "[childlike, small girl, whispering, eerie]"
+    }
+   ],
+   "noScarf": true
+  },
+  {
+   "set": "hoehle",
+   "cam": "close",
+   "focus": "mats",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -0.6
+     ],
+     "face": -15,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Dann mach ich es diesmal anders.",
+     "tone": "[determined, stubborn]"
+    }
+   ],
+   "noScarf": true
+  },
+  {
+   "set": "leere",
+   "cam": "extreme",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Das hab ich auch jedes Mal gesagt.",
+     "tone": "[whispering, slow, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "title": "ECHO",
+   "sub": "FOLGE 12 – MORGEN",
+   "cut": "hard",
+   "pre": 0.6,
+   "post": 0.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Kann Mats die Schleife brechen? Folge zwölf – morgen. Denn beim 313. Mal …",
+     "say": "Kann Mats die Schleife brechen? Folge zwölf – morgen. Denn beim dreihundertdreizehnten Mal …",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
+ ]
+}

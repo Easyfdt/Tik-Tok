@@ -1,0 +1,413 @@
+{
+ "nr": 8,
+ "titel": "Zahnräder",
+ "beschreibung": "Hunderte Uhren. Jede trägt einen Namen. Und Lenas Uhr läuft rückwärts. ⏳ Folge 8/15 #ECHO #mystery #horror #zeitreise #serie",
+ "shots": [
+  {
+   "set": "leere",
+   "cam": "close",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "hook": "Hunderte Uhren. Jede trägt einen Namen",
+   "stamp": "??:?? · ????",
+   "pre": 0.2,
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Willkommen in meiner Werkstatt, Mats.",
+     "tone": "[slow, whispering, menacing]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 8 · ZAHNRÄDER",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Hier tickt jede Stunde, die Grauwald je verloren hat.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "pov",
+   "from": -6,
+   "travel": 12,
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Der Mann ohne Gesicht führt ihn tiefer, als der Stollen reicht.",
+     "tone": "[quiet, tense]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "wide",
+   "focus": "mats",
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      1.5
+     ],
+     "face": 180,
+     "pose": "look"
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Hunderte Uhren. Und alle zeigen 23 Uhr 13.",
+     "say": "Hunderte Uhren. Und alle zeigen dreiundzwanzig Uhr dreizehn.",
+     "tone": "[whispering, creepy]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      1.5
+     ],
+     "face": 20,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Was ist das hier?",
+     "tone": "[scared whisper]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "push",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Jede Uhr gehört einem Menschen. Bleibt sie stehen, ist seine Zeit vorbei.",
+     "tone": "[calm, menacing, slow]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "diary": {
+    "title": "Uhr Nr. 1989",
+    "text": "LENA BERGER",
+    "red": true
+   },
+   "punch": false,
+   "trans": "wipe",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Auf einer steht ein Name, den er kennt.",
+     "tone": "[slow, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      1.5
+     ],
+     "face": 15,
+     "pose": "fear"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Lena …",
+     "tone": "[horrified whisper]"
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      -1.0,
+      -1.2
+     ],
+     "face": 15,
+     "pose": "fear"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "trans": "flash",
+   "stamp": "23:16 · 1989",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats? Ich höre so ein Ticken. In meinem Kopf.",
+     "tone": "[scared whisper, trembling]"
+    }
+   ],
+   "noScarf": true
+  },
+  {
+   "set": "uhrturm",
+   "cam": "crane",
+   "focus": "clock",
+   "fx": [
+    "fog"
+   ],
+   "trans": "clock",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Seit 1952 bleibt Grauwalds Turmuhr jede Nacht um 23 Uhr 13 stehen. Über 27.000 Mal.",
+     "say": "Seit neunzehnhundertzweiundfünfzig bleibt Grauwalds Turmuhr jede Nacht um dreiundzwanzig Uhr dreizehn stehen. Über siebenundzwanzigtausend Mal.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "close",
+   "focus": "mats",
+   "angle": -20,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      1.5
+     ],
+     "face": -20,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Und meine? Wo ist meine Uhr?",
+     "tone": "[urgent, scared]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "extreme",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Deine Uhr, Mats … habe ich nie gefunden.",
+     "tone": "[whispering, slow, sad, menacing]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "close",
+   "focus": "maedchen",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      1.2,
+      0.5
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Er lügt, Mats. Er trägt sie in seiner Brust.",
+     "tone": "[childlike, small girl, whispering, eerie]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      1.5
+     ],
+     "face": 20,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Was … was soll das heißen?",
+     "tone": "[terrified whisper]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "diary": {
+    "title": "LENA BERGER",
+    "text": "23:13 … 23:12 … 23:11 …",
+    "red": true
+   },
+   "punch": false,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Dann beginnt Lenas Uhr zu laufen. Rückwärts.",
+     "tone": "[slow, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "extreme",
+   "focus": "lena",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      -1.0,
+      -1.2
+     ],
+     "face": 10,
+     "pose": "fear"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats … ich kann meine Hände nicht mehr sehen.",
+     "tone": "[terrified, breaking whisper]"
+    }
+   ],
+   "noScarf": true
+  },
+  {
+   "set": "leere",
+   "cam": "extreme",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Erreicht sie null, Mats, dann hat es Lena nie gegeben.",
+     "tone": "[whispering, slow, menacing]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "title": "ECHO",
+   "sub": "FOLGE 9 – MORGEN",
+   "cut": "hard",
+   "pre": 0.6,
+   "post": 0.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Wie lange hat Lena noch? Folge neun – morgen. Denn die Zeit läuft rückwärts …",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
+ ]
+}

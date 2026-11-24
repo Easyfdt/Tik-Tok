@@ -1,0 +1,428 @@
+{
+ "nr": 14,
+ "titel": "Das Gesicht",
+ "beschreibung": "Der Uhrmacher nimmt den Hut ab. Darunter ist ein Gesicht, das Mats jeden Tag im Spiegel sieht. 🎩 Folge 14/15 #ECHO #mystery #horror #zeitreise #serie",
+ "shots": [
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "uhrmacher",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "pre": 0.2,
+   "hook": "Das Gesicht unter dem Hut",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Der Uhrmacher nimmt den Hut ab.",
+     "tone": "[slow, whispering]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 14 · DAS GESICHT",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Und das Ziffernblatt zerfällt zu Staub.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "push",
+   "focus": "altmats",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "altmats",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Darunter: ein Gesicht. Alt. Müde. Vertraut.",
+     "tone": "[slow, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "lena",
+   "angle": 170,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -12.6
+     ],
+     "face": 0,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats …?",
+     "tone": "[shocked whisper]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Das … bin ich.",
+     "tone": "[horrified whisper]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "altmats",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "altmats",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "altmats",
+     "text": "Ich war siebzehn, als ich zum ersten Mal hier stand. So wie du.",
+     "tone": "[old man, tired, gentle]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "altmats",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "altmats",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": -15,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "altmats",
+     "text": "Ich hab Lena gerettet. Und sie damit verloren. Wieder und wieder.",
+     "tone": "[old man, sad, whispering]"
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "crane",
+   "focus": "clock",
+   "fx": [
+    "fog"
+   ],
+   "trans": "clock",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "312 Versuche. 312 Mal dieselbe Nacht. Für ihn war es ein ganzes Leben.",
+     "say": "Dreihundertzwölf Versuche. Dreihundertzwölf Mal dieselbe Nacht. Für ihn war es ein ganzes Leben.",
+     "tone": "[slow, sad]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Warum hast du uns Angst gemacht? All die Rätsel?",
+     "tone": "[angry, confused]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "altmats",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "altmats",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "altmats",
+     "text": "Weil du nur auf Angst hörst, Mats. Ich kenne dich. Ich bin du.",
+     "tone": "[old man, calm, sad smile]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 165,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -12.6
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Und wie hört das auf?",
+     "tone": "[quiet, scared]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "altmats",
+   "angle": -10,
+   "chars": [
+    {
+     "who": "altmats",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": -10,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "altmats",
+     "text": "Die Schleife beginnt, weil Mats Lena retten will. Immer.",
+     "tone": "[old man, slow, grave]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "altmats",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "altmats",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "lines": [
+    {
+     "who": "altmats",
+     "text": "Sie endet nur, wenn jemand freiwillig bleibt. Nicht gezwungen. Freiwillig.",
+     "tone": "[old man, whispering, intense]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": -15,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Dann bleib du! Du hast es verdient!",
+     "tone": "[shouting, desperate]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "altmats",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "altmats",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "altmats",
+     "text": "Ich bin schon geblieben, Mats. Ich bin der Stollen.",
+     "tone": "[old man, whispering, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "lena",
+   "angle": 170,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.3,
+      -12.6
+     ],
+     "face": 0,
+     "pose": "down"
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Lena sieht auf ihre Hände. Sie werden wieder durchsichtig.",
+     "tone": "[whispering, tense]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "extreme",
+   "focus": "altmats",
+   "angle": -10,
+   "chars": [
+    {
+     "who": "altmats",
+     "pos": [
+      0.3,
+      -14.5
+     ],
+     "face": -10,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "altmats",
+     "text": "Diesmal machen wir es anders, Lena.",
+     "tone": "[old man, soft, determined]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "title": "ECHO",
+   "sub": "FINALE – MORGEN",
+   "cut": "hard",
+   "pre": 0.6,
+   "post": 0.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Wer bleibt freiwillig zurück? Das große Finale – morgen. Denn um 23 Uhr 14 …",
+     "say": "Wer bleibt freiwillig zurück? Das große Finale – morgen. Denn um dreiundzwanzig Uhr vierzehn …",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
+ ]
+}

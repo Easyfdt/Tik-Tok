@@ -1,0 +1,379 @@
+{
+ "nr": 10,
+ "titel": "Stille",
+ "beschreibung": "Zum ersten Mal schweigt das Funkgerät um 23:13. Dann meldet sich eine Stimme – aus dem Jahr 2063. 📻 Folge 10/15 #ECHO #mystery #horror #zeitreise #serie",
+ "shots": [
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "radio",
+   "angle": 20,
+   "cut": "hard",
+   "pre": 0.2,
+   "hook": "Zum ersten Mal: völlige Stille",
+   "stamp": "23:13 · 1989",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "23 Uhr 13. Und zum ersten Mal bleibt das Funkgerät stumm.",
+     "say": "Dreiundzwanzig Uhr dreizehn. Und zum ersten Mal bleibt das Funkgerät stumm.",
+     "tone": "[slow, tense]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 10 · STILLE",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Kein Rauschen. Nicht einmal das.",
+     "tone": "[whispering, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 20,
+     "pose": "fear"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats? … Mats, bitte!",
+     "tone": "[desperate, scared]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": -15,
+     "pose": "fear"
+    }
+   ],
+   "stamp": "23:13 · 1952",
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Lena! Lena, antworte!",
+     "tone": "[shouting, desperate]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "push",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0,
+     "pose": "stand"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Hörst du das, Mats? So klingt eine Zeit, die es nicht mehr gibt.",
+     "tone": "[whispering, slow, menacing]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "vogel",
+   "era": 1952,
+   "fx": [
+    "fog"
+   ],
+   "trans": "wipe",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "In beiden Zeiten bleiben die Uhren stehen. Und diesmal läuft keine weiter.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "close",
+   "era": 1952,
+   "focus": "maedchen",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      -3.0,
+      0.8
+     ],
+     "face": 20,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Jetzt ist er ganz nah.",
+     "tone": "[childlike, small girl, whispering, scared]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "close",
+   "era": 1952,
+   "focus": "mats",
+   "angle": 25,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 25,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Wer? Der Uhrmacher?",
+     "tone": "[scared whisper]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "cam": "extreme",
+   "era": 1952,
+   "focus": "maedchen",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      -3.0,
+      0.8
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Nein. Der andere.",
+     "tone": "[childlike, small girl, whispering, terrified]"
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "crane",
+   "focus": "clock",
+   "fx": [
+    "fog"
+   ],
+   "trans": "clock",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Ein leeres Bergwerk misst zehn Dezibel. Leiser als dein eigener Herzschlag.",
+     "tone": "[whispering, slow]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "lena",
+   "angle": -20,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": -20,
+     "pose": "look"
+    }
+   ],
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Jakob? Jakob, wo bist du?",
+     "tone": "[scared, calling out]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "dolly",
+   "angle": 40,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Das Haus ist leer. Als hätte hier nie jemand gewohnt.",
+     "tone": "[slow, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "lena",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 15,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Was passiert hier?",
+     "tone": "[terrified whisper]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "radio",
+   "angle": -20,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Dann knackt das Funkgerät.",
+     "tone": "[whispering, tense]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "radio",
+   "angle": 25,
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "stimme",
+     "text": "Hier spricht Mats. Mats Keller. Es ist das Jahr 2063.",
+     "say": "Hier spricht Mats. Mats Keller. Es ist das Jahr zweitausenddreiundsechzig.",
+     "tone": "[old man, tired, slow, quiet]",
+     "radio": true
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      0.4,
+      -1.4
+     ],
+     "face": 20,
+     "pose": "fear"
+    }
+   ],
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats …? Deine Stimme … sie klingt so alt.",
+     "tone": "[shocked, trembling whisper]"
+    }
+   ]
+  },
+  {
+   "set": "zimmer",
+   "cam": "extreme",
+   "focus": "radio",
+   "angle": 15,
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "stimme",
+     "text": "Lena, hör mir genau zu. Rette mich nicht. Egal, was ich sage.",
+     "tone": "[old man, urgent, whispering]",
+     "radio": true
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "title": "ECHO",
+   "sub": "FOLGE 11 – MORGEN",
+   "cut": "hard",
+   "pre": 0.6,
+   "post": 0.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Wer spricht aus dem Jahr 2063? Folge elf – morgen. Denn manche Stimmen …",
+     "say": "Wer spricht aus dem Jahr zweitausenddreiundsechzig? Folge elf – morgen. Denn manche Stimmen …",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
+ ]
+}
