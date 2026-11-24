@@ -3,59 +3,498 @@
  "titel": "1952",
  "beschreibung": "Grauwald, 1952. Das Dorf baut sich vor Mats' Augen zusammen – und heute Nacht stürzt Stollen drei ein. ⛏️ Folge 7/15 #ECHO #mystery #horror #zeitreise #serie",
  "shots": [
-  { "set": "strasse1989", "era": 1952, "build": true, "cam": "wide", "focus": "mats", "angle": 0, "chars": [ { "who": "mats", "pos": [-3.7, 2.4], "face": 180, "pose": "look" } ], "fx": ["fog"], "cut": "hard", "pre": 0.2, "min": 6,
-    "hook": "Die Zeit baut ein ganzes Dorf zusammen", "stamp": "06:52 · 1952",
-    "lines": [ { "who": "erz", "text": "1952. Und Grauwald setzt sich vor seinen Augen zusammen.", "say": "Neunzehnhundertzweiundfünfzig. Und Grauwald setzt sich vor seinen Augen zusammen.", "tone": "[slow, awed, ominous]" } ] },
-
-  { "set": "leere", "cam": "dolly", "fx": ["dream"], "title": "ECHO", "sub": "FOLGE 7 · 1952", "pre": 0.6,
-    "lines": [ { "who": "erz", "text": "Block für Block. Haus für Haus.", "tone": "[slow, ominous]" } ] },
-
-  { "set": "strasse1989", "era": 1952, "cam": "close", "focus": "maedchen", "angle": 20, "chars": [ { "who": "maedchen", "pos": [-3.0, 0.8], "face": 20, "pose": "stand" }, { "who": "mats", "pos": [-3.7, 2.4], "face": 160, "pose": "stand" } ], "fx": ["fog"], "trans": "flash",
-    "lines": [ { "who": "maedchen", "text": "Du hast lange gebraucht, Mats.", "tone": "[childlike, small girl, calm, eerie]" } ] },
-
-  { "set": "strasse1989", "era": 1952, "cam": "close", "focus": "mats", "angle": 25, "chars": [ { "who": "mats", "pos": [-3.7, 2.4], "face": 25, "pose": "fear" } ], "cut": "hard",
-    "lines": [ { "who": "mats", "text": "Wer bist du? Sag mir deinen Namen.", "tone": "[nervous, urgent]" } ] },
-
-  { "set": "strasse1989", "era": 1952, "cam": "extreme", "focus": "maedchen", "angle": 15, "chars": [ { "who": "maedchen", "pos": [-3.0, 0.8], "face": 15, "pose": "stand" } ], "fx": ["fog"], "cut": "hard",
-    "lines": [ { "who": "maedchen", "text": "Das darf ich nicht. Noch nicht.", "tone": "[childlike, small girl, whispering, sad]" } ] },
-
-  { "set": "strasse1989", "era": 1952, "cam": "high", "focus": "mats", "angle": 35, "chars": [ { "who": "mats", "pos": [-3.7, 2.4], "face": 120, "pose": "look" }, { "who": "maedchen", "pos": [-3.0, 0.8], "face": 140, "pose": "stand" } ], "fx": ["fog"], "trans": "wipe",
-    "lines": [ { "who": "erz", "text": "Um sieben beginnt die Schicht. Elf Männer gehen in Stollen drei.", "tone": "[quiet, heavy]" } ] },
-
-  { "set": "hoehle", "cam": "dolly", "focus": "maedchen", "angle": 25, "chars": [ { "who": "maedchen", "pos": [-0.9, -1.0], "face": 25, "pose": "stand" }, { "who": "mats", "pos": [0.4, -0.6], "face": -60, "pose": "stand" } ], "fx": ["fog"], "noScarf": true, "trans": "slide", "stamp": "Stollen drei · 1952",
-    "lines": [ { "who": "maedchen", "text": "Heute Nacht kommen nicht alle wieder raus.", "tone": "[childlike, small girl, whispering, ominous]" } ] },
-
-  { "set": "hoehle", "cam": "close", "focus": "mats", "angle": -15, "chars": [ { "who": "mats", "pos": [0.4, -0.6], "face": -15, "pose": "fear" } ], "noScarf": true, "cut": "hard",
-    "lines": [ { "who": "mats", "text": "Woher weißt du das?", "tone": "[scared whisper]" } ] },
-
-  { "set": "leere", "cam": "push", "focus": "uhrmacher", "chars": [ { "who": "uhrmacher", "pos": [0, 0], "face": 0 } ], "cut": "hard",
-    "lines": [ { "who": "uhrmacher", "text": "Weil sie es schon einmal erlebt hat, Mats. Und einmal davor.", "tone": "[calm, menacing, slow]" } ] },
-
-  { "set": "uhrturm", "cam": "crane", "focus": "clock", "fx": ["fog"], "trans": "clock", "stamp": "14. Oktober 1952",
-    "lines": [ { "who": "erz", "text": "Am 14. Oktober 1952 bricht Stollen drei ein. Um 23 Uhr 13.", "say": "Am vierzehnten Oktober neunzehnhundertzweiundfünfzig bricht Stollen drei ein. Um dreiundzwanzig Uhr dreizehn.", "tone": "[slow, ominous]" } ] },
-
-  { "set": "hoehle", "cam": "close", "focus": "lena", "angle": 15, "chars": [ { "who": "lena", "pos": [-1.0, -1.2], "face": 15, "pose": "look" } ], "fx": ["fog"], "noScarf": true, "trans": "flash", "stamp": "23:15 · 1989",
-    "lines": [ { "who": "lena", "text": "Mats? Der Stollen leuchtet wieder. Bist du das?", "tone": "[hopeful, scared, whispering]" } ] },
-
-  { "set": "stollen", "cam": "dolly", "focus": "mats", "angle": 160, "chars": [ { "who": "mats", "pos": [0, -8], "move": [0, -3], "face": 180, "pose": "walk" } ], "trans": "leak",
-    "lines": [ { "who": "erz", "text": "Mats folgt den Männern tief in den Berg.", "tone": "[quiet, tense]" } ] },
-
-  { "set": "stollen", "cam": "close", "focus": "mats", "angle": 15, "chars": [ { "who": "mats", "pos": [0, -11], "face": 15, "pose": "fear" } ], "cut": "hard",
-    "lines": [ { "who": "mats", "text": "Das Unglück … es hat den Riss in der Zeit gemacht.", "tone": "[realizing, horrified whisper]" } ] },
-
-  { "set": "leere", "cam": "extreme", "focus": "uhrmacher", "chars": [ { "who": "uhrmacher", "pos": [0, 0], "face": 0 } ], "cut": "hard",
-    "lines": [ { "who": "uhrmacher", "text": "Jetzt verstehst du es endlich.", "tone": "[whispering, slow, pleased, menacing]" } ] },
-
-  { "set": "stollen", "cam": "dolly", "focus": "uhrbergmann", "angle": 10, "chars": [ { "who": "mats", "pos": [0, -11], "face": 180, "pose": "look" }, { "who": "uhrbergmann", "pos": [0.3, -17], "face": 180 } ],
-    "lines": [ { "who": "erz", "text": "Ganz hinten arbeitet ein Mann allein. Ohne Pause. Ohne Hut.", "tone": "[slow, creepy]" } ] },
-
-  { "set": "stollen", "cam": "close", "focus": "mats", "angle": -15, "chars": [ { "who": "mats", "pos": [0, -11], "face": -15, "pose": "reach" } ],
-    "lines": [ { "who": "mats", "text": "Entschuldigung … wir müssen hier raus!", "tone": "[urgent, scared]" } ] },
-
-  { "set": "stollen", "cam": "push", "focus": "uhrbergmann", "angle": 0, "chars": [ { "who": "uhrbergmann", "pos": [0.3, -17], "face": 0 } ], "cut": "hard",
-    "lines": [ { "who": "uhrmacher", "text": "Hallo, Mats. Ich hab auf dich gewartet.", "tone": "[slow, calm, chilling]" } ] },
-
-  { "set": "leere", "cam": "dolly", "black": true, "title": "ECHO", "sub": "FOLGE 8 – MORGEN", "cut": "hard", "pre": 0.6, "post": 0.4,
-    "lines": [ { "who": "erz", "text": "Wer ist der Mann ohne Gesicht? Folge acht – morgen. Denn um 23 Uhr 13 …", "say": "Wer ist der Mann ohne Gesicht? Folge acht – morgen. Denn um dreiundzwanzig Uhr dreizehn …", "tone": "[quiet, ominous]" } ] }
+  {
+   "set": "strasse1989",
+   "era": 1952,
+   "build": true,
+   "cam": "vogel",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 180,
+     "pose": "look"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "cut": "hard",
+   "pre": 0.2,
+   "min": 6,
+   "hook": "Die Zeit baut ein ganzes Dorf zusammen",
+   "stamp": "06:52 · 1952",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "1952. Und Grauwald setzt sich vor seinen Augen zusammen.",
+     "say": "Neunzehnhundertzweiundfünfzig. Und Grauwald setzt sich vor seinen Augen zusammen.",
+     "tone": "[slow, awed, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "fx": [
+    "dream"
+   ],
+   "title": "ECHO",
+   "sub": "FOLGE 7 · 1952",
+   "pre": 0.6,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Block für Block. Haus für Haus.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "era": 1952,
+   "cam": "close",
+   "focus": "maedchen",
+   "angle": 20,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      -3.0,
+      0.8
+     ],
+     "face": 20,
+     "pose": "stand"
+    },
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 160,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "trans": "flash",
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Du hast lange gebraucht, Mats.",
+     "tone": "[childlike, small girl, calm, eerie]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "era": 1952,
+   "cam": "close",
+   "focus": "mats",
+   "angle": 25,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 25,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Wer bist du? Sag mir deinen Namen.",
+     "tone": "[nervous, urgent]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "era": 1952,
+   "cam": "extreme",
+   "focus": "maedchen",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      -3.0,
+      0.8
+     ],
+     "face": 15,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Das darf ich nicht. Noch nicht.",
+     "tone": "[childlike, small girl, whispering, sad]"
+    }
+   ]
+  },
+  {
+   "set": "strasse1989",
+   "era": 1952,
+   "cam": "wide",
+   "focus": "mats",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      -3.7,
+      2.4
+     ],
+     "face": 120,
+     "pose": "look"
+    },
+    {
+     "who": "maedchen",
+     "pos": [
+      -3.0,
+      0.8
+     ],
+     "face": 140,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "trans": "wipe",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Um sieben beginnt die Schicht. Elf Männer gehen in Stollen drei.",
+     "tone": "[quiet, heavy]"
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "dolly",
+   "focus": "maedchen",
+   "angle": 25,
+   "chars": [
+    {
+     "who": "maedchen",
+     "pos": [
+      -0.9,
+      -1.0
+     ],
+     "face": 25,
+     "pose": "stand"
+    },
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -0.6
+     ],
+     "face": -60,
+     "pose": "stand"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "noScarf": true,
+   "trans": "slide",
+   "stamp": "Stollen drei · 1952",
+   "lines": [
+    {
+     "who": "maedchen",
+     "text": "Heute Nacht kommen nicht alle wieder raus.",
+     "tone": "[childlike, small girl, whispering, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "close",
+   "focus": "mats",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0.4,
+      -0.6
+     ],
+     "face": -15,
+     "pose": "fear"
+    }
+   ],
+   "noScarf": true,
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Woher weißt du das?",
+     "tone": "[scared whisper]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "push",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Weil sie es schon einmal erlebt hat, Mats. Und einmal davor.",
+     "tone": "[calm, menacing, slow]"
+    }
+   ]
+  },
+  {
+   "set": "uhrturm",
+   "cam": "crane",
+   "focus": "clock",
+   "fx": [
+    "fog"
+   ],
+   "trans": "clock",
+   "stamp": "14. Oktober 1952",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Am 14. Oktober 1952 bricht Stollen drei ein. Um 23 Uhr 13.",
+     "say": "Am vierzehnten Oktober neunzehnhundertzweiundfünfzig bricht Stollen drei ein. Um dreiundzwanzig Uhr dreizehn.",
+     "tone": "[slow, ominous]"
+    }
+   ]
+  },
+  {
+   "set": "hoehle",
+   "cam": "close",
+   "focus": "lena",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "lena",
+     "pos": [
+      -1.0,
+      -1.2
+     ],
+     "face": 15,
+     "pose": "look"
+    }
+   ],
+   "fx": [
+    "fog"
+   ],
+   "noScarf": true,
+   "trans": "flash",
+   "stamp": "23:15 · 1989",
+   "lines": [
+    {
+     "who": "lena",
+     "text": "Mats? Der Stollen leuchtet wieder. Bist du das?",
+     "tone": "[hopeful, scared, whispering]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "dolly",
+   "focus": "mats",
+   "angle": 160,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -8
+     ],
+     "move": [
+      0,
+      -3
+     ],
+     "face": 180,
+     "pose": "walk"
+    }
+   ],
+   "trans": "leak",
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Mats folgt den Männern tief in den Berg.",
+     "tone": "[quiet, tense]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": 15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 15,
+     "pose": "fear"
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Das Unglück … es hat den Riss in der Zeit gemacht.",
+     "tone": "[realizing, horrified whisper]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "extreme",
+   "focus": "uhrmacher",
+   "chars": [
+    {
+     "who": "uhrmacher",
+     "pos": [
+      0,
+      0
+     ],
+     "face": 0
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Jetzt verstehst du es endlich.",
+     "tone": "[whispering, slow, pleased, menacing]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "dolly",
+   "focus": "uhrbergmann",
+   "angle": 10,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": 180,
+     "pose": "look"
+    },
+    {
+     "who": "uhrbergmann",
+     "pos": [
+      0.3,
+      -17
+     ],
+     "face": 180
+    }
+   ],
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Ganz hinten arbeitet ein Mann allein. Ohne Pause. Ohne Hut.",
+     "tone": "[slow, creepy]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "close",
+   "focus": "mats",
+   "angle": -15,
+   "chars": [
+    {
+     "who": "mats",
+     "pos": [
+      0,
+      -11
+     ],
+     "face": -15,
+     "pose": "reach"
+    }
+   ],
+   "lines": [
+    {
+     "who": "mats",
+     "text": "Entschuldigung … wir müssen hier raus!",
+     "tone": "[urgent, scared]"
+    }
+   ]
+  },
+  {
+   "set": "stollen",
+   "cam": "push",
+   "focus": "uhrbergmann",
+   "angle": 0,
+   "chars": [
+    {
+     "who": "uhrbergmann",
+     "pos": [
+      0.3,
+      -17
+     ],
+     "face": 0
+    }
+   ],
+   "cut": "hard",
+   "lines": [
+    {
+     "who": "uhrmacher",
+     "text": "Hallo, Mats. Ich hab auf dich gewartet.",
+     "tone": "[slow, calm, chilling]"
+    }
+   ]
+  },
+  {
+   "set": "leere",
+   "cam": "dolly",
+   "black": true,
+   "title": "ECHO",
+   "sub": "FOLGE 8 – MORGEN",
+   "cut": "hard",
+   "pre": 0.6,
+   "post": 0.4,
+   "lines": [
+    {
+     "who": "erz",
+     "text": "Wer ist der Mann ohne Gesicht? Folge acht – morgen. Denn um 23 Uhr 13 …",
+     "say": "Wer ist der Mann ohne Gesicht? Folge acht – morgen. Denn um dreiundzwanzig Uhr dreizehn …",
+     "tone": "[quiet, ominous]"
+    }
+   ]
+  }
  ]
 }
