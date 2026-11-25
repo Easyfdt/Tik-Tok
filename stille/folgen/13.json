@@ -499,18 +499,17 @@
 "noschnee"
 ],
 "cam": "push",
-"focus": "jonas",
+"focus": "jonasx",
 "angle": 0,
 "chars": [
 {
-"who": "jonas",
+"who": "jonasx",
 "pos": [
 -1.2,
 -1.5
 ],
 "face": 0,
-"pose": "stare",
-"hollow": 0.0
+"pose": "stare"
 }
 ],
 "sfx": [
@@ -549,11 +548,11 @@
 {
 "set": "huette",
 "cam": "close",
-"focus": "jonas",
+"focus": "jonasx",
 "angle": 180,
 "chars": [
 {
-"who": "jonas",
+"who": "jonasx",
 "pos": [
 1.1,
 0.55

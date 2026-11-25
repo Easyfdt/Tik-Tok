@@ -165,7 +165,7 @@ E[10] = ('Lara weiß es', [
   OPEN('Sie war schon mal hier.', 'Jonas und Mia schaffen es zurück. Lara sitzt am Kamin. Sie hat geweint.', set='huette', cam='creep', focus=La, angle=60, d0=5, d1=2.2, chars=[C(La, -2.4, -1.3, 40, 'down')], sfx=['room']),
   S('huette', L(J, 'Lara. Was hast du damals getan?', '[cold, demanding]'), cam='ots', over=J, focus=La, side=1, chars=[C(J, -0.6, 0.4, 230, 'stand'), C(La, -2.4, -1.3, 40, 'down')]),
   S('huette', L(La, 'Ich war acht. Wir waren hier. Papa, Mama und ich. Drei.', '[quiet, shaking]'), cam='close', focus=La, angle=40, chars=[C(La, -2.4, -1.3, 40, 'stand')], sfx=['room', 'hum']),
-  S('huette', L('erz', 'Neunzehn Jahre früher. Dieselbe Hütte. Derselbe Sturm.', '[slow, eerie]'), era=1974, cam='wide', focus='main', angle=20, chars=[C('larakind', -0.4, 0.8, 180, 'stand')], trans='fade', sfx=['wind', 'room'], fx=['dunkel']),
+  S('huette', L('erz', 'Zehn Jahre früher. Dieselbe Hütte. Derselbe Sturm.', '[slow, eerie]'), era=1974, cam='wide', focus='main', angle=20, chars=[C('larakind', -0.4, 0.8, 180, 'stand')], trans='fade', sfx=['wind', 'room'], fx=['dunkel']),
   S('huette', L(La, 'In der zweiten Nacht saß ein Junge an unserem Tisch. Klein. Grüne Jacke. Er hat mich angelächelt.', '[whispering, haunted]'), era=1974, cam='close', focus=T, angle=180, chars=[C(T, 0, 0.55, 180, 'sit')], sfx=['hum']),
   S('huette', L(La, 'Er hat gesagt: Wenn du mich mitnimmst, darf Mama bleiben.', '[crying, whispering]'), era=1974, cam='extreme', focus='larakind', angle=170, chars=[C('larakind', -0.4, 0.8, 170, 'down')], sfx=['heartbeat']),
   S('huette', L(La, 'Und ich hab ja gesagt.', '[barely audible, broken]'), cam='extreme', focus=La, angle=40, chars=[C(La, -2.4, -1.3, 40, 'down')], cut='hard', sfx=['hit']),
@@ -228,9 +228,9 @@ E[13] = ('Weiße Stille', [
   S('aussen', L(M, 'Eins. Zwei. Drei. Vier.', '[slow, relieved]'), fx=['noschnee'], cam='track', focus=M, angle=20, chars=[C(J, -1.2, -1.5, 0, 'stand'), C(M, -0.4, -1.4, 0, 'count'), C(B, 0.4, -1.5, 0, 'stand'), C(La, 1.2, -1.4, 0, 'stand')]),
   S('aussen', L('erz', 'Und da ist sie wieder. Die Stimme. Ganz leise. Direkt neben Jonas.', '[very slow, chilling whisper]'), fx=['noschnee'], cam='ots', over=J, focus=X, side=-1, chars=[C(J, -1.2, -1.5, 0, 'fear'), C(X, -2.0, -1.6, 0, 'stare')], sfx=['heartbeat', 'riser']),
   S('aussen', L(X, 'Fünf.', '[deep, slow, whispering right behind]'), fx=['noschnee'], cam='extreme', focus=X, angle=60, chars=[C(X, -2.0, -1.6, 60, 'stare', tilt=10)], cut='hard', sfx=['hit']),
-  S('aussen', L('erz', 'Im Pistenbully macht Mia ein letztes Foto. Vier lachende Freunde. Und Jonas … ohne Gesicht.', '[slow, ominous]'), fx=['noschnee'], cam='push', focus=J, angle=0, chars=[C(J, -1.2, -1.5, 0, 'stare', hollow=0.0)], sfx=['riser']),
+  S('aussen', L('erz', 'Im Pistenbully macht Mia ein letztes Foto. Vier lachende Freunde. Und Jonas … ohne Gesicht.', '[slow, ominous]'), fx=['noschnee'], cam='push', focus='jonasx', angle=0, chars=[C('jonasx', -1.2, -1.5, 0, 'stare')], sfx=['riser']),
   S('huette', L('erz', 'Oben in der Hütte deckt jemand den Tisch. Für sechs.', '[very slow, whispering]'), cam='creep', focus='tisch', angle=200, d0=5, d1=1.8, fx=['dunkel'], sfx=['hum', 'clock']),
-  S('huette', L(J, 'Ich hab Hunger.', '[deep, slow, whispering, Jonas and the sixth voice together]'), cam='close', focus=J, angle=180, chars=[C(J, 1.1, 0.55, 180, 'turn', sit=True, head0=170, t0=0.05, dur=0.6)], fx=['dunkel'], fill=1.4, cut='hard', sfx=['hit'], post=1.2),
+  S('huette', L(J, 'Ich hab Hunger.', '[deep, slow, whispering, Jonas and the sixth voice together]'), cam='close', focus='jonasx', angle=180, chars=[C('jonasx', 1.1, 0.55, 180, 'turn', sit=True, head0=170, t0=0.05, dur=0.6)], fx=['dunkel'], fill=1.4, cut='hard', sfx=['hit'], post=1.2),
   S('leere', L('erz', 'Wir waren fünf. Wir sind fünf. Aber einer von uns … war nie da.', '[quiet, ominous, slow]'), black=True, title='WEISSE STILLE', sub='ENDE … ODER?', cut='hard', pre=0.8, post=1.0)])
 
 # Jonas ohne Gesicht im letzten Bild: eigener Figur-Eintrag 'jonasx'
