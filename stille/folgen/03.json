@@ -1,0 +1,488 @@
+{
+"nr": 3,
+"titel": "Fußspuren",
+"shots": [
+{
+"set": "aussen",
+"hook": "Sie führen nur hin.",
+"cut": "hard",
+"pre": 0.5,
+"fx": [],
+"spuren": true,
+"camPos": [
+0,
+6,
+14
+],
+"camTo": [
+0,
+1.2,
+6
+],
+"look": [
+0,
+0.3,
+2
+],
+"focus": "weg",
+"sfx": [
+"wind"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Am Morgen ist der Sturm kurz still. Und im Schnee sind Spuren.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "aussen",
+"cam": "close",
+"focus": "mia",
+"angle": -30,
+"spuren": true,
+"chars": [
+{
+"who": "mia",
+"pos": [
+-0.9,
+-1.4
+],
+"face": 160,
+"pose": "filmen",
+"cold": true
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Barfuß. Wer läuft hier barfuß?",
+"tone": "[shaky, filming]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "aussen",
+"cam": "track",
+"focus": "jonas",
+"angle": 90,
+"spuren": true,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+0.4,
+2
+],
+"face": 0,
+"pose": "down"
+},
+{
+"who": "ben",
+"pos": [
+1.3,
+3
+],
+"face": 0,
+"pose": "frieren"
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Die Spuren gehen nur zur Hütte. Keine geht weg.",
+"tone": "[slow, realizing]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "aussen",
+"cam": "ots",
+"over": "ben",
+"focus": "tuer",
+"side": 1,
+"spuren": true,
+"chars": [
+{
+"who": "ben",
+"pos": [
+1.0,
+1.0
+],
+"face": 180,
+"pose": "stand"
+},
+{
+"who": "jonas",
+"pos": [
+0.2,
+0.6
+],
+"face": 180,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "ben",
+"text": "Dann ist er noch drin.",
+"tone": "[whispering, scared]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "aussen",
+"cam": "crane",
+"focus": "ben",
+"angle": -60,
+"chars": [
+{
+"who": "ben",
+"pos": [
+3.8,
+-2.4
+],
+"face": 160,
+"pose": "walk",
+"move": [
+0.5,
+-1
+]
+}
+],
+"spuren": true,
+"sfx": [
+"wind",
+"steps"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Ben folgt den Spuren um die Hütte herum. Bis unter das Fenster, hinter dem sie geschlafen haben.",
+"tone": "[low, tense]"
+}
+]
+},
+{
+"set": "aussen",
+"cam": "close",
+"focus": "ben",
+"angle": -110,
+"chars": [
+{
+"who": "ben",
+"pos": [
+4.3,
+-3.4
+],
+"face": -90,
+"pose": "down"
+}
+],
+"sfx": [
+"wind",
+"heartbeat"
+],
+"lines": [
+{
+"who": "ben",
+"text": "Hier ist der Schnee platt. Als hätte jemand die ganze Nacht hier gestanden.",
+"tone": "[horrified whisper]"
+}
+]
+},
+{
+"set": "aussen",
+"cam": "low",
+"focus": "ben",
+"angle": -90,
+"chars": [
+{
+"who": "ben",
+"pos": [
+4.3,
+-3.4
+],
+"face": -90,
+"pose": "fear"
+}
+],
+"sfx": [
+"steps",
+"heartbeat"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Und dann hört Ben ein Knirschen. Schritte. Ganz nah.",
+"tone": "[very slow, whispering]"
+}
+]
+},
+{
+"set": "aussen",
+"camPos": [
+6.5,
+1.0,
+-0.5
+],
+"camTo": [
+5.8,
+0.6,
+-1.6
+],
+"look": [
+4.3,
+0.2,
+-3.4
+],
+"focus": "ben",
+"chars": [
+{
+"who": "ben",
+"pos": [
+4.3,
+-3.4
+],
+"face": 60,
+"pose": "fear"
+}
+],
+"sfx": [
+"steps",
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Neue Abdrücke. Einer nach dem anderen. Direkt auf ihn zu.",
+"tone": "[slow, chilling]"
+}
+]
+},
+{
+"set": "aussen",
+"cam": "dutch",
+"focus": "ben",
+"angle": 40,
+"roll": 16,
+"chars": [
+{
+"who": "ben",
+"pos": [
+4.3,
+-3.4
+],
+"face": 40,
+"pose": "run",
+"move": [
+-1.5,
+2
+]
+}
+],
+"sfx": [
+"wind",
+"hit"
+],
+"lines": [
+{
+"who": "ben",
+"text": "Jonas! Da läuft jemand! Ich seh ihn nicht!",
+"tone": "[screaming, panicked]"
+}
+]
+},
+{
+"set": "aussen",
+"cam": "wide",
+"focus": "jonas",
+"angle": 20,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+0.6,
+-2.5
+],
+"face": 120,
+"pose": "point"
+},
+{
+"who": "mia",
+"pos": [
+-0.5,
+-2.7
+],
+"face": 120,
+"pose": "filmen"
+},
+{
+"who": "ben",
+"pos": [
+2.6,
+-1.2
+],
+"face": -120,
+"pose": "run",
+"move": [
+-1.8,
+-1
+]
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Ben! Rein! Sofort!",
+"tone": "[shouting]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "tuer",
+"angle": 180,
+"chars": [
+{
+"who": "ben",
+"pos": [
+2.4,
+-2.4
+],
+"face": 0,
+"pose": "fear"
+},
+{
+"who": "jonas",
+"pos": [
+1.6,
+-2.2
+],
+"face": 30,
+"pose": "fear"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit",
+"heartbeat"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Die Tür knallt zu. Riegel vor. Fünf Herzen, die rasen.",
+"tone": "[fast, tense]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "lara",
+"angle": 200,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-0.4,
+1.4
+],
+"face": 200,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "lara",
+"text": "Fünf? Wir sind doch …",
+"tone": "[whispering, confused]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "top",
+"focus": "main",
+"h": 1.9,
+"fx": [
+"dunkel"
+],
+"sfx": [
+"drip",
+"heartbeat"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Auf dem Holzboden: nasse Abdrücke. Barfuß. Sie führen ins Zimmer. Und hören mitten im Raum einfach auf.",
+"tone": "[slow, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "tim",
+"angle": 170,
+"cut": "hard",
+"chars": [
+{
+"who": "tim",
+"pos": [
+0,
+1.8
+],
+"face": 170,
+"pose": "stand",
+"tilt": 8
+}
+],
+"sfx": [
+"hit"
+],
+"post": 0.4,
+"lines": [
+{
+"who": "tim",
+"text": "Er ist schon drin. Er war nie draußen.",
+"tone": "[calm, creepy, childlike]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 4 · DAS FOTO",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Wer keine Spuren hinterlässt, steht vielleicht direkt neben dir.",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}

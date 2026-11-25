@@ -1,0 +1,519 @@
+{
+"nr": 11,
+"titel": "1974",
+"shots": [
+{
+"set": "aussen",
+"hook": "So fing alles an.",
+"cut": "hard",
+"pre": 0.5,
+"era": 1974,
+"fx": [
+"sturm"
+],
+"cam": "wide",
+"focus": "main",
+"angle": 10,
+"chars": [
+{
+"who": "wirt",
+"pos": [
+0,
+-2.9
+],
+"face": 0,
+"pose": "stand"
+},
+{
+"who": "m74a",
+"pos": [
+-1,
+0.5
+],
+"face": 180,
+"pose": "walk",
+"move": [
+0,
+-1
+]
+},
+{
+"who": "m74b",
+"pos": [
+0,
+1.2
+],
+"face": 180,
+"pose": "walk",
+"move": [
+0,
+-1
+]
+},
+{
+"who": "m74c",
+"pos": [
+1,
+0.8
+],
+"face": 180,
+"pose": "walk",
+"move": [
+0,
+-1
+]
+}
+],
+"sfx": [
+"wind",
+"steps"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Neunzehnhundertvierundsiebzig. Fünf Freunde erreichen die Hütte. Der Hüttenwirt wartet schon.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "close",
+"focus": "wirt",
+"angle": 20,
+"chars": [
+{
+"who": "wirt",
+"pos": [
+-2.2,
+-1.4
+],
+"face": 40,
+"pose": "stand"
+}
+],
+"sfx": [
+"room"
+],
+"lines": [
+{
+"who": "wirt",
+"text": "Setzt euch. Und hört gut zu. Hier oben gibt es eine Regel.",
+"tone": "[old man, gravelly, serious]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "ots",
+"over": "m74a",
+"focus": "wirt",
+"side": 1,
+"chars": [
+{
+"who": "m74a",
+"pos": [
+-0.6,
+0.2
+],
+"face": 230,
+"pose": "stand"
+},
+{
+"who": "wirt",
+"pos": [
+-2.2,
+-1.4
+],
+"face": 40,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "wirt",
+"text": "Wenn der Sturm kommt, kommt einer dazu. Er setzt sich an euren Tisch. Zählt euch niemals laut.",
+"tone": "[old man, whispering]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "orbit",
+"focus": "tisch",
+"angle": 30,
+"chars": [
+{
+"who": "m74a",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "m74b",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "m74c",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "m74d",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+},
+{
+"who": "m74e",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "count",
+"sit": true
+}
+],
+"sfx": [
+"room",
+"clock"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Uwe lacht. Und zählt. Eins. Zwei. Drei. Vier. Fünf.",
+"tone": "[slow, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "push",
+"focus": "sechster",
+"angle": 180,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"fx": [
+"dunkel"
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "sechster",
+"text": "Sechs.",
+"tone": "[deep, slow whisper]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "track",
+"focus": "wirt",
+"angle": 30,
+"chars": [
+{
+"who": "wirt",
+"pos": [
+0.2,
+1.3
+],
+"face": 200,
+"pose": "down"
+}
+],
+"trans": "fade",
+"sfx": [
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Am nächsten Morgen fehlt Martin. Und niemand erinnert sich an ihn. Nur der Wirt.",
+"tone": "[slow, chilling]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "extreme",
+"focus": "wirt",
+"angle": 200,
+"chars": [
+{
+"who": "wirt",
+"pos": [
+0.2,
+1.3
+],
+"face": 200,
+"pose": "stand"
+}
+],
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "wirt",
+"text": "Der Berg nimmt einen. Und schickt einen zurück, der nie da war.",
+"tone": "[old man, whispering, sad]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "creep",
+"focus": "tisch",
+"angle": 160,
+"d0": 6,
+"d1": 2.5,
+"chars": [
+{
+"who": "m74e",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "down",
+"sit": true
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"clock"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Susi. Klaus. Petra. Jede Nacht einer weniger. Bis nur noch Uwe übrig ist. Allein am Tisch.",
+"tone": "[slow, whispering]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "close",
+"focus": "m74e",
+"angle": 170,
+"chars": [
+{
+"who": "m74e",
+"pos": [
+0,
+0.55
+],
+"face": 170,
+"pose": "down"
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Er schreibt drei Worte ins Buch. Zählt euch nicht. Dann setzt er die Kapuze auf.",
+"tone": "[very slow]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "push",
+"focus": "sechster",
+"angle": 180,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Und sein Gesicht … wird weiß wie Schnee.",
+"tone": "[slow, chilling whisper]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "jonas",
+"angle": 20,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.6,
+0.4
+],
+"face": 20,
+"pose": "fear"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Der Sechste … war mal einer von ihnen.",
+"tone": "[horrified whisper]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "mia",
+"angle": -20,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0.4,
+1.0
+],
+"face": -20,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Und wer verschwindet … wird der nächste.",
+"tone": "[realizing, crying]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "creep",
+"focus": "fenster",
+"angle": -90,
+"d0": 5,
+"d1": 1.6,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+5.0,
+0.2
+],
+"face": -90,
+"pose": "point"
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"riser",
+"wind"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Am Fenster steht wieder jemand. Rote Jacke. Weißes Gesicht. Und er winkt. Wie Ben immer gewinkt hat.",
+"tone": "[slow, chilling]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "fenster",
+"angle": -90,
+"cut": "hard",
+"sfx": [
+"static",
+"hit"
+],
+"post": 0.6,
+"lines": [
+{
+"who": "ben",
+"text": "Ich bin jetzt der Sechste, Jonas. Und morgen … holen wir dich.",
+"tone": "[deep, slow, whispering, sad]",
+"radio": true
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 12 · DER GIPFEL",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Der Sturm vergisst niemanden. Er tauscht nur.",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}

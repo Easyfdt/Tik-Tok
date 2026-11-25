@@ -1,0 +1,466 @@
+{
+"nr": 6,
+"titel": "Der Keller",
+"shots": [
+{
+"set": "huette",
+"hook": "Geh nicht runter.",
+"cut": "hard",
+"pre": 0.5,
+"cam": "top",
+"focus": "main",
+"h": 1.9,
+"chars": [
+{
+"who": "ben",
+"pos": [
+0.6,
+1.3
+],
+"face": 180,
+"pose": "down"
+},
+{
+"who": "jonas",
+"pos": [
+-0.5,
+1.8
+],
+"face": 150,
+"pose": "stand"
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"room"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Unter dem Teppich ist eine Luke. Ben will wissen, wer das Buch schreibt.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "keller",
+"cam": "creep",
+"focus": "main",
+"angle": 20,
+"d0": 6,
+"d1": 3,
+"h": 0.6,
+"chars": [
+{
+"who": "ben",
+"pos": [
+1.8,
+1.6
+],
+"face": 180,
+"pose": "walk",
+"move": [
+-0.6,
+-0.8
+],
+"y": 0.0
+},
+{
+"who": "jonas",
+"pos": [
+1.8,
+2.4
+],
+"face": 180,
+"pose": "walk",
+"move": [
+-0.4,
+-0.6
+]
+}
+],
+"sfx": [
+"drip",
+"hum",
+"steps"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Eine Treppe. Kalte Luft. Eine Glühbirne, die von allein schwingt.",
+"tone": "[slow, tense]"
+}
+]
+},
+{
+"set": "keller",
+"cam": "close",
+"focus": "ben",
+"angle": -60,
+"chars": [
+{
+"who": "ben",
+"pos": [
+1.8,
+-1.0
+],
+"face": -90,
+"pose": "stand",
+"cold": true
+}
+],
+"lines": [
+{
+"who": "ben",
+"text": "Da hängen Jacken. Alte Jacken. Die sind nass.",
+"tone": "[whispering, disturbed]"
+}
+],
+"sfx": [
+"drip",
+"hum"
+]
+},
+{
+"set": "keller",
+"cam": "ots",
+"over": "mia",
+"focus": "wand",
+"side": 1,
+"chars": [
+{
+"who": "mia",
+"pos": [
+-0.4,
+0.2
+],
+"face": 180,
+"pose": "filmen"
+}
+],
+"sfx": [
+"drip",
+"heartbeat"
+],
+"lines": [
+{
+"who": "mia",
+"text": "Leute … die Wand.",
+"tone": "[barely audible]"
+}
+]
+},
+{
+"set": "keller",
+"cam": "track",
+"focus": "wand",
+"angle": 0,
+"dist": 2.2,
+"travel": 2.6,
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Namen. Eingeritzt in den Stein. Martin. Susi. Klaus. Petra. Uwe. Und darunter … frisch.",
+"tone": "[slow, chilling whisper]"
+}
+]
+},
+{
+"set": "keller",
+"cam": "close",
+"focus": "lara",
+"angle": 200,
+"chars": [
+{
+"who": "lara",
+"pos": [
+0.6,
+-0.5
+],
+"face": 200,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "lara",
+"text": "Mia. Ben. Lara. Jonas.",
+"tone": "[reading, whispering]"
+}
+],
+"sfx": [
+"drip",
+"hum"
+]
+},
+{
+"set": "keller",
+"cam": "close",
+"focus": "jonas",
+"angle": -20,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.0,
+-0.4
+],
+"face": -20,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Und Tim? Wo ist Tims Name?",
+"tone": "[confused, scared]"
+}
+],
+"sfx": [
+"drip",
+"hum"
+]
+},
+{
+"set": "keller",
+"cam": "extreme",
+"focus": "tim",
+"angle": 160,
+"chars": [
+{
+"who": "tim",
+"pos": [
+-0.2,
+0.8
+],
+"face": 160,
+"pose": "stand"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "tim",
+"text": "Ich brauch keinen.",
+"tone": "[softly, smiling]"
+}
+]
+},
+{
+"set": "keller",
+"cam": "low",
+"focus": "main",
+"angle": 10,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.0,
+-0.4
+],
+"face": 160,
+"pose": "fear"
+},
+{
+"who": "lara",
+"pos": [
+0.6,
+-0.5
+],
+"face": 160,
+"pose": "fear"
+},
+{
+"who": "mia",
+"pos": [
+-0.4,
+0.2
+],
+"face": 160,
+"pose": "filmen"
+},
+{
+"who": "ben",
+"pos": [
+1.0,
+0.4
+],
+"face": 160,
+"pose": "fear"
+}
+],
+"sfx": [
+"hit",
+"heartbeat"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Oben knallt die Luke zu. Die Birne schwingt. Licht. Dunkel. Licht.",
+"tone": "[fast, tense]"
+}
+]
+},
+{
+"set": "keller",
+"cam": "creep",
+"focus": "sechster",
+"angle": -160,
+"d0": 5,
+"d1": 2.6,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+1.5,
+2.0
+],
+"face": 200,
+"pose": "stare"
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Neben der Treppe steht jemand. Ganz still.",
+"tone": "[very slow, whispering]"
+}
+]
+},
+{
+"set": "keller",
+"cam": "creep",
+"focus": "treppe",
+"angle": -160,
+"d0": 2.6,
+"d1": 2.4,
+"sfx": [
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Die Birne schwingt zurück. Und er ist weg.",
+"tone": "[whispering]"
+}
+]
+},
+{
+"set": "keller",
+"cam": "low",
+"focus": "treppe",
+"angle": 180,
+"h": -0.6,
+"sfx": [
+"hit",
+"steps"
+],
+"lines": [
+{
+"who": "ben",
+"text": "Leute? Warum habt ihr die Luke zugemacht? Lasst mich rein!",
+"tone": "[muffled, from above, knocking]",
+"radio": true
+}
+]
+},
+{
+"set": "keller",
+"cam": "close",
+"focus": "jonas",
+"angle": 10,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.0,
+-0.4
+],
+"face": 10,
+"pose": "fear"
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Das … das ist Bens Stimme.",
+"tone": "[horrified whisper]"
+}
+],
+"sfx": [
+"drip",
+"hum"
+]
+},
+{
+"set": "keller",
+"cam": "ots",
+"over": "jonas",
+"focus": "ben",
+"side": -1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.0,
+-0.4
+],
+"face": 60,
+"pose": "fear"
+},
+{
+"who": "ben",
+"pos": [
+0.0,
+-0.2
+],
+"face": -110,
+"pose": "stare"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"post": 0.6,
+"lines": [
+{
+"who": "erz",
+"text": "Aber Ben steht genau neben ihm.",
+"tone": "[slow, chilling]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 7 · BEN IST WEG",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Zwei Stimmen. Ein Gesicht. Welcher Ben ist echt?",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}

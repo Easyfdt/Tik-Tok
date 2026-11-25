@@ -1,0 +1,527 @@
+{
+"nr": 2,
+"titel": "Wer fehlt?",
+"shots": [
+{
+"set": "huette",
+"hook": "Zähl nicht laut.",
+"cut": "hard",
+"pre": 0.5,
+"cam": "creep",
+"focus": "stuhl6",
+"angle": 200,
+"d0": 6,
+"d1": 2.2,
+"fx": [
+"dunkel"
+],
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+},
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"sfx": [
+"heartbeat",
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Als Jonas wieder hinsieht, ist der Stuhl leer.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "ben",
+"angle": -20,
+"chars": [
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+}
+],
+"lines": [
+{
+"who": "ben",
+"text": "Okay. Das war der Hüttenwirt. Ein Scherz. Ganz sicher.",
+"tone": "[nervous, fast]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "mia",
+"angle": 15,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit",
+"headY": -25
+},
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Ein Scherz ohne Gesicht?",
+"tone": "[shaky, angry]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "mia",
+"focus": "jonas",
+"side": 1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "point",
+"sit": true
+},
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Wir zählen uns. Jetzt. Laut.",
+"tone": "[firm, scared]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "orbit",
+"focus": "tisch",
+"angle": 40,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "count",
+"sit": true
+},
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+},
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"sfx": [
+"room",
+"clock"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Eins. Zwei. Drei. Vier. Fünf …",
+"tone": "[slow, counting, whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "tim",
+"angle": 180,
+"cut": "hard",
+"chars": [
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "tim",
+"text": "Sechs.",
+"tone": "[tiny, flat whisper]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "lara",
+"angle": 170,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit",
+"headY": 30
+},
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"lines": [
+{
+"who": "lara",
+"text": "Tim. Wer ist sechs?",
+"tone": "[frozen, whispering]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "dutch",
+"focus": "tim",
+"angle": 190,
+"roll": -12,
+"chars": [
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"sfx": [
+"hum"
+],
+"lines": [
+{
+"who": "tim",
+"text": "Der Mann. Er hat mich gezählt.",
+"tone": "[innocent, quiet]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "track",
+"focus": "tisch",
+"angle": 150,
+"travel": 3,
+"dist": 4.2,
+"fx": [
+"dunkel"
+],
+"trans": "fade",
+"lines": [
+{
+"who": "erz",
+"text": "Später liegt jeder wach. Niemand schaut zum leeren Stuhl.",
+"tone": "[slow, chilling]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"camPos": [
+1.5,
+1.4,
+1.6
+],
+"camTo": [
+1.25,
+1.1,
+0.95
+],
+"look": [
+1.1,
+0.84,
+0.05
+],
+"focus": "stuhl6",
+"fx": [
+"dunkel"
+],
+"sfx": [
+"hum",
+"heartbeat"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Auf dem sechsten Teller liegt ein Löffel. Benutzt.",
+"tone": "[very slow, whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "mia",
+"angle": 60,
+"chars": [
+{
+"who": "mia",
+"pos": [
+2.6,
+0.9
+],
+"face": 120,
+"pose": "filmen"
+}
+],
+"sfx": [
+"wind",
+"room"
+],
+"lines": [
+{
+"who": "mia",
+"text": "Jonas … schau ins Fenster.",
+"tone": "[terrified whisper]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "creep",
+"focus": "fenster",
+"angle": -90,
+"d0": 5,
+"d1": 1.4,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+3.3,
+-1.2
+],
+"face": 90,
+"pose": "stare",
+"alpha": 0.55
+}
+],
+"sfx": [
+"riser",
+"wind"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Im Glas spiegelt sich der Raum. Fünf Freunde. Und hinter ihnen … einer mehr.",
+"tone": "[slow, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "jonas",
+"angle": 30,
+"cut": "hard",
+"chars": [
+{
+"who": "jonas",
+"pos": [
+2.2,
+1.3
+],
+"face": 100,
+"pose": "fear"
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Nicht umdrehen. Keiner dreht sich um.",
+"tone": "[barely audible whisper]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "sechster",
+"focus": "jonas",
+"side": -1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+2.2,
+1.3
+],
+"face": 100,
+"pose": "fear"
+},
+{
+"who": "sechster",
+"pos": [
+1.4,
+1.6
+],
+"face": 70,
+"pose": "stare"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"post": 0.5,
+"lines": [
+{
+"who": "sechster",
+"text": "Zu spät.",
+"tone": "[deep, slow, whispering right behind]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 3 · FUSSSPUREN",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Wer sich umdreht, wird gezählt.",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}

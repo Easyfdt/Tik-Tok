@@ -1,0 +1,489 @@
+{
+"nr": 4,
+"titel": "Das Foto",
+"shots": [
+{
+"set": "huette",
+"hook": "Schau genau hin.",
+"cut": "hard",
+"pre": 0.5,
+"cam": "close",
+"focus": "mia",
+"angle": 20,
+"chars": [
+{
+"who": "mia",
+"pos": [
+-1.6,
+-1.2
+],
+"face": 30,
+"pose": "filmen"
+}
+],
+"sfx": [
+"room"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Mia hat gestern Abend ein Gruppenfoto gemacht. Fünf Freunde am Kamin.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "mia",
+"angle": 25,
+"chars": [
+{
+"who": "mia",
+"pos": [
+-1.6,
+-1.2
+],
+"face": 25,
+"pose": "filmen"
+}
+],
+"sfx": [
+"hum"
+],
+"lines": [
+{
+"who": "mia",
+"text": "Wir sind sechs auf dem Foto.",
+"tone": "[barely breathing]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "creep",
+"focus": "sechster",
+"angle": 0,
+"d0": 4,
+"d1": 1.4,
+"chars": [
+{
+"who": "tim",
+"pos": [
+-2.2,
+-1.9
+],
+"face": 0,
+"pose": "stand"
+},
+{
+"who": "sechster",
+"pos": [
+-2.2,
+-2.4
+],
+"face": 0,
+"pose": "stare"
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Hinter Tim steht ein Mann. Graue Kapuze. Eine Hand auf seiner Schulter. Und wo sein Gesicht sein sollte …",
+"tone": "[slow, chilling whisper]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "ben",
+"angle": -30,
+"chars": [
+{
+"who": "ben",
+"pos": [
+-0.6,
+-0.9
+],
+"face": -30,
+"pose": "fear"
+}
+],
+"lines": [
+{
+"who": "ben",
+"text": "Lösch das. Lösch das sofort!",
+"tone": "[panicked]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "jonas",
+"focus": "mia",
+"side": 1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.6,
+0.6
+],
+"face": 200,
+"pose": "stand"
+},
+{
+"who": "mia",
+"pos": [
+-1.4,
+-0.6
+],
+"face": 30,
+"pose": "filmen"
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Da ist noch ein Video. Von heute Nacht. Ich hab nicht gefilmt.",
+"tone": "[terrified whisper]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"camPos": [
+1.0,
+2.6,
+2.2
+],
+"camTo": [
+0.6,
+2.2,
+1.7
+],
+"look": [
+0,
+0.2,
+1.2
+],
+"chars": [
+{
+"who": "jonas",
+"pos": [
+0,
+1.2
+],
+"face": 0,
+"pose": "sit",
+"y": -0.3
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Das Video zeigt Jonas. Er schläft. Die Kamera schwebt über ihm, ganz ruhig.",
+"tone": "[slow, whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "push",
+"focus": "sechster",
+"angle": 180,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+0,
+2.6
+],
+"face": 180,
+"pose": "turn",
+"head0": -120,
+"t0": 0.2,
+"dur": 0.7
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"heartbeat",
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Dann dreht sich das Bild. Langsam. Zu dem, der filmt.",
+"tone": "[very slow, chilling]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "jonas",
+"angle": -15,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.6,
+0.6
+],
+"face": -15,
+"pose": "fear"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Das war direkt neben meinem Bett.",
+"tone": "[horrified whisper]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "lara",
+"angle": 150,
+"chars": [
+{
+"who": "lara",
+"pos": [
+0.4,
+0.4
+],
+"face": 150,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "lara",
+"text": "Mia. Gib mir die Kamera.",
+"tone": "[cold, controlled]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "lara",
+"focus": "mia",
+"side": -1,
+"chars": [
+{
+"who": "lara",
+"pos": [
+0.4,
+0.4
+],
+"face": 210,
+"pose": "stand"
+},
+{
+"who": "mia",
+"pos": [
+-0.8,
+-0.9
+],
+"face": 30,
+"pose": "filmen"
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Warum? Was weißt du, Lara?",
+"tone": "[suspicious, shaky]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "dutch",
+"focus": "lara",
+"angle": 170,
+"roll": -10,
+"chars": [
+{
+"who": "lara",
+"pos": [
+0.4,
+0.4
+],
+"face": 170,
+"pose": "down"
+}
+],
+"lines": [
+{
+"who": "lara",
+"text": "Nichts. Ich will nur nicht, dass er uns noch mal sieht.",
+"tone": "[whispering, lying]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "top",
+"focus": "main",
+"h": 1.95,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.6,
+0.6
+],
+"face": 200,
+"pose": "stand"
+},
+{
+"who": "mia",
+"pos": [
+-0.8,
+-0.9
+],
+"face": 30,
+"pose": "filmen"
+},
+{
+"who": "lara",
+"pos": [
+0.4,
+0.4
+],
+"face": 210,
+"pose": "stand"
+},
+{
+"who": "ben",
+"pos": [
+0.9,
+-0.6
+],
+"face": 250,
+"pose": "stand"
+},
+{
+"who": "tim",
+"pos": [
+0.1,
+1.4
+],
+"face": 180,
+"pose": "stand"
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Das letzte Bild auf der Karte hat die Uhrzeit von jetzt. Es zeigt die fünf. Von oben. Aus der Ecke unter dem Dach.",
+"tone": "[slow, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"camPos": [
+-3.6,
+2.9,
+2.6
+],
+"camTo": [
+-3.5,
+2.85,
+2.5
+],
+"look": [
+0,
+0.8,
+-0.3
+],
+"cut": "hard",
+"chars": [
+{
+"who": "tim",
+"pos": [
+0.1,
+1.4
+],
+"face": 120,
+"pose": "point"
+}
+],
+"sfx": [
+"hit"
+],
+"post": 0.5,
+"lines": [
+{
+"who": "tim",
+"text": "Er winkt.",
+"tone": "[soft, delighted, creepy]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 5 · DAS GÄSTEBUCH",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Manche Kameras filmen nicht. Sie beobachten.",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}

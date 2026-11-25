@@ -1,0 +1,537 @@
+{
+"nr": 12,
+"titel": "Der Gipfel",
+"shots": [
+{
+"set": "gipfel",
+"hook": "Ganz oben ist Netz.",
+"cut": "hard",
+"pre": 0.5,
+"fx": [
+"sturm"
+],
+"camPos": [
+6,
+7,
+14
+],
+"camTo": [
+3,
+3,
+7
+],
+"look": [
+0,
+2,
+-3
+],
+"focus": "kreuz",
+"sfx": [
+"wind",
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Auf dem Gipfel steht ein alter Funkmast. Die letzte Chance, Hilfe zu rufen.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "track",
+"focus": "jonas",
+"angle": 80,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+0,
+3
+],
+"face": 180,
+"pose": "walk",
+"move": [
+0,
+-2
+]
+},
+{
+"who": "mia",
+"pos": [
+-0.8,
+4
+],
+"face": 180,
+"pose": "walk",
+"move": [
+0,
+-2
+]
+},
+{
+"who": "lara",
+"pos": [
+0.8,
+4.6
+],
+"face": 180,
+"pose": "walk",
+"move": [
+0,
+-2
+]
+}
+],
+"sfx": [
+"wind",
+"steps"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Weiter! Nicht stehen bleiben! Nicht zählen!",
+"tone": "[shouting over wind]"
+}
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "close",
+"focus": "lara",
+"angle": -20,
+"chars": [
+{
+"who": "lara",
+"pos": [
+0.8,
+2.6
+],
+"face": 160,
+"pose": "look"
+}
+],
+"lines": [
+{
+"who": "lara",
+"text": "Wo ist Tim? Er war doch gerade noch hinter mir.",
+"tone": "[panicked, out of breath]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "low",
+"focus": "main",
+"angle": 180,
+"sfx": [
+"wind",
+"heartbeat"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Hinter ihnen im Schnee: drei Spuren nebeneinander. Und eine vierte. Kleiner. Die rückwärts läuft.",
+"tone": "[slow, chilling]"
+}
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "ots",
+"over": "mia",
+"focus": "jonas",
+"side": 1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+1.0,
+-1.2
+],
+"face": 120,
+"pose": "point"
+},
+{
+"who": "mia",
+"pos": [
+0,
+0.2
+],
+"face": 200,
+"pose": "frieren"
+}
+],
+"sfx": [
+"wind",
+"static"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Hallo? Hier sind vier Jugendliche, Hütte am Nordgrat! Wir brauchen Hilfe!",
+"tone": "[shouting into radio, desperate]"
+}
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "close",
+"focus": "jonas",
+"angle": 60,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+1.0,
+-1.2
+],
+"face": 60,
+"pose": "stand"
+}
+],
+"sfx": [
+"static"
+],
+"lines": [
+{
+"who": "wirt",
+"text": "Bergwacht hier. Wir sehen euch auf der Wärmebildkamera. Wie viele seid ihr?",
+"tone": "[calm, radio voice]",
+"radio": true
+}
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "extreme",
+"focus": "jonas",
+"angle": 40,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+1.0,
+-1.2
+],
+"face": 40,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Vier. Wir sind vier.",
+"tone": "[out of breath]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "creep",
+"focus": "jonas",
+"angle": 0,
+"d0": 6,
+"d1": 2.5,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+1.0,
+-1.2
+],
+"face": 180,
+"pose": "fear"
+},
+{
+"who": "mia",
+"pos": [
+0,
+0.2
+],
+"face": 180,
+"pose": "fear"
+}
+],
+"sfx": [
+"static",
+"riser"
+],
+"lines": [
+{
+"who": "wirt",
+"text": "Nein. Auf dem Bild seid ihr sechs. Zwei stehen direkt hinter euch.",
+"tone": "[slow, confused, radio voice]",
+"radio": true
+}
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "low",
+"focus": "mia",
+"angle": 180,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0,
+0.2
+],
+"face": 0,
+"pose": "fear"
+},
+{
+"who": "jonas",
+"pos": [
+1.0,
+-1.2
+],
+"face": 0,
+"pose": "fear"
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Langsam drehen sie sich um.",
+"tone": "[very slow, whispering]"
+}
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "push",
+"focus": "kreuz",
+"angle": 0,
+"chars": [
+{
+"who": "tim",
+"pos": [
+-0.6,
+-2.4
+],
+"face": 0,
+"pose": "stare",
+"hollow": 0.8
+},
+{
+"who": "sechster",
+"pos": [
+0.6,
+-2.5
+],
+"face": 0,
+"pose": "stare"
+}
+],
+"sfx": [
+"riser",
+"wind"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Am Gipfelkreuz: Tim. Und neben ihm, in roter Jacke … Ben. Beide ohne Gesicht.",
+"tone": "[slow, chilling whisper]"
+}
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "ots",
+"over": "lara",
+"focus": "tim",
+"side": 1,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-0.4,
+0.6
+],
+"face": 180,
+"pose": "stand"
+},
+{
+"who": "tim",
+"pos": [
+-0.6,
+-2.4
+],
+"face": 0,
+"pose": "stare",
+"hollow": 0.8
+}
+],
+"lines": [
+{
+"who": "lara",
+"text": "Tim … komm her. Bitte.",
+"tone": "[crying, whispering]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "extreme",
+"focus": "tim",
+"angle": 0,
+"chars": [
+{
+"who": "tim",
+"pos": [
+-0.6,
+-2.4
+],
+"face": 0,
+"pose": "stare",
+"tilt": 10,
+"hollow": 0.8
+}
+],
+"fill": 1.4,
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "tim",
+"text": "Ich war nie dein Bruder, Lara. Ich war immer der Fünfte.",
+"tone": "[sweet, cold, childlike whisper]"
+}
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "wide",
+"focus": "kreuz",
+"angle": 20,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-0.4,
+-1.2
+],
+"face": 0,
+"pose": "walk",
+"move": [
+0,
+-1.5
+]
+}
+],
+"sfx": [
+"wind",
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Der Sturm verschluckt die beiden. Und mit ihnen … Lara.",
+"tone": "[slow, ominous]"
+}
+]
+},
+{
+"set": "gipfel",
+"fx": [
+"sturm"
+],
+"cam": "dutch",
+"focus": "mia",
+"angle": 180,
+"roll": -16,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0,
+0.2
+],
+"face": 0,
+"pose": "fear"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"post": 0.5,
+"lines": [
+{
+"who": "mia",
+"text": "Lara! LARA!",
+"tone": "[screaming]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 13 · WEISSE STILLE",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Zwei sind übrig. Aber wie viele kommen zurück?",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}

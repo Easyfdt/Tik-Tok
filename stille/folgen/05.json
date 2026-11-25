@@ -1,0 +1,396 @@
+{
+"nr": 5,
+"titel": "Das Gästebuch",
+"shots": [
+{
+"set": "huette",
+"hook": "Lies die letzte Seite nicht.",
+"cut": "hard",
+"pre": 0.5,
+"camPos": [
+1.3,
+1.25,
+0.5
+],
+"camTo": [
+1.0,
+1.15,
+0.2
+],
+"look": [
+0.75,
+0.86,
+-0.25
+],
+"focus": "buch",
+"sfx": [
+"room",
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Auf dem Tisch liegt ein altes Gästebuch. Rotes Leder. Kalt wie Eis.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "jonas",
+"focus": "buch",
+"side": 1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "down",
+"sit": true
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Neunzehnhundertvierundsiebzig. Martin, Susi, Klaus, Petra, Uwe. Fünf Personen.",
+"tone": "[reading slowly]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "jonas",
+"angle": 15,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "down",
+"sit": true
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Am nächsten Tag: sechs Personen.",
+"tone": "[whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "mia",
+"angle": -10,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit",
+"headY": -30
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Und dann?",
+"tone": "[scared]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "push",
+"focus": "buch",
+"angle": 30,
+"fx": [
+"dunkel"
+],
+"sfx": [
+"clock"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Vier. Drei. Zwei. Eins.",
+"tone": "[slow, chilling]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "creep",
+"focus": "buch",
+"angle": -20,
+"d0": 2.5,
+"d1": 0.9,
+"h": 0.4,
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Der letzte Eintrag ist mit zitternder Hand geschrieben. Drei Worte.",
+"tone": "[slow, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "jonas",
+"angle": 5,
+"cut": "hard",
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+}
+],
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Zählt euch nicht.",
+"tone": "[horrified whisper]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "ben",
+"angle": -25,
+"chars": [
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+}
+],
+"lines": [
+{
+"who": "ben",
+"text": "Das ist Fake. Irgendein Spinner hat das reingeschrieben.",
+"tone": "[angry, scared]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "lara",
+"angle": 165,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"lines": [
+{
+"who": "lara",
+"text": "Blätter um, Jonas.",
+"tone": "[quiet, knowing]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "top",
+"focus": "buch",
+"h": 1.2,
+"sfx": [
+"heartbeat",
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Die nächste Seite ist neu. Die Tinte noch feucht. Darauf: ihre Namen. In einer Schrift, die keiner von ihnen kennt.",
+"tone": "[very slow, whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "ben",
+"focus": "jonas",
+"side": -1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "down",
+"sit": true
+},
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Jonas. Mia. Ben. Lara. Tim. Und eine Zahl. Sechs Personen.",
+"tone": "[reading, trembling]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "tim",
+"angle": 190,
+"chars": [
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"lines": [
+{
+"who": "tim",
+"text": "Da steht noch was. Ganz unten. Für morgen.",
+"tone": "[small, curious]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "creep",
+"focus": "buch",
+"angle": 60,
+"d0": 2,
+"d1": 0.8,
+"h": 0.35,
+"fx": [
+"dunkel"
+],
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Morgen. Fünf Personen. Und ein Name ist durchgestrichen.",
+"tone": "[slow, chilling]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "ben",
+"angle": -5,
+"cut": "hard",
+"chars": [
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "fear",
+"sit": true
+}
+],
+"sfx": [
+"hit",
+"heartbeat"
+],
+"post": 0.5,
+"lines": [
+{
+"who": "ben",
+"text": "Warum … steht da mein Name?",
+"tone": "[voice breaking, whispering]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 6 · DER KELLER",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Das Buch zählt mit. Und es irrt sich nie.",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}

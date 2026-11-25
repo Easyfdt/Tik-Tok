@@ -1,0 +1,604 @@
+{
+"nr": 13,
+"titel": "Weiße Stille",
+"shots": [
+{
+"set": "aussen",
+"hook": "Hört ihr das?",
+"cut": "hard",
+"pre": 0.5,
+"fx": [
+"noschnee"
+],
+"camPos": [
+0,
+10,
+26
+],
+"camTo": [
+0,
+3,
+11
+],
+"look": [
+0,
+2,
+-6
+],
+"focus": "huette",
+"sfx": [],
+"lines": [
+{
+"who": "erz",
+"text": "Am Morgen hört der Sturm auf. Und plötzlich ist es still. Weiße Stille.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "aussen",
+"fx": [
+"noschnee"
+],
+"cam": "wide",
+"focus": "main",
+"angle": -20,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.4,
+-2
+],
+"face": 180,
+"pose": "frieren"
+},
+{
+"who": "mia",
+"pos": [
+0.5,
+-2.2
+],
+"face": 180,
+"pose": "frieren"
+}
+],
+"sfx": [
+"wind"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Ein Pistenbully kämpft sich den Hang hinauf. Die Bergwacht.",
+"tone": "[slow, calm]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "creep",
+"focus": "ben",
+"angle": 180,
+"d0": 5,
+"d1": 2.4,
+"chars": [
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+}
+],
+"sfx": [
+"room"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Drinnen sitzt jemand am Tisch. Löffelt Suppe. Als wäre nichts gewesen.",
+"tone": "[slow, eerie]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "ben",
+"angle": -10,
+"chars": [
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit",
+"headY": 20
+}
+],
+"lines": [
+{
+"who": "ben",
+"text": "Da seid ihr ja! Wo wart ihr die ganze Nacht?",
+"tone": "[cheerful, normal]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "ben",
+"focus": "mia",
+"side": -1,
+"chars": [
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "mia",
+"pos": [
+-0.2,
+1.4
+],
+"face": 180,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Ben? Ben! Du lebst!",
+"tone": "[crying, relieved]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "lara",
+"angle": 170,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "lara",
+"text": "Natürlich lebt er. Was ist mit euch los?",
+"tone": "[confused, light]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "jonas",
+"angle": 20,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.8,
+1.6
+],
+"face": 170,
+"pose": "fear"
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Lara? Du warst … am Gipfel … mit Tim.",
+"tone": "[stunned whisper]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "push",
+"focus": "lara",
+"angle": 170,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "lara",
+"text": "Wer ist Tim?",
+"tone": "[innocent, puzzled]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "orbit",
+"focus": "tisch",
+"angle": 30,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+},
+{
+"who": "jonas",
+"pos": [
+-1.8,
+1.4
+],
+"face": 150,
+"pose": "stand"
+}
+],
+"sfx": [
+"room",
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Niemand erinnert sich an Tim. Nicht Lara. Nicht Mia. Nicht Ben. Nur Jonas.",
+"tone": "[slow, whispering]"
+}
+]
+},
+{
+"set": "aussen",
+"fx": [
+"noschnee"
+],
+"cam": "wide",
+"focus": "main",
+"angle": 10,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.2,
+-1.5
+],
+"face": 180,
+"pose": "stand"
+},
+{
+"who": "mia",
+"pos": [
+-0.4,
+-1.4
+],
+"face": 180,
+"pose": "stand"
+},
+{
+"who": "ben",
+"pos": [
+0.4,
+-1.5
+],
+"face": 180,
+"pose": "stand"
+},
+{
+"who": "lara",
+"pos": [
+1.2,
+-1.4
+],
+"face": 180,
+"pose": "stand"
+}
+],
+"sfx": [
+"wind"
+],
+"lines": [
+{
+"who": "wirt",
+"text": "So. Durchzählen bitte, bevor wir losfahren.",
+"tone": "[friendly rescuer, radio voice]",
+"radio": true
+}
+]
+},
+{
+"set": "aussen",
+"fx": [
+"noschnee"
+],
+"cam": "track",
+"focus": "mia",
+"angle": 20,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.2,
+-1.5
+],
+"face": 0,
+"pose": "stand"
+},
+{
+"who": "mia",
+"pos": [
+-0.4,
+-1.4
+],
+"face": 0,
+"pose": "count"
+},
+{
+"who": "ben",
+"pos": [
+0.4,
+-1.5
+],
+"face": 0,
+"pose": "stand"
+},
+{
+"who": "lara",
+"pos": [
+1.2,
+-1.4
+],
+"face": 0,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Eins. Zwei. Drei. Vier.",
+"tone": "[slow, relieved]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "aussen",
+"fx": [
+"noschnee"
+],
+"cam": "ots",
+"over": "jonas",
+"focus": "sechster",
+"side": -1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.2,
+-1.5
+],
+"face": 0,
+"pose": "fear"
+},
+{
+"who": "sechster",
+"pos": [
+-2.0,
+-1.6
+],
+"face": 0,
+"pose": "stare"
+}
+],
+"sfx": [
+"heartbeat",
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Und da ist sie wieder. Die Stimme. Ganz leise. Direkt neben Jonas.",
+"tone": "[very slow, chilling whisper]"
+}
+]
+},
+{
+"set": "aussen",
+"fx": [
+"noschnee"
+],
+"cam": "extreme",
+"focus": "sechster",
+"angle": 60,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+-2.0,
+-1.6
+],
+"face": 60,
+"pose": "stare",
+"tilt": 10
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "sechster",
+"text": "Fünf.",
+"tone": "[deep, slow, whispering right behind]"
+}
+]
+},
+{
+"set": "aussen",
+"fx": [
+"noschnee"
+],
+"cam": "push",
+"focus": "jonas",
+"angle": 0,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.2,
+-1.5
+],
+"face": 0,
+"pose": "stare",
+"hollow": 0.0
+}
+],
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Im Pistenbully macht Mia ein letztes Foto. Vier lachende Freunde. Und Jonas … ohne Gesicht.",
+"tone": "[slow, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "creep",
+"focus": "tisch",
+"angle": 200,
+"d0": 5,
+"d1": 1.8,
+"fx": [
+"dunkel"
+],
+"sfx": [
+"hum",
+"clock"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Oben in der Hütte deckt jemand den Tisch. Für sechs.",
+"tone": "[very slow, whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "jonas",
+"angle": 180,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+1.1,
+0.55
+],
+"face": 180,
+"pose": "turn",
+"sit": true,
+"head0": 170,
+"t0": 0.05,
+"dur": 0.6
+}
+],
+"fx": [
+"dunkel"
+],
+"fill": 1.4,
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"post": 1.2,
+"lines": [
+{
+"who": "jonas",
+"text": "Ich hab Hunger.",
+"tone": "[deep, slow, whispering, Jonas and the sixth voice together]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "ENDE … ODER?",
+"cut": "hard",
+"pre": 0.8,
+"post": 1.0,
+"lines": [
+{
+"who": "erz",
+"text": "Wir waren fünf. Wir sind fünf. Aber einer von uns … war nie da.",
+"tone": "[quiet, ominous, slow]"
+}
+],
+"sfx": []
+}
+]
+}

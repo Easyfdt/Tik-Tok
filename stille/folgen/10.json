@@ -1,0 +1,406 @@
+{
+"nr": 10,
+"titel": "Lara weiß es",
+"shots": [
+{
+"set": "huette",
+"hook": "Sie war schon mal hier.",
+"cut": "hard",
+"pre": 0.5,
+"cam": "creep",
+"focus": "lara",
+"angle": 60,
+"d0": 5,
+"d1": 2.2,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-2.4,
+-1.3
+],
+"face": 40,
+"pose": "down"
+}
+],
+"sfx": [
+"room"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Jonas und Mia schaffen es zurück. Lara sitzt am Kamin. Sie hat geweint.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "jonas",
+"focus": "lara",
+"side": 1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.6,
+0.4
+],
+"face": 230,
+"pose": "stand"
+},
+{
+"who": "lara",
+"pos": [
+-2.4,
+-1.3
+],
+"face": 40,
+"pose": "down"
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Lara. Was hast du damals getan?",
+"tone": "[cold, demanding]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "lara",
+"angle": 40,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-2.4,
+-1.3
+],
+"face": 40,
+"pose": "stand"
+}
+],
+"sfx": [
+"room",
+"hum"
+],
+"lines": [
+{
+"who": "lara",
+"text": "Ich war acht. Wir waren hier. Papa, Mama und ich. Drei.",
+"tone": "[quiet, shaking]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "wide",
+"focus": "main",
+"angle": 20,
+"chars": [
+{
+"who": "larakind",
+"pos": [
+-0.4,
+0.8
+],
+"face": 180,
+"pose": "stand"
+}
+],
+"trans": "fade",
+"sfx": [
+"wind",
+"room"
+],
+"fx": [
+"dunkel"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Neunzehn Jahre früher. Dieselbe Hütte. Derselbe Sturm.",
+"tone": "[slow, eerie]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "close",
+"focus": "tim",
+"angle": 180,
+"chars": [
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"sfx": [
+"hum"
+],
+"lines": [
+{
+"who": "lara",
+"text": "In der zweiten Nacht saß ein Junge an unserem Tisch. Klein. Grüne Jacke. Er hat mich angelächelt.",
+"tone": "[whispering, haunted]"
+}
+]
+},
+{
+"set": "huette",
+"era": 1974,
+"cam": "extreme",
+"focus": "larakind",
+"angle": 170,
+"chars": [
+{
+"who": "larakind",
+"pos": [
+-0.4,
+0.8
+],
+"face": 170,
+"pose": "down"
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "lara",
+"text": "Er hat gesagt: Wenn du mich mitnimmst, darf Mama bleiben.",
+"tone": "[crying, whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "lara",
+"angle": 40,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-2.4,
+-1.3
+],
+"face": 40,
+"pose": "down"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "lara",
+"text": "Und ich hab ja gesagt.",
+"tone": "[barely audible, broken]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "mia",
+"angle": -20,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0.4,
+1.0
+],
+"face": -40,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Lara … Tim trägt eine grüne Jacke.",
+"tone": "[slowly realizing, terrified]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "push",
+"focus": "lara",
+"angle": 60,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-2.4,
+-1.3
+],
+"face": 60,
+"pose": "stand"
+}
+],
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "lara",
+"text": "Seit dieser Nacht hab ich einen kleinen Bruder. Und alle tun so, als wäre er immer da gewesen.",
+"tone": "[whispering, desperate]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "jonas",
+"angle": 200,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.6,
+0.4
+],
+"face": 200,
+"pose": "look"
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Wo ist Tim jetzt?",
+"tone": "[whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "top",
+"focus": "tisch",
+"h": 1.9,
+"fx": [
+"dunkel"
+],
+"sfx": [
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Niemand hat ihn heute gesehen. Aber auf dem Tisch stehen wieder sechs Teller. Fein säuberlich gedeckt.",
+"tone": "[slow, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "lara",
+"focus": "tim",
+"side": -1,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-2.4,
+-1.3
+],
+"face": 0,
+"pose": "fear"
+},
+{
+"who": "tim",
+"pos": [
+-2.3,
+0.4
+],
+"face": 180,
+"pose": "stand"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "tim",
+"text": "Du hast es ihnen gesagt, Lara.",
+"tone": "[soft, disappointed, childlike]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "tim",
+"angle": 180,
+"chars": [
+{
+"who": "tim",
+"pos": [
+-2.3,
+0.4
+],
+"face": 180,
+"pose": "stand",
+"tilt": 12,
+"hollow": 0.7
+}
+],
+"fill": 1.3,
+"sfx": [
+"riser"
+],
+"post": 0.6,
+"lines": [
+{
+"who": "tim",
+"text": "Jetzt muss ich mir eine neue Schwester suchen.",
+"tone": "[sweet, slow, creepy whisper]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 11 · NEUNZEHNHUNDERTVIERUNDSIEBZIG",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Manche Brüder werden nicht geboren. Sie werden eingeladen.",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}

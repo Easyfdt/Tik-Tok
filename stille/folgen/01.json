@@ -1,0 +1,745 @@
+{
+"nr": 1,
+"titel": "Der Sturm",
+"beschreibung": "Fünf Freunde, eine Hütte – und ein sechster Teller.",
+"shots": [
+{
+"set": "aussen",
+"fx": [
+"sturm"
+],
+"camPos": [
+0,
+9,
+24
+],
+"camTo": [
+0,
+3.2,
+10
+],
+"look": [
+0,
+2,
+-6
+],
+"focus": "huette",
+"hook": "Wir waren fünf.",
+"cut": "hard",
+"pre": 0.6,
+"sfx": [
+"wind"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Wir waren fünf, als der Sturm kam.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "aussen",
+"fx": [
+"sturm"
+],
+"cam": "wide",
+"focus": "huette",
+"angle": 15,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 1 · DER STURM",
+"sfx": [
+"wind",
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Fünf Freunde. Eine Hütte. Und der Weg nach unten verschwindet im Schnee.",
+"tone": "[slow, tense]"
+}
+]
+},
+{
+"set": "aussen",
+"fx": [
+"sturm"
+],
+"cam": "track",
+"focus": "jonas",
+"angle": 70,
+"dist": 5,
+"h": 0.5,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+0,
+5
+],
+"move": [
+0,
+-2.5
+],
+"face": 180,
+"pose": "walk"
+},
+{
+"who": "mia",
+"pos": [
+-0.9,
+6.2
+],
+"move": [
+0,
+-2.5
+],
+"face": 180,
+"pose": "walk"
+},
+{
+"who": "ben",
+"pos": [
+0.9,
+6.6
+],
+"move": [
+0,
+-2.5
+],
+"face": 180,
+"pose": "walk"
+},
+{
+"who": "lara",
+"pos": [
+-0.4,
+7.6
+],
+"move": [
+0,
+-2.5
+],
+"face": 180,
+"pose": "walk"
+},
+{
+"who": "tim",
+"pos": [
+0.5,
+8.2
+],
+"move": [
+0,
+-2.5
+],
+"face": 180,
+"pose": "walk"
+}
+],
+"sfx": [
+"wind",
+"steps"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Da vorne! Die Hütte!",
+"tone": "[out of breath, shouting over the wind]"
+}
+]
+},
+{
+"set": "aussen",
+"fx": [
+"sturm"
+],
+"cam": "close",
+"focus": "ben",
+"angle": -25,
+"chars": [
+{
+"who": "ben",
+"pos": [
+0.9,
+3.2
+],
+"face": -20,
+"pose": "frieren"
+},
+{
+"who": "jonas",
+"pos": [
+-0.3,
+2.2
+],
+"face": 180,
+"pose": "stand"
+}
+],
+"sfx": [
+"wind"
+],
+"lines": [
+{
+"who": "ben",
+"text": "Wenn da drin kein Kakao ist, geh ich zurück.",
+"tone": "[shivering, joking]"
+}
+]
+},
+{
+"set": "aussen",
+"fx": [
+"sturm"
+],
+"focus": "tuer",
+"chars": [
+{
+"who": "lara",
+"pos": [
+0.3,
+-1.6
+],
+"face": 180,
+"pose": "stand"
+},
+{
+"who": "tim",
+"pos": [
+1.1,
+-0.9
+],
+"face": 180,
+"pose": "frieren"
+}
+],
+"sfx": [
+"wind"
+],
+"lines": [
+{
+"who": "lara",
+"text": "Die Tür … war schon offen.",
+"tone": "[quiet, uneasy]"
+}
+],
+"camPos": [
+1.5,
+1.9,
+0.8
+],
+"camTo": [
+1.2,
+1.8,
+0.3
+],
+"look": [
+0,
+1.3,
+-3.1
+]
+},
+{
+"set": "huette",
+"cam": "crane",
+"focus": "main",
+"angle": 20,
+"trans": "fade",
+"chars": [
+{
+"who": "jonas",
+"pos": [
+1.6,
+-2.2
+],
+"move": [
+-0.6,
+0.8
+],
+"face": 200,
+"pose": "walk"
+},
+{
+"who": "mia",
+"pos": [
+2.4,
+-2.6
+],
+"move": [
+-0.4,
+0.6
+],
+"face": 200,
+"pose": "walk"
+},
+{
+"who": "ben",
+"pos": [
+3,
+-2.2
+],
+"face": 220,
+"pose": "frieren"
+}
+],
+"sfx": [
+"room"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Drinnen brennt ein Feuer. Obwohl niemand hier ist.",
+"tone": "[low, tense]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "mia",
+"angle": -30,
+"chars": [
+{
+"who": "mia",
+"pos": [
+1.2,
+-1.6
+],
+"face": -40,
+"pose": "stand"
+},
+{
+"who": "jonas",
+"pos": [
+0.2,
+-2.0
+],
+"face": -60,
+"pose": "stand"
+}
+],
+"sfx": [
+"room"
+],
+"lines": [
+{
+"who": "mia",
+"text": "Okay … wer hat das Feuer angemacht?",
+"tone": "[nervous laugh]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "jonas",
+"angle": 25,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+0.2,
+-2.0
+],
+"face": 20,
+"pose": "stand"
+}
+],
+"sfx": [
+"room"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Bestimmt der Hüttenwirt. Der kommt gleich.",
+"tone": "[trying to sound calm]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "tim",
+"focus": "radio",
+"side": 1,
+"chars": [
+{
+"who": "tim",
+"pos": [
+-3.4,
+1.2
+],
+"face": -90,
+"pose": "point"
+}
+],
+"sfx": [
+"static"
+],
+"lines": [
+{
+"who": "tim",
+"text": "Das Funkgerät geht nicht.",
+"tone": "[small, scared voice]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "creep",
+"focus": "fenster",
+"angle": -90,
+"d0": 6,
+"d1": 1.6,
+"sfx": [
+"wind",
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Draußen frisst der Sturm jede Spur. Kein Netz. Kein Weg zurück.",
+"tone": "[whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "orbit",
+"focus": "tisch",
+"angle": 30,
+"trans": "fade",
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+},
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"teller": 6,
+"sfx": [
+"room"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Später sitzen sie am Tisch. Suppe. Lachen. Für einen Moment ist alles gut.",
+"tone": "[calm, slow]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "ben",
+"angle": -15,
+"chars": [
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 20,
+"pose": "sit"
+}
+],
+"sfx": [
+"room"
+],
+"lines": [
+{
+"who": "ben",
+"text": "Auf uns fünf!",
+"tone": "[laughing, cheerful]"
+}
+]
+},
+{
+"set": "huette",
+"focus": "tisch",
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "ben",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+},
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"cut": "hard",
+"sfx": [
+"room",
+"hum"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Moment … warum stehen hier sechs Teller?",
+"tone": "[confused, slowly]"
+}
+],
+"camPos": [
+-2.8,
+2.8,
+2.4
+],
+"camTo": [
+-2.4,
+2.6,
+2.0
+],
+"look": [
+0,
+0.85,
+-0.3
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "lara",
+"angle": 180,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"sfx": [
+"hum"
+],
+"lines": [
+{
+"who": "lara",
+"text": "Ich hab fünf hingestellt. Ganz sicher.",
+"tone": "[whispering, scared]"
+}
+],
+"exp": 0.7
+},
+{
+"set": "huette",
+"focus": "sechster",
+"rack": [
+0.9,
+3.3
+],
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+},
+{
+"who": "sechster",
+"pos": [
+1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"heartbeat",
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Und am Ende des Tisches … sitzt jemand.",
+"tone": "[very slow, chilling whisper]"
+}
+],
+"camPos": [
+0.6,
+1.35,
+-2.05
+],
+"camTo": [
+0.65,
+1.3,
+-1.85
+],
+"look": [
+1.1,
+1.0,
+0.55
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "sechster",
+"angle": 180,
+"cut": "hard",
+"fx": [
+"dunkel"
+],
+"chars": [
+{
+"who": "sechster",
+"pos": [
+1.1,
+0.55
+],
+"face": 180,
+"pose": "turn",
+"head0": 170,
+"t0": 0.05,
+"dur": 0.7,
+"sit": true
+}
+],
+"sfx": [
+"hit",
+"heartbeat"
+],
+"post": 0.6,
+"lines": [
+{
+"who": "sechster",
+"text": "Ich hab Hunger.",
+"tone": "[deep, slow, whispering]"
+}
+],
+"exp": 1.25,
+"fill": 1.6
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 2 · WER FEHLT?",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Wir waren fünf. Am Tisch saßen sechs.",
+"tone": "[quiet, ominous]"
+}
+]
+}
+]
+}

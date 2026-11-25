@@ -1,0 +1,368 @@
+{
+"nr": 8,
+"titel": "Die Stimme im Funkgerät",
+"shots": [
+{
+"set": "huette",
+"hook": "Mach nicht auf.",
+"cut": "hard",
+"pre": 0.5,
+"cam": "creep",
+"focus": "radio",
+"angle": -60,
+"d0": 4,
+"d1": 1.2,
+"fx": [
+"dunkel"
+],
+"sfx": [
+"static",
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Um drei Uhr nachts rauscht das kaputte Funkgerät.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "radio",
+"angle": -90,
+"fx": [
+"dunkel"
+],
+"sfx": [
+"static",
+"wind"
+],
+"lines": [
+{
+"who": "ben",
+"text": "Hallo? Hört mich jemand? Es ist so kalt …",
+"tone": "[weak, shivering, desperate]",
+"radio": true
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "jonas",
+"angle": -40,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-3.4,
+0.9
+],
+"face": -80,
+"pose": "fear"
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Ben! Ben, wo bist du?",
+"tone": "[desperate, shouting]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "jonas",
+"focus": "radio",
+"side": -1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-3.4,
+0.9
+],
+"face": -80,
+"pose": "fear"
+}
+],
+"sfx": [
+"static"
+],
+"lines": [
+{
+"who": "ben",
+"text": "Hinter der Hütte. Ich seh euer Licht. Bitte. Macht die Tür auf.",
+"tone": "[crying, pleading]",
+"radio": true
+}
+]
+},
+{
+"set": "huette",
+"cam": "track",
+"focus": "jonas",
+"angle": 60,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+0.5,
+0.4
+],
+"face": 160,
+"pose": "run",
+"move": [
+1.6,
+-2
+]
+}
+],
+"sfx": [
+"steps"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Ich hol ihn rein!",
+"tone": "[determined]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "dutch",
+"focus": "lara",
+"angle": 200,
+"roll": -14,
+"chars": [
+{
+"who": "lara",
+"pos": [
+2.4,
+-2.5
+],
+"face": 20,
+"pose": "stand"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "lara",
+"text": "Nein! Das ist nicht Ben!",
+"tone": "[screaming]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "mia",
+"angle": -30,
+"chars": [
+{
+"who": "mia",
+"pos": [
+1.0,
+1.0
+],
+"face": -40,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Woher willst du das wissen?",
+"tone": "[angry, crying]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "push",
+"focus": "radio",
+"angle": -80,
+"fx": [
+"dunkel"
+],
+"sfx": [
+"static",
+"riser"
+],
+"lines": [
+{
+"who": "ben",
+"text": "Lara … ich weiß, was du damals getan hast.",
+"tone": "[suddenly calm, deep, slow]",
+"radio": true
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "lara",
+"angle": 180,
+"chars": [
+{
+"who": "lara",
+"pos": [
+2.4,
+-2.5
+],
+"face": 180,
+"pose": "hide"
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "lara",
+"text": "Hör auf. Hör auf!",
+"tone": "[panicked whisper]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "creep",
+"focus": "fenster",
+"angle": -90,
+"d0": 5,
+"d1": 2,
+"sfx": [
+"hit",
+"wind"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Dann klopft es. Nicht an der Tür. Am Fenster.",
+"tone": "[slow, chilling]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "mia",
+"focus": "fenster",
+"side": 1,
+"chars": [
+{
+"who": "mia",
+"pos": [
+2.6,
+0.8
+],
+"face": 90,
+"pose": "filmen"
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Klopf. Klopf. Klopf. Immer im selben Takt. Wie ein Herz.",
+"tone": "[whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "push",
+"focus": "fenster",
+"angle": -90,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+5.0,
+0.2
+],
+"face": -90,
+"pose": "stare"
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Hinter dem Glas steht jemand in Bens roter Jacke.",
+"tone": "[very slow]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "sechster",
+"angle": -90,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+5.0,
+0.2
+],
+"face": -90,
+"pose": "stare",
+"hollow": 0.85
+}
+],
+"fill": 1.4,
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"post": 0.6,
+"lines": [
+{
+"who": "sechster",
+"text": "Darf ich rein? Ich hab doch einen Platz.",
+"tone": "[deep, slow, whispering, with Bens voice]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 9 · DER WALD",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Wer klopft, will nicht rein. Er will dich raus.",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}

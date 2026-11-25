@@ -1,0 +1,447 @@
+{
+"nr": 7,
+"titel": "Ben ist weg",
+"shots": [
+{
+"set": "huette",
+"hook": "Erinnerst du dich an Ben?",
+"cut": "hard",
+"pre": 0.5,
+"cam": "creep",
+"focus": "main",
+"angle": 160,
+"d0": 5,
+"d1": 2,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.6,
+1.4
+],
+"face": 180,
+"pose": "down"
+}
+],
+"sfx": [
+"room",
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Am Morgen ist ein Schlafsack leer. Kalt. Als hätte nie jemand darin gelegen.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "jonas",
+"angle": 150,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.6,
+1.4
+],
+"face": 150,
+"pose": "stand"
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Ben? Ben!",
+"tone": "[calling, worried]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "aussen",
+"fx": [
+"sturm"
+],
+"cam": "wide",
+"focus": "main",
+"angle": -10,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+0,
+-1.5
+],
+"face": 180,
+"pose": "look"
+},
+{
+"who": "mia",
+"pos": [
+-1,
+-1.8
+],
+"face": 200,
+"pose": "filmen"
+}
+],
+"lines": [
+{
+"who": "erz",
+"text": "Draußen nur Wind. Keine Spuren. Nicht eine.",
+"tone": "[slow, tense]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "mia",
+"focus": "buch",
+"side": 1,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "down",
+"sit": true
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Das Gästebuch. Fünf Personen. Ben ist durchgestrichen.",
+"tone": "[whispering, shaking]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "tim",
+"angle": 180,
+"chars": [
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"lines": [
+{
+"who": "tim",
+"text": "Wer ist Ben?",
+"tone": "[innocent, curious]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "dutch",
+"focus": "jonas",
+"angle": 20,
+"roll": 12,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "point",
+"sit": true
+}
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Was? Ben! Unser Freund! Er sitzt jeden Abend da!",
+"tone": "[angry, desperate]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "mia",
+"angle": -20,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "filmen",
+"sit": true
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Jonas … er ist auf keinem Video mehr.",
+"tone": "[voice breaking]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "orbit",
+"focus": "tisch",
+"angle": 40,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "mia",
+"pos": [
+0,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+},
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "sit"
+},
+{
+"who": "tim",
+"pos": [
+0,
+0.55
+],
+"face": 180,
+"pose": "sit"
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Mia spult zurück. Der Abend am Tisch. Lachen. Suppe. Und an Bens Platz: ein leerer Stuhl.",
+"tone": "[slow, ominous]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "extreme",
+"focus": "lara",
+"angle": 170,
+"chars": [
+{
+"who": "lara",
+"pos": [
+-1.1,
+0.55
+],
+"face": 180,
+"pose": "down",
+"sit": true
+}
+],
+"lines": [
+{
+"who": "lara",
+"text": "Bei mir fängt es auch an. Ich weiß nicht mehr, wie er gelacht hat.",
+"tone": "[crying softly]"
+}
+],
+"sfx": [
+"room"
+]
+},
+{
+"set": "huette",
+"cam": "push",
+"focus": "jonas",
+"angle": 0,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit"
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Ich erinnere mich an ihn. Noch.",
+"tone": "[determined whisper]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "creep",
+"focus": "tisch",
+"angle": 150,
+"d0": 6,
+"d1": 3.2,
+"fx": [
+"dunkel"
+],
+"trans": "fade",
+"sfx": [
+"hum",
+"clock"
+],
+"lines": [
+{
+"who": "erz",
+"text": "In der Nacht wird Jonas wach. Am Tisch klappert ein Löffel.",
+"tone": "[very slow, whispering]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "ots",
+"over": "jonas",
+"focus": "sechster",
+"side": 1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-1.8,
+2.0
+],
+"face": 140,
+"pose": "stand"
+},
+{
+"who": "sechster",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "sit",
+"headY": 0
+}
+],
+"fx": [
+"dunkel"
+],
+"sfx": [
+"heartbeat",
+"riser"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Jemand isst. Im Dunkeln. Auf Bens Platz.",
+"tone": "[slow, chilling]"
+}
+]
+},
+{
+"set": "huette",
+"cam": "close",
+"focus": "sechster",
+"angle": 0,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+1.1,
+-1.15
+],
+"face": 0,
+"pose": "turn",
+"sit": true,
+"head0": -150,
+"t0": 0.1,
+"dur": 0.6
+}
+],
+"fill": 1.5,
+"cut": "hard",
+"sfx": [
+"hit"
+],
+"post": 0.5,
+"lines": [
+{
+"who": "sechster",
+"text": "Jetzt sind wir wieder fünf.",
+"tone": "[deep, slow, whispering]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 8 · DIE STIMME IM FUNKGERÄT",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Wer vergessen wird, ist nicht tot. Er ist nur … draußen.",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}

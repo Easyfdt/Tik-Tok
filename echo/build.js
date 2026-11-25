@@ -9,14 +9,15 @@ const nr = parseInt(process.argv[2] || '1', 10);
 const preview = process.argv.includes('--preview');
 const clipArg = process.argv.indexOf('--clip'); const CLIP = clipArg > 0 ? { start: +process.argv[clipArg + 1], dur: +process.argv[clipArg + 2] } : null;
 const id = String(nr).padStart(2, '0');
-const ep = JSON.parse(fs.readFileSync(path.join(__dirname, 'folgen', `${id}.json`), 'utf8'));
+const SERIE = process.env.SERIE || 'echo';
+const ep = JSON.parse(fs.readFileSync(path.join(ROOT, SERIE, 'folgen', `${id}.json`), 'utf8'));
 const FPS = 24;
-const WORK = path.join(ROOT, 'out', `echo-${id}`); fs.mkdirSync(WORK, { recursive: true });
+const WORK = path.join(ROOT, 'out', `${SERIE}-${id}`); fs.mkdirSync(WORK, { recursive: true });
 const sh = (cmd, args, opt = {}) => execFileSync(cmd, args, { stdio: ['pipe', 'pipe', 'pipe'], maxBuffer: 1 << 26, ...opt });
 
 // ---------- 1. Stimmen ----------
 const VOICE_DIR = path.join(os.homedir(), '.cache', 'echo-voices');
-const VOICES = { jakob: 'de-pavoque-low', erz: 'de-thorsten-low', uhrmacher: 'de-thorsten-low', lena: 'de-kerstin-low', maedchen: 'de-kerstin-low', altmats: 'de-thorsten-low', stimme: 'de-thorsten-low', mats: 'de-pavoque-low' };
+const VOICES = { jonas: 'de-pavoque-low', ben: 'de-pavoque-low', tim: 'de-kerstin-low', mia: 'de-kerstin-low', lara: 'de-kerstin-low', larakind: 'de-kerstin-low', sechster: 'de-thorsten-low', wirt: 'de-thorsten-low', jakob: 'de-pavoque-low', erz: 'de-thorsten-low', uhrmacher: 'de-thorsten-low', lena: 'de-kerstin-low', maedchen: 'de-kerstin-low', altmats: 'de-thorsten-low', stimme: 'de-thorsten-low', mats: 'de-pavoque-low' };
 function ensureVoices() {
   try { sh('python3', ['-c', 'import piper']); } catch { sh('pip', ['install', '-q', 'piper-tts']); }
   for (const v of new Set(Object.values(VOICES))) {
@@ -40,7 +41,8 @@ const VOICE_FX = {
 const CLEAN = 'aresample=44100';
 const EL_FX = { // saubere Stimmen: kein Hall, keine Tonhöhen-Verschiebung
   erz: CLEAN, lena: CLEAN, maedchen: CLEAN, altmats: CLEAN, stimme: CLEAN, mats: CLEAN, jakob: CLEAN,
-  uhrmacher: CLEAN,
+  uhrmacher: CLEAN, jonas: CLEAN, mia: CLEAN, ben: CLEAN, lara: CLEAN, tim: CLEAN, larakind: CLEAN, wirt: CLEAN,
+  sechster: 'asetrate=44100*0.82,aresample=44100,atempo=1.1,lowpass=f=4200,aecho=0.8:0.8:60|120:0.3|0.2,volume=1.5',
   radio: 'aresample=44100',
 };
 const SPEED = { erz: 1.12, lena: 1.0, mats: 0.98, uhrmacher: 1.1 };
@@ -70,7 +72,7 @@ function envelope(f) {
 function dur(f) { return parseFloat(sh('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f]).toString()); }
 // ElevenLabs-Stimmen (API-Key wird vom Netzwerk-Proxy eingesetzt). Fällt bei Fehlern auf Piper zurück.
 const EL_MODEL = process.env.ECHO_EL_MODEL || 'eleven_v3';
-const EL_VOICES = { erz: 'DoHz70qrC3ss60PDk9cg', lena: 'h5v6xrdIQqGLrT6nHNdj', maedchen: 'h5v6xrdIQqGLrT6nHNdj', altmats: '6t8LORFSPwBBPJsBLSYZ', stimme: '6t8LORFSPwBBPJsBLSYZ', mats: 'IjnA9kwZJHJ20Fp7Vmy6', jakob: 'IjnA9kwZJHJ20Fp7Vmy6', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
+const EL_VOICES = { jonas: 'hE5g948a43gbyxPuk4qh', mia: 'Jpm0FNvrnzdW3k4rnWVH', ben: 'KJGvwDt0zADAAvDmMQEN', lara: '60AkIxCFeI9yJsEdAuaf', tim: 'yWJ7hVkexxVG70fCINyw', larakind: 'yWJ7hVkexxVG70fCINyw', sechster: '6t8LORFSPwBBPJsBLSYZ', wirt: '6t8LORFSPwBBPJsBLSYZ', erz: 'DoHz70qrC3ss60PDk9cg', lena: 'h5v6xrdIQqGLrT6nHNdj', maedchen: 'h5v6xrdIQqGLrT6nHNdj', altmats: '6t8LORFSPwBBPJsBLSYZ', stimme: '6t8LORFSPwBBPJsBLSYZ', mats: 'IjnA9kwZJHJ20Fp7Vmy6', jakob: 'IjnA9kwZJHJ20Fp7Vmy6', uhrmacher: '6t8LORFSPwBBPJsBLSYZ' };
 const EL_CACHE = path.join(ROOT, 'out', 'el-cache'); fs.mkdirSync(EL_CACHE, { recursive: true });
 let elOk = process.env.ECHO_TTS !== 'piper', usedEL = 0, usedPiper = 0;
 const elKey = (line, text) => require('crypto').createHash('sha1').update(EL_MODEL + '|' + EL_VOICES[line.who] + '|' + line.who + '|' + (line.tone || '') + '|' + text).digest('hex').slice(0, 16);
@@ -96,7 +98,7 @@ function voiceLine(line, k) {
     sh('python3', ['-m', 'piper', '-m', model, '-f', raw, '--length-scale', String(SPEED[line.who] || 1), '--noise-scale', '0.6', '--sentence-silence', '0.25'], { input: text });
     src = raw;
   } else usedEL++;
-  const fx = src === raw ? (line.radio ? VOICE_FX.radio : VOICE_FX[line.who]) : (line.radio ? EL_FX.radio : EL_FX[line.who]);
+  const fx = src === raw ? (line.radio ? VOICE_FX.radio : (VOICE_FX[line.who] || VOICE_FX.mats)) : (line.radio ? EL_FX.radio : (EL_FX[line.who] || CLEAN));
   sh('ffmpeg', ['-y', '-v', 'error', '-i', src, '-af', `${fx},silenceremove=start_periods=1:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse,apad=pad_dur=0.05`, '-ac', '2', fin]);
   return { file: fin, d: dur(fin) };
 }
@@ -117,7 +119,7 @@ function buildTimeline() {
     shots.push({ ...s, lines: undefined, t0, t1 });
     t = t1;
   }
-  return { nr, titel: ep.titel, fps: FPS, duration: t, shots, subs, voices, mouth };
+  return { serie: SERIE, nr, titel: ep.titel, fps: FPS, duration: t, shots, subs, voices, mouth };
 }
 
 // ---------- 3. Sounddesign ----------
@@ -153,7 +155,7 @@ function mixVoicesOnly(tl) {
   return outA;
 }
 // Echte Sounds (ElevenLabs, echo/assets/sfx) – Ambiences werden geloopt, Einzel-Effekte einmal abgespielt
-const SFX_DIR = path.join(__dirname, 'assets', 'sfx'), THEME = path.join(__dirname, 'assets', 'music', 'theme.mp3');
+const SFX_DIR = path.join(__dirname, 'assets', 'sfx'), THEME = path.join(ROOT, process.env.SERIE || 'echo', 'assets', 'music', 'theme.mp3');
 const SFX_VOL = { rain: 0.55, wind: 0.5, forest: 0.6, crowd: 0.45, room: 0.6, radio: 0.4, clock: 0.45, heartbeat: 0.8, drip: 0.6, hum: 0.5, steps: 0.6, crows: 0.6, car: 0.6, thunder: 0.9, hit: 0.85, whoosh: 0.6, static: 0.5, riser: 0.6 };
 function mixAudio(tl) {
   if (process.env.ECHO_SFX !== '1' && process.env.ECHO_MUSIC !== '1') return mixVoicesOnly(tl);
@@ -203,7 +205,7 @@ async function render(tl, audio) {
     fs.createReadStream(p).pipe(res);
   });
   await new Promise(r => server.listen(0, r));
-  const url = `http://localhost:${server.address().port}/echo/engine.html?tl=/out/echo-${id}/timeline.json`;
+  const url = `http://localhost:${server.address().port}/echo/engine.html?tl=/out/${SERIE}-${id}/timeline.json`;
   const openPage = async () => {
     const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
     const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
@@ -233,7 +235,7 @@ async function render(tl, audio) {
       }
       await browser.close();
     }));
-    const outFile = path.join(ROOT, 'out', CLIP ? `echo-folge-${id}-ausschnitt.mp4` : `echo-folge-${id}.mp4`);
+    const outFile = path.join(ROOT, 'out', CLIP ? `${SERIE}-folge-${id}-ausschnitt.mp4` : `${SERIE}-folge-${id}.mp4`);
     sh('ffmpeg', ['-y', '-v', 'error', '-framerate', String(FPS), '-i', path.join(FR, '%05d.jpg'), ...(CLIP ? ['-ss', String(CLIP.start), '-t', String(CLIP.dur)] : []), '-i', audio,
       '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', outFile]);
     fs.rmSync(FR, { recursive: true, force: true });
@@ -254,6 +256,6 @@ if (process.argv.includes('--lines')) {
   const tl = buildTimeline();
   console.log(`Folge ${nr} „${ep.titel}“: ${tl.duration.toFixed(1)} s, ${tl.shots.length} Shots – Stimmen: ${usedEL}x ElevenLabs, ${usedPiper}x Piper`);
   const audio = mixAudio(tl);
-  if (process.argv.includes('--audio')) { sh('ffmpeg', ['-y', '-v', 'error', '-i', audio, '-b:a', '192k', path.join(ROOT, 'out', `echo-folge-${id}-ton.mp3`)]); console.log('TON FERTIG'); return; }
+  if (process.argv.includes('--audio')) { sh('ffmpeg', ['-y', '-v', 'error', '-i', audio, '-b:a', '192k', path.join(ROOT, 'out', `${SERIE}-folge-${id}-ton.mp3`)]); console.log('TON FERTIG'); return; }
   await render(tl, audio);
 })().catch(e => { console.error(e.stderr ? e.stderr.toString() : e); process.exit(1); });

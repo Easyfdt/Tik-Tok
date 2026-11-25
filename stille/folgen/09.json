@@ -1,0 +1,439 @@
+{
+"nr": 9,
+"titel": "Der Wald",
+"shots": [
+{
+"set": "schneewald",
+"hook": "Folge nicht den Bäumen.",
+"cut": "hard",
+"pre": 0.5,
+"cam": "crane",
+"focus": "main",
+"angle": 10,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+-0.3,
+2
+],
+"face": 180,
+"pose": "walk",
+"move": [
+0,
+-2.5
+]
+},
+{
+"who": "mia",
+"pos": [
+0.5,
+2.8
+],
+"face": 180,
+"pose": "walk",
+"move": [
+0,
+-2.5
+]
+}
+],
+"sfx": [
+"wind",
+"steps"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Im Morgengrauen gehen Jonas und Mia in den Wald. Sie wollen Ben finden.",
+"tone": "[whispering, ominous]"
+}
+]
+},
+{
+"set": "schneewald",
+"cam": "close",
+"focus": "mia",
+"angle": 20,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0.5,
+0
+],
+"face": 20,
+"pose": "frieren"
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Hier war mal ein Weg. Jetzt ist hier nur noch Weiß.",
+"tone": "[whispering, cold]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "schneewald",
+"cam": "ots",
+"over": "jonas",
+"focus": "jacke",
+"side": 1,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+0.0,
+-3.0
+],
+"face": 180,
+"pose": "point"
+}
+],
+"sfx": [
+"wind",
+"hit"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Da! An dem Ast! Bens Jacke!",
+"tone": "[shouting]"
+}
+]
+},
+{
+"set": "schneewald",
+"cam": "close",
+"focus": "jacke",
+"angle": 10,
+"sfx": [
+"wind",
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Die Jacke ist steif gefroren. In der Tasche: Bens Handy. Ein Video. Aufgenommen heute Nacht.",
+"tone": "[slow, tense]"
+}
+]
+},
+{
+"set": "schneewald",
+"cam": "extreme",
+"focus": "mia",
+"angle": 30,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0.9,
+-5.6
+],
+"face": 30,
+"pose": "filmen"
+}
+],
+"sfx": [
+"static",
+"heartbeat"
+],
+"lines": [
+{
+"who": "ben",
+"text": "Wenn ihr das seht … zählt nicht. Er zählt mit euch. Und wer übrig bleibt …",
+"tone": "[whispering, terrified, crying]",
+"radio": true
+}
+]
+},
+{
+"set": "schneewald",
+"cam": "close",
+"focus": "mia",
+"angle": -10,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0.9,
+-5.6
+],
+"face": -10,
+"pose": "down"
+}
+],
+"lines": [
+{
+"who": "mia",
+"text": "Das Video bricht ab.",
+"tone": "[shaking]"
+}
+],
+"sfx": [
+"wind"
+]
+},
+{
+"set": "schneewald",
+"cam": "ots",
+"over": "mia",
+"focus": "tief",
+"side": -1,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0.9,
+-5.6
+],
+"face": 180,
+"pose": "filmen"
+},
+{
+"who": "sechster",
+"pos": [
+-2.5,
+-13
+],
+"face": 0,
+"pose": "stare",
+"alpha": 0.6
+},
+{
+"who": "sechster",
+"pos": [
+2.0,
+-16
+],
+"face": 0,
+"pose": "stare",
+"alpha": 0.6
+}
+],
+"sfx": [
+"riser",
+"wind"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Mia hebt die Kamera. Auf dem Display: Bäume. Und zwischen den Bäumen … Gestalten.",
+"tone": "[slow, chilling]"
+}
+]
+},
+{
+"set": "schneewald",
+"cam": "close",
+"focus": "mia",
+"angle": 20,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0.9,
+-5.6
+],
+"face": 20,
+"pose": "filmen"
+}
+],
+"sfx": [
+"heartbeat"
+],
+"lines": [
+{
+"who": "mia",
+"text": "Jonas. Ich zähle sechs. Ohne Kamera sehe ich keinen.",
+"tone": "[barely audible]"
+}
+]
+},
+{
+"set": "schneewald",
+"cam": "track",
+"focus": "jonas",
+"angle": 80,
+"chars": [
+{
+"who": "jonas",
+"pos": [
+0.0,
+-5.2
+],
+"face": 0,
+"pose": "walk",
+"move": [
+0,
+1.2
+]
+}
+],
+"sfx": [
+"steps",
+"wind"
+],
+"lines": [
+{
+"who": "jonas",
+"text": "Runter mit der Kamera. Nicht hinsehen. Rückwärts gehen.",
+"tone": "[whispering, urgent]"
+}
+]
+},
+{
+"set": "schneewald",
+"cam": "close",
+"focus": "mia",
+"angle": 180,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0.9,
+-5.6
+],
+"face": 180,
+"pose": "stand"
+}
+],
+"sfx": [
+"hum"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Mia senkt die Kamera.",
+"tone": "[very slow]"
+}
+]
+},
+{
+"set": "schneewald",
+"cam": "ots",
+"over": "mia",
+"focus": "sechster",
+"side": 1,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0.9,
+-5.6
+],
+"face": 180,
+"pose": "fear"
+},
+{
+"who": "sechster",
+"pos": [
+0.9,
+-6.4
+],
+"face": 0,
+"pose": "stare"
+}
+],
+"cut": "hard",
+"sfx": [
+"hit",
+"heartbeat"
+],
+"lines": [
+{
+"who": "erz",
+"text": "Und einer steht direkt vor ihr. So nah, dass ihr Atem an ihm gefriert.",
+"tone": "[slow, whispering, chilling]"
+}
+]
+},
+{
+"set": "schneewald",
+"cam": "extreme",
+"focus": "sechster",
+"angle": 0,
+"chars": [
+{
+"who": "sechster",
+"pos": [
+0.9,
+-6.4
+],
+"face": 0,
+"pose": "stare",
+"tilt": 10,
+"hollow": 0.9
+}
+],
+"fill": 1.4,
+"sfx": [
+"riser"
+],
+"lines": [
+{
+"who": "sechster",
+"text": "Du hast mich gezählt.",
+"tone": "[deep, slow, whispering]"
+}
+]
+},
+{
+"set": "schneewald",
+"cam": "dutch",
+"focus": "mia",
+"angle": 150,
+"roll": 18,
+"chars": [
+{
+"who": "mia",
+"pos": [
+0.9,
+-5.6
+],
+"face": 150,
+"pose": "run",
+"move": [
+-0.5,
+2.5
+]
+}
+],
+"cut": "hard",
+"sfx": [
+"hit",
+"wind"
+],
+"post": 0.5,
+"lines": [
+{
+"who": "mia",
+"text": "Jonas! Lauf!",
+"tone": "[screaming]"
+}
+]
+},
+{
+"set": "leere",
+"black": true,
+"title": "WEISSE STILLE",
+"sub": "FOLGE 10 · LARA WEISS ES",
+"cut": "hard",
+"pre": 0.6,
+"post": 0.5,
+"lines": [
+{
+"who": "erz",
+"text": "Was du zählst, zählt auch dich.",
+"tone": "[quiet, ominous]"
+}
+],
+"sfx": []
+}
+]
+}
