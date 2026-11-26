@@ -7,15 +7,15 @@ ECHO 1–9: schon gepostet (19.–25.11.2026). ECHO 10 + 11: postet der Nutzer s
 
 | Datum | Uhrzeit | Video | Status |
 |---|---|---|---|
-| Fr 27.11. | 18:00 | ECHO Folge 12 – Das Unglück | wartet auf Video-Link |
-| Fr 27.11. | 21:00 | ECHO Folge 13 – Rückweg | wartet auf Video-Link |
-| Sa 28.11. | 18:00 | ECHO Folge 14 – Das Gesicht | wartet auf Video-Link |
-| Sa 28.11. | 21:00 | ECHO Folge 15 – 23:14 (Finale) | wartet auf Video-Link |
-| So 29.11. | 18:00 | WEISSE STILLE Folge 1 – Der Sturm | wartet auf Video-Link |
-| So 29.11. | 21:00 | WEISSE STILLE Folge 2 – Wer fehlt? | wartet auf Video-Link |
-| Mo 30.11. | 18:00 | WEISSE STILLE Folge 3 – Fußspuren | wartet auf Video-Link |
-| Mo 30.11. | 21:00 | WEISSE STILLE Folge 4 – Das Foto | wartet auf Video-Link |
-| Di 01.12. | 18:00 | WEISSE STILLE Folge 5 – Das Gästebuch | wartet auf Video-Link |
+| Fr 27.11. | 18:00 | ECHO Folge 12 – Das Unglück | ✅ eingeplant |
+| Fr 27.11. | 21:00 | ECHO Folge 13 – Rückweg | ✅ eingeplant |
+| Sa 28.11. | 18:00 | ECHO Folge 14 – Das Gesicht | ✅ eingeplant |
+| Sa 28.11. | 21:00 | ECHO Folge 15 – 23:14 (Finale) | ✅ eingeplant |
+| So 29.11. | 18:00 | WEISSE STILLE Folge 1 – Der Sturm | ✅ eingeplant |
+| So 29.11. | 21:00 | WEISSE STILLE Folge 2 – Wer fehlt? | ✅ eingeplant |
+| Mo 30.11. | 18:00 | WEISSE STILLE Folge 3 – Fußspuren | ✅ eingeplant |
+| Mo 30.11. | 21:00 | WEISSE STILLE Folge 4 – Das Foto | ✅ eingeplant |
+| Di 01.12. | 18:00 | WEISSE STILLE Folge 5 – Das Gästebuch | ✅ eingeplant |
 
 Danach sind keine fertigen Videos mehr übrig. WEISSE STILLE 6–13: Drehbücher fertig (`stille/folgen/`), Videos noch nicht gerendert.
 
@@ -49,3 +49,16 @@ Danach sind keine fertigen Videos mehr übrig. WEISSE STILLE 6–13: Drehbücher
 
 ### WEISSE STILLE Folge 5 – Das Gästebuch
 📖 1974: FÜNF GÄSTE. AM NÄCHSTEN TAG: SECHS. DANN VIER. DREI. ZWEI. EINS. 😱 Im alten Gästebuch der Hütte steht ein letzter Eintrag, mit zitternder Hand geschrieben: „Zählt euch nicht.“ ✍️ Doch auf der nächsten Seite ist die Tinte noch feucht. Dort stehen ihre Namen. Und für morgen: fünf Personen. Ein Name ist durchgestrichen … 😨 👀 Wessen Name ist es? 👇 Schreib deine Theorie in die Kommentare! 🔥 Folge 6 kommt bald! #horrortok #gruselgeschichte #3danimation #horrorserie #mysterylost
+
+---
+
+## Stand 26.11.2026 / Entscheidungen des Nutzers
+
+- 9 Posts in Metricool eingeplant (Drive-Videos, ohne Cover-Frame). Folge 5: Text "Folge 6 kommt morgen!".
+- GitHub-Hosting erlaubt: neue Videos ins öffentliche Repo legen, raw-Link an Metricool geben.
+- Cover: kein Business-Account -> Cover (Drive: "echo bild.png", "Weisse stille.png") in die ersten 0,3 s des Videos einbrennen.
+- **WEISSE STILLE Folge 6 erst am Dienstag 01.12. erstellen, Post Mittwoch 02.12.** Danach 6-13 automatisieren (2 Posts/Tag, 18 + 21 Uhr).
+- Stimmen: gespeicherter ElevenLabs-Key im Proxy ist ungültig -> Stimmen über ElevenLabs-MCP erzeugen
+  (`SERIE=stille node echo/build.js N --lines`, eleven_v3, generations_count 1), MP3s nach `out/el-cache/` legen.
+  Folge 6: alle 15 Stimmen schon fertig in `stille/el-cache/` (vor dem Rendern nach `out/el-cache/` kopieren).
+- Rendern: Branch `claude/blissful-cannon-5pfjdt`, `SERIE=stille ECHO_SFX=1 ECHO_WORKERS=4 node echo/build.js N` (~50 min).
