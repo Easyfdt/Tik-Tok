@@ -78,3 +78,9 @@ Danach sind keine fertigen Videos mehr übrig. WEISSE STILLE 6–13: Drehbücher
 - So 29.11. – Do 03.12.: WEISSE STILLE 1–5, je 1 pro Tag um 18:00
 - **Fr 04.12. 18:00 WEISSE STILLE 6**, dann täglich 18:00 (7 = 05.12. … 13 = 11.12.), danach Staffel 3.
 - Folge 6 am Di 01.12. rendern (Erinnerung gesetzt).
+
+## YouTube (ab WEISSE STILLE 1)
+- Neuer YouTube-Kanal in Metricool verbunden (UCegulkooJXEZeX1lbdTYkhw).
+- WEISSE STILLE 1–5 gehen gleichzeitig auf TikTok + YouTube (Short) um 18:00.
+- Alle neuen Folgen: providers tiktok + youtube, youtubeData {title "WEISSE STILLE · Folge N: Titel 😱 3D Horror-Serie #shorts", type short, privacy public, category FILM_ANIMATION, madeForKids false}.
+- ECHO 12–15 bleiben nur TikTok.
