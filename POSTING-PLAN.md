@@ -62,3 +62,12 @@ Danach sind keine fertigen Videos mehr übrig. WEISSE STILLE 6–13: Drehbücher
   (`SERIE=stille node echo/build.js N --lines`, eleven_v3, generations_count 1), MP3s nach `out/el-cache/` legen.
   Folge 6: alle 15 Stimmen schon fertig in `stille/el-cache/` (vor dem Rendern nach `out/el-cache/` kopieren).
 - Rendern: Branch `claude/blissful-cannon-5pfjdt`, `SERIE=stille ECHO_SFX=1 ECHO_WORKERS=4 node echo/build.js N` (~50 min).
+
+## Entscheidungen (26.11., Nutzer: "mach was gut ist für den Account")
+
+1. Ab Mi 02.12.: **1 Folge pro Tag um 18:00** (WEISSE STILLE 6 am 02.12., 7 am 03.12. … 13 am 09.12.).
+2. Cover-Versionen (Cover in den ersten 0,3 s) am Dienstag für die noch nicht veröffentlichten Posts austauschen, danach bei jeder neuen Folge.
+3. Neue Folgen direkt posten, keine Freigabe nötig.
+4. KI-Kennzeichnung aus (stilisierte 3D-Animation, nicht realistisch).
+5. Nach Folge 13: Staffel 3 selbst schreiben (gleicher Stil) und weitermachen.
+6. ElevenLabs-Credits einfach nutzen, Nutzer warnen, wenn sie knapp werden.
