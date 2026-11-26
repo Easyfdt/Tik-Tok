@@ -71,3 +71,10 @@ Danach sind keine fertigen Videos mehr übrig. WEISSE STILLE 6–13: Drehbücher
 4. KI-Kennzeichnung aus (stilisierte 3D-Animation, nicht realistisch).
 5. Nach Folge 13: Staffel 3 selbst schreiben (gleicher Stil) und weitermachen.
 6. ElevenLabs-Credits einfach nutzen, Nutzer warnen, wenn sie knapp werden.
+
+## Aktueller Kalender (Stand 26.11. abends)
+- Fr 27.11. 18:00 ECHO 12 · 21:00 ECHO 13
+- Sa 28.11. 18:00 ECHO 14 · 21:00 ECHO 15
+- So 29.11. – Do 03.12.: WEISSE STILLE 1–5, je 1 pro Tag um 18:00
+- **Fr 04.12. 18:00 WEISSE STILLE 6**, dann täglich 18:00 (7 = 05.12. … 13 = 11.12.), danach Staffel 3.
+- Folge 6 am Di 01.12. rendern (Erinnerung gesetzt).
