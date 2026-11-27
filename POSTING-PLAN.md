@@ -103,3 +103,13 @@ Kein Flackern. Folgen 6–13 erstellt NUR diese Sitzung (mit MysteryLost-Chat ab
 - Unter jedes Video kommt Musik. Bei automatischen Posts (autoPublish true): eigene Musik leise unter der Stimme
   (echo/assets/music/theme.mp3, ECHO_MUSIC=1 beim Rendern prüfen). Nur wenn der Nutzer selbst einen TikTok-Sound wählen will: autoPublish false.
 - Teaser ECHO 12 am 27.11. um 12:30 eingeplant (autoPublish false, Video per Raw-Link aus Branch claude/blissful-cannon-5pfjdt).
+
+## Teaser-Regel WEISSE STILLE (vom MysteryLost-Chat, 27.11.)
+- An jedem Folgen-Tag um 12:30 ein Teaser (~10 s), nur TikTok, autoPublish true, isAigc true,
+  tiktokData.title "WEISSE STILLE – Teaser Folge N".
+- Folge 1–5: Teaser macht/plant der MysteryLost-Chat (29.11.–03.12.).
+- Folge 6–13: Teaser macht diese Sitzung nach dem Rendern mit `teaser/make_teaser.sh` (Branch claude/blissful-cannon-5pfjdt):
+  `make_teaser.sh <folge.mp4> <out.mp4> "WEISSE STILLE" "Folge N – heute 18 Uhr" "start dauer" ...`
+  2–3 Schnitte aus timeline.json (subs t0/t1), zusammen ~8 s + 2 s Endkarte; vor Auflösung abbrechen, Twist nicht verraten.
+  Text: Spannungssatz + Emoji + "WEISSE STILLE – Folge N heute 18 Uhr. #weissestille #horror #serie #roblox #mysterylost".
+  Medien: Raw-Link aus öffentlichem Repo.
