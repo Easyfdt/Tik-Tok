@@ -98,3 +98,8 @@ Kein Flackern. Folgen 6–13 erstellt NUR diese Sitzung (mit MysteryLost-Chat ab
   nach ~/.claude/skills/ kopieren. Wichtig: cinematic-director, cinematic-3d-video, 3d-animator, threejs-*, particle-system,
   shader-glsl, webgl-threejs-animation, motion-design, storyboard, tiktok-script, tiktok-marketing. Kein Flackern/Glitch.
 - Teaser (12–15 s) erstellen; posten nur, wenn der Nutzer es sagt.
+
+## Musik (Regel vom 27.11.)
+- Unter jedes Video kommt Musik. Bei automatischen Posts (autoPublish true): eigene Musik leise unter der Stimme
+  (echo/assets/music/theme.mp3, ECHO_MUSIC=1 beim Rendern prüfen). Nur wenn der Nutzer selbst einen TikTok-Sound wählen will: autoPublish false.
+- Teaser ECHO 12 am 27.11. um 12:30 eingeplant (autoPublish false, Video per Raw-Link aus Branch claude/blissful-cannon-5pfjdt).
