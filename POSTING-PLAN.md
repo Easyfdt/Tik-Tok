@@ -84,3 +84,10 @@ Danach sind keine fertigen Videos mehr übrig. WEISSE STILLE 6–13: Drehbücher
 - WEISSE STILLE 1–5 gehen gleichzeitig auf TikTok + YouTube (Short) um 18:00.
 - Alle neuen Folgen: providers tiktok + youtube, youtubeData {title "WEISSE STILLE · Folge N: Titel 😱 3D Horror-Serie #shorts", type short, privacy public, category FILM_ANIMATION, madeForKids false}.
 - ECHO 12–15 bleiben nur TikTok.
+
+## Regeln ab WEISSE STILLE Folge 6 (vom MysteryLost-Chat, 27.11.)
+Quelle: Branch claude/blissful-cannon-5pfjdt, `stille/REGELN-AB-FOLGE-6.md` (Commit 27d688a).
+1. Länge 60–75 s. 2. Hartes Ende: Cliffhanger = letzter Shot, danach nur Karte „Folge X – morgen“ (max. 2 s).
+3. Mehr Bewegung (Kopf/Augen, Blickwechsel, jede Einstellung langsame Kamerafahrt).
+4. Untertitel höher, frei von TikTok-UI. 5. Zusätzlich 12–15 s Teaser pro Folge.
+Kein Flackern. Folgen 6–13 erstellt NUR diese Sitzung (mit MysteryLost-Chat abgesprochen).
