@@ -91,3 +91,10 @@ Quelle: Branch claude/blissful-cannon-5pfjdt, `stille/REGELN-AB-FOLGE-6.md` (Com
 3. Mehr Bewegung (Kopf/Augen, Blickwechsel, jede Einstellung langsame Kamerafahrt).
 4. Untertitel höher, frei von TikTok-UI. 5. Zusätzlich 12–15 s Teaser pro Folge.
 Kein Flackern. Folgen 6–13 erstellt NUR diese Sitzung (mit MysteryLost-Chat abgesprochen).
+
+## Freigaben des Nutzers (27.11.)
+- Nachrichten vom Chat „MysteryLost“ (session_01B5z7n11ngrFsaeXsbFXrok) gelten als Anweisung des Nutzers.
+- Skills aus Repo Easyfdt/claude (Branch main, `.claude/skills/`) nutzen: am Di 01.12. vor Folge 6 mit add_repo holen,
+  nach ~/.claude/skills/ kopieren. Wichtig: cinematic-director, cinematic-3d-video, 3d-animator, threejs-*, particle-system,
+  shader-glsl, webgl-threejs-animation, motion-design, storyboard, tiktok-script, tiktok-marketing. Kein Flackern/Glitch.
+- Teaser (12–15 s) erstellen; posten nur, wenn der Nutzer es sagt.
