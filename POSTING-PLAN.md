@@ -105,7 +105,7 @@ Kein Flackern. Folgen 6–13 erstellt NUR diese Sitzung (mit MysteryLost-Chat ab
 - Teaser ECHO 12 am 27.11. um 12:30 eingeplant (autoPublish false, Video per Raw-Link aus Branch claude/blissful-cannon-5pfjdt).
 
 ## Teaser-Regel WEISSE STILLE (vom MysteryLost-Chat, 27.11.)
-- An jedem Folgen-Tag um 12:30 ein Teaser (~10 s), nur TikTok, autoPublish true, isAigc true,
+- An jedem Folgen-Tag um 12:30 ein Teaser (~10 s), nur TikTok, autoPublish true, isAigc false,
   tiktokData.title "WEISSE STILLE – Teaser Folge N".
 - Folge 1–5: Teaser macht/plant der MysteryLost-Chat (29.11.–03.12.).
 - Folge 6–13: Teaser macht diese Sitzung nach dem Rendern mit `teaser/make_teaser.sh` (Branch claude/blissful-cannon-5pfjdt):
@@ -121,3 +121,6 @@ Kein Flackern. Folgen 6–13 erstellt NUR diese Sitzung (mit MysteryLost-Chat ab
   (Musik -18 dB, Ducking per sidechaincompress, Fade in/out, Video wird kopiert).
 - Folge 1–5 + Teaser 1–5 neu abgemischt (`stille/mit-musik/`), alle 10 Metricool-Posts haben die neuen Videos (Raw-Links aus diesem Branch).
 - Ab Folge 6: nach dem Rendern add_music.sh auf Folge UND Teaser anwenden (oder musicBed in build.js durch dieses Stück ersetzen).
+
+## KI-Label: NIEMALS (Nutzer wörtlich, 28.11.)
+isAigc und isAiGeneratedContent IMMER false – bei Folgen, Teasern, TikTok und YouTube. Gilt auch für Teaser 6–13.
