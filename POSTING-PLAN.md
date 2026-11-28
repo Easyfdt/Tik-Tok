@@ -124,3 +124,8 @@ Kein Flackern. Folgen 6–13 erstellt NUR diese Sitzung (mit MysteryLost-Chat ab
 
 ## KI-Label: NIEMALS (Nutzer wörtlich, 28.11.)
 isAigc und isAiGeneratedContent IMMER false – bei Folgen, Teasern, TikTok und YouTube. Gilt auch für Teaser 6–13.
+
+## Teaser auch auf YouTube (28.11.)
+Alle Teaser (ab WEISSE STILLE 1) gehen um 12:30 auf TikTok UND YouTube (Short).
+youtubeData: title "WEISSE STILLE – Teaser Folge N 😱 Heute 18 Uhr #shorts", type short, public, FILM_ANIMATION, madeForKids false, isAiGeneratedContent false.
+Aktuelle Teaser-IDs 1–5: 445785571, 445785605, 445785649, 445785691, 445785745.
