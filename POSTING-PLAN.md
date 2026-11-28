@@ -113,3 +113,11 @@ Kein Flackern. Folgen 6–13 erstellt NUR diese Sitzung (mit MysteryLost-Chat ab
   2–3 Schnitte aus timeline.json (subs t0/t1), zusammen ~8 s + 2 s Endkarte; vor Auflösung abbrechen, Twist nicht verraten.
   Text: Spannungssatz + Emoji + "WEISSE STILLE – Folge N heute 18 Uhr. #weissestille #horror #serie #roblox #mysterylost".
   Medien: Raw-Link aus öffentlichem Repo.
+
+## Serienmusik WEISSE STILLE (28.11.)
+- Stück: `stille/assets/music/stille-theme.mp3` (ElevenLabs Music v2.5, 120 s, Dark Ambient: tiefe Streicher, Klavier, kein Beat, kein Gesang).
+  IMMER dasselbe Stück verwenden.
+- Mischen: `stille/tools/add_music.sh <in.mp4> <out.mp4> stille/assets/music/stille-theme.mp3 -18`
+  (Musik -18 dB, Ducking per sidechaincompress, Fade in/out, Video wird kopiert).
+- Folge 1–5 + Teaser 1–5 neu abgemischt (`stille/mit-musik/`), alle 10 Metricool-Posts haben die neuen Videos (Raw-Links aus diesem Branch).
+- Ab Folge 6: nach dem Rendern add_music.sh auf Folge UND Teaser anwenden (oder musicBed in build.js durch dieses Stück ersetzen).
